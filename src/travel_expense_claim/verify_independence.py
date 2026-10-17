@@ -25,7 +25,7 @@ class Sources:
     def __init__(self, manifest):
         self.path = Path(manifest).resolve()
         self.base = self.path.parent
-        self.data = json.loads(self.path.read_text())
+        self.data = json.loads(self.path.read_text(encoding="utf-8"))
         entries = self.data["files"]
         self.files = {e["source_id"]: e for e in entries}
         if len(self.files) != len(entries) or len({e["url"] for e in entries}) != 5:
@@ -39,7 +39,7 @@ class Sources:
 
     def read(self, source_id):
         entry = self.files[source_id]
-        return json.loads((self.base / entry["path"]).read_text(), parse_float=Decimal)
+        return json.loads((self.base / entry["path"]).read_text(encoding="utf-8"), parse_float=Decimal)
 
     def table(self, name):
         source_id = "REGISTERS-" + name.upper().replace(" ", "-")

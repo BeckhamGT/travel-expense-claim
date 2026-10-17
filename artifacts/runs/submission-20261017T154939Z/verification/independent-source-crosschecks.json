@@ -1,0 +1,22 @@
+{
+  "offline": true,
+  "independent_policy_line_calculations_checked": 804,
+  "monetary_mismatches": [],
+  "independent_receipt_records": 203,
+  "raw_claim_versions": 127,
+  "raw_finance_delivery_types": {
+    "settled": 107,
+    "failed": 1,
+    "retry_authorized": 1,
+    "cancellation_requested": 1,
+    "cancelled": 1,
+    "adjustment": 1,
+    "refund": 2,
+    "resolution": 2,
+    "accepted": 104
+  },
+  "all_batches_schema_valid": true,
+  "visible_finance_ids_and_net_money_match_raw_rows": true,
+  "decisions_and_packets_arrival_bounded": true,
+  "cancellation_and_finance_ids_disjoint": true
+}

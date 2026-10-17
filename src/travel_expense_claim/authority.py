@@ -1,4 +1,4 @@
-"""Recheck supplied claim reviews against current facts without creating replies.
+"""Recheck supplied claim/permit reviews against current facts without creating replies.
 
 The caller has already established evidence/entitlement and filtered review and
 cancellation arrivals. This component checks current authority only. It grants
@@ -46,14 +46,21 @@ def _payload(row):
 
 
 def recheck_authority(claim, trip, person, entitlement_cents, reviews, packets, cancellations, sources):
-    """Return current claim approvals and reasons other replies cannot authorize it.
+    """Return current approvals and reasons other replies cannot authorize them.
 
     ``packets`` is either native rows or a decision-ID mapping. ``cancellations``
     contains admitted processes from the cancellation reducer. The source reader
     supplies ``table('Budget')`` plus manifest ``data`` and ``files``. The full
     department/project/period ledger reference set is checked here; affordability
     and accepted-request reconciliation remain separate checks.
+
+    ``subject_type='permit'`` selects the independent permit route: its ID and
+    revision must match the trip's permit, its reviewed amount is the estimate,
+    and later claim expense references do not define permission authority.
     """
+    subject_type = claim.get("subject_type", "claim")
+    if subject_type not in {"claim", "permit"}:
+        raise ValueError("Review subject must be claim or permit")
     if entitlement_cents is not None and (type(entitlement_cents) is not int or entitlement_cents < 0):
         raise ValueError("Entitlement must be nonnegative integer cents or unknown")
     required = {role: person.get(field) for role, field in ROLE_FIELDS.items() if role != "director"}
@@ -69,10 +76,16 @@ def recheck_authority(claim, trip, person, entitlement_cents, reviews, packets, 
     identity_valid = (claim.get("employee") == person.get("Employee ID") == trip.get("Employee ID")
                       and claim.get("trip") == trip.get("Trip reference")
                       and claim.get("trip_revision") == trip.get("Trip revision"))
-    costs = tuple(line["cost_id"] for line in claim["lines"])
+    if subject_type == "permit":
+        identity_valid = (identity_valid and bool(trip.get("Permit reference"))
+                          and claim.get("id") == trip.get("Permit reference")
+                          and claim.get("revision") == trip.get("Permit revision"))
+    costs = tuple(line["cost_id"] for line in claim.get("lines", [])) if subject_type == "claim" else None
     policy_version = sources.files["POLICY"]["source_version"]
     claim_source = str(claim.get("source_ref", "INITIAL")).split(":", 1)[0]
-    version_ids = (claim_source, "RECEIPTS", "REGISTERS-PEOPLE", "REGISTERS-TRIPS", "REGISTERS-BUDGET")
+    version_ids = (claim_source, "REGISTERS-PEOPLE", "REGISTERS-TRIPS", "REGISTERS-BUDGET")
+    if subject_type == "claim":
+        version_ids += ("RECEIPTS",)
     expected_versions = {policy_version}
     expected_versions.update(sources.files[key]["source_version"] for key in version_ids if key in sources.files)
     source_refs = {reference for reference in (claim.get("source_ref"), trip.get("_ref"), person.get("_ref"), "POLICY") if reference}
@@ -129,8 +142,8 @@ def recheck_authority(claim, trip, person, entitlement_cents, reviews, packets, 
         if not decision_id or any(_payload(other) != _payload(row) for other in deliveries[1:]):
             reject(row, "Missing decision ID or conflicting payloads for one decision reference", delivery_refs)
             continue
-        if row.get("Subject type") != "claim" or row.get("Revision") != claim["revision"] or isinstance(row.get("Revision"), bool):
-            reject(row, "Wrong subject type or prior/stale claim revision", delivery_refs)
+        if row.get("Subject type") != subject_type or row.get("Revision") != claim["revision"] or isinstance(row.get("Revision"), bool):
+            reject(row, f"Wrong subject type or prior/stale {subject_type} revision", delivery_refs)
             continue
         options = packet_groups.get(decision_id, [])
         if not options or any(_payload(other) != _payload(options[0]) for other in options[1:]):
@@ -146,12 +159,16 @@ def recheck_authority(claim, trip, person, entitlement_cents, reviews, packets, 
         expected = (person.get("Employee ID"), trip.get("Trip reference"), trip.get("Trip revision"),
                     trip.get("Permit reference"), trip.get("Permit revision"), costs)
         actual = (packet.get("Employee ID"), packet.get("Trip reference"), packet.get("Trip revision"),
-                  packet.get("Permit reference"), packet.get("Permit revision"), _refs(packet.get("Expense references")))
+                  packet.get("Permit reference"), packet.get("Permit revision"),
+                  _refs(packet.get("Expense references")) if subject_type == "claim" else None)
         if actual != expected or isinstance(packet.get("Trip revision"), bool) or isinstance(packet.get("Permit revision"), bool):
             reject(row, "Packet employee/trip/permit/revision/expense identities do not match current evidence", references)
             continue
         if any(packet.get(field) != trip.get(field) for field in CONTEXT_FIELDS):
             reject(row, "Packet business purpose/client/coverage/alternatives are not current", references)
+            continue
+        if subject_type == "permit" and packet.get("Reviewed estimate (EUR)") != trip.get("Estimate (EUR)"):
+            reject(row, "Permit packet does not review the exact current trip estimate", references)
             continue
         versions = set(_refs(row.get("Source revisions")))
         stale_versions = {version for version in versions if version.startswith(("POL-", "SRC-")) and version not in expected_versions}

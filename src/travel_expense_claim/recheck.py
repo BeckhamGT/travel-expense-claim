@@ -1,4 +1,4 @@
-"""Offline full recheck of supplied domestic claim revisions.
+"""Full recheck of supplied claim revisions from retained native evidence.
 
 This observer preserves source versions and Finance history. It creates no
 requests, transfers, final acceptance or operational batch snapshots. The caller
@@ -17,6 +17,8 @@ import re
 from .authority import recheck_authority
 from .cancellations import reduce_cancellations
 from .finance import summarize_finance
+from .eligibility import assess_permission
+from .obligations import reconcile_prior_costs
 from .independence import budget_remaining, visible_at
 from .monetary import calculate_line
 from .verify_independence import Sources, SourceError, field, payment_check, receipt_records, single
@@ -27,14 +29,14 @@ ISSUE_NAMES = {"late filing": "late_filing", "late permit": "late_permit",
                "permit unapproved": "permit_unapproved", "travel cancellation": "travel_cancellation"}
 
 
-def claim_versions(sources, through_batch=4):
+def claim_versions(sources, through_batch=None):
     """Keep every supplied revision, including its original exception wording."""
     result, seen = [], set()
     for source_id, reference in (("INITIAL-PAGES", "INITIAL"), ("UPDATES-PAGES", "UPDATES")):
         for page in sources.read(source_id):
             text = page["text"]
             arrival = int(field(text, "Arrival batch"))
-            if arrival > through_batch:
+            if through_batch is not None and arrival > through_batch:
                 continue
             lines = [dict(cost_id=m[0], receipt_id=m[1], first_submitted=m[2],
                           gross=Decimal(m[3]), currency=m[4]) for m in re.findall(
@@ -47,6 +49,7 @@ def claim_versions(sources, through_batch=4):
                         trip=field(text, "Trip reference"), trip_revision=int(field(text, "Trip revision")),
                         submitted=field(text, "Submitted date"), status=field(text, "Status"),
                         reason=field(text, "Claim reason"), lines=lines, exception=None,
+                        related_claims=[] if field(text, "Related earlier claims") == "None" else field(text, "Related earlier claims").split(","),
                         source_ref=f"{reference}:page{page['page']}", parse_error=parse_error)
             if "Authorizing Finance officer:" in text:
                 try:
@@ -174,8 +177,7 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
         return item
     if trip["Employee ID"] != claim["employee"]:
         issue("trip_identity", "Trip employee does not match current claim", claim["employee"], [trip["_ref"], claim["source_ref"]])
-    if trip["International"]:
-        issue("permit_review_pending", "This scoped recheck has not implemented international permit eligibility", person["Administration reviewer"], [trip["_ref"], "POLICY:paragraph4"])
+    permission = assess_permission(claim, trip, person, reviews, packets, cancellations, sources)
     if claim.get("parse_error"):
         issue("claim_payload", claim["parse_error"], claim["employee"], [claim["source_ref"]])
     relevant = [process for process in cancellations["processes"] if process["trip"] == claim["trip"]
@@ -197,11 +199,15 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
             for line in old["lines"]:
                 previous_costs.setdefault(line["cost_id"], line["first_submitted"])
     for line in claim["lines"]:
+        issue_start = len(issues)
         receipt = receipts.get(line["receipt_id"])
         check = payment_check(claim, line, receipt, tables["Merchant payments"], sources.data["case_clock"])
         exception, exception_error = validate_exception(claim, line, person)
         if exception_error:
             issue("invalid_exception", exception_error, person["Finance officer"], [claim["source_ref"]])
+        for finding in permission["findings"]:
+            resolved = exception["source_ref"] if exception and finding["code"] in exception["covered_issues"] else None
+            issue(finding["code"], finding["detail"], person["Finance officer"], finding["source_refs"], resolved_by=resolved)
         calculation = dict(allowed_cents=None, findings=[], source_refs=[])
         settled = [row for row in tables["Merchant payments"] if row["_ref"] in check.source_refs]
         if not check.satisfied:
@@ -223,7 +229,7 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
                 fx_rows=tables["FX"], caps_rows=tables["Caps"], replacement_allowed=exception["allowed"] if exception else None)
             for finding in calculation["findings"]:
                 if finding["blocking"]:
-                    issue(finding["code"], finding["detail"], person["Finance officer"], [*check.source_refs, *calculation["source_refs"]])
+                    issue(finding["code"], f"{line['cost_id']} ({line['currency']}, paid {paid['Paid date']}): " + finding["detail"], person["Finance officer"], [*check.source_refs, *calculation["source_refs"]])
         for process in confirmed:
             resolved = (exception["source_ref"] if exception and "travel_cancellation" in exception["covered_issues"]
                         and exception["cancellation_id"] == process["cancellation_id"] else None)
@@ -231,13 +237,33 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
                   person["Finance officer"], [claim["source_ref"], *process["source_refs"]], resolved_by=resolved)
             if settled and settled[0]["Paid date"] == process["confirmed_time"][:10]:
                 issue("cancellation_payment_order", "Date-only payment and same-day cancellation have unresolved ordering", person["Finance officer"], [*check.source_refs, *process["source_refs"]])
+        for item in issues[issue_start:]:
+            item["cost_id"] = line["cost_id"]
         lines.append(dict(cost_id=line["cost_id"], receipt_id=line["receipt_id"], evidence_supported=check.satisfied,
                           first_filed=previous_costs.get(line["cost_id"], line["first_submitted"]),
                           filing_deadline=filing_deadline(trip["End date"]).isoformat(),
                           calculation=calculation, exception=exception, source_refs=list(check.source_refs)))
     entitlement = None if claim.get("parse_error") or any(line["calculation"]["allowed_cents"] is None for line in lines) else sum(line["calculation"]["allowed_cents"] for line in lines)
+    total_reviewed = entitlement
+    prior_costs = reconcile_prior_costs(claim, tables["visible_versions"], finance)
+    for finding in prior_costs["findings"]:
+        issue(finding["code"], finding["detail"], person["Finance officer"] if finding["owner"] == "Finance" else finding["owner"], finding["source_refs"], next_action=finding["next_action"])
+    for cost, excluded in prior_costs["exclusion_by_cost_cents"].items():
+        line = next(line for line in lines if line["cost_id"] == cost)
+        amount = line["calculation"]["allowed_cents"]
+        if amount is None or excluded > amount:
+            issue("prior_cost_exclusion", "Prior settled amount cannot be assigned against the current supported line", person["Finance officer"], prior_costs["source_refs"])
+        else:
+            line["previously_paid_cents"] = excluded
+            line["reviewed_cents"] = amount
+            line["calculation"]["allowed_cents"] -= excluded
+    entitlement = None if entitlement is None else sum(line["calculation"]["allowed_cents"] for line in lines)
     authority = recheck_authority(claim, trip, person, entitlement, reviews, packets, relevant, sources)
-    if not authority["current"]:
+    clean_finance = not finance["claims"][claim["id"]]["request_ids"] and finance["claims"][claim["id"]]["net_paid_cents"] == 0
+    rejected = [entry for entry in authority["rejected_decisions"] if entry["reason"] == "Current reviewer outcome is reject"]
+    disposition = "withdrawn" if claim["status"] == "withdrawn" else "rejected" if rejected else "submitted"
+    clean_nonpayment = clean_finance and (disposition != "submitted" or entitlement == 0)
+    if not authority["current"] and not clean_nonpayment:
         issue("current_approvals", "Current revision lacks applicable approval roles: " + ", ".join(authority["missing_roles"]), person["Administration reviewer"], authority["source_refs"] or [claim["source_ref"]])
     current_finance = finance["claims"][claim["id"]]
     requests = [finance["requests"][key] for key in current_finance["request_ids"]]
@@ -248,8 +274,25 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
     accepted_before_revision = any(next(row["Arrival batch"] for row in tables["visible_finance"]
         if row["Activity reference"] == event["event_id"]) < claim["batch"] for event in accepted_events)
     cancelled_after_acceptance = any(_stamp(event["time"]) < _stamp(process["confirmed_time"]) for event in accepted_events for process in confirmed)
+    prior_overpayment, running_obligation, running_paid, financial_changes = False, None, 0, []
+    for event in finance["admitted_events"]:
+        if event["claim_id"] != claim["id"]:
+            continue
+        kind = event["type"]
+        if kind in {"accepted", "adjustment"}:
+            running_obligation = event["obligation_cents"]
+        elif kind == "cancelled":
+            running_obligation = 0
+        elif kind == "settled":
+            running_paid += event["amount_cents"]
+        elif kind == "refund":
+            running_paid -= event["amount_cents"]
+        overpaid_now = running_obligation is not None and running_paid > running_obligation
+        prior_overpayment |= overpaid_now
+        if kind in {"adjustment", "cancelled", "refund"} or (kind == "settled" and overpaid_now):
+            financial_changes.append(_stamp(event["time"]))
     resolution_required = bool((changes and accepted_before_revision) or cancelled_after_acceptance
-                               or any(event["claim_id"] == claim["id"] and event["type"] == "adjustment" for event in finance["admitted_events"]))
+                               or prior_overpayment or any(event["claim_id"] == claim["id"] and event["type"] == "adjustment" for event in finance["admitted_events"]))
     # Finance rows do not carry a revision number. Require corroborating current
     # reviews and business chronology as well as arrival and amount; arrival alone
     # cannot turn a late-imported old resolution into current resolution proof.
@@ -262,6 +305,7 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
         arrival = min(row["Arrival batch"] for row in tables["visible_finance"] if row["Activity reference"] == event["event_id"])
         if (authority["current"] and arrival >= claim["batch"]
                 and all(_stamp(event["time"]) >= stamp for stamp in current_review_times)
+                and all(_stamp(event["time"]) >= stamp for stamp in financial_changes)
                 and all(_stamp(event["time"]) >= _stamp(process["confirmed_time"]) for process in confirmed)):
             resolutions.append(event["event_id"])
     if resolution_required and not resolutions:
@@ -273,29 +317,22 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
     balance = None if entitlement is None else entitlement - current_finance["net_paid_cents"]
     if balance is not None and balance < 0 and not any(item["code"] == "overpayment" for item in issues):
         issue("overpayment", "Confirmed net paid exceeds current calculated amount; retain transfers until a linked refund", person["Finance officer"], [ref for req in requests for ref in req["source_refs"]])
-    own_costs = {line["cost_id"] for line in claim["lines"]}
-    shared = []
-    for request_id, request in finance["requests"].items():
-        if request["claim_id"] == claim["id"]:
-            continue
-        acceptance_batch = min(row["Arrival batch"] for row in tables["visible_finance"]
-                               if row["Request reference"] == request_id and row["Activity type"] == "accepted")
-        accepted_version = max((version for version in tables["visible_versions"]
-                                if version["id"] == request["claim_id"] and version["batch"] <= acceptance_batch),
-                               key=lambda version: version["revision"])
-        other_costs = {line["cost_id"] for line in accepted_version["lines"]}
-        if own_costs & other_costs:
-            shared.append(request_id)
-            issue("shared_cost_obligation", "Cost is already bound to another accepted request: " + request_id,
-                  person["Finance officer"], [claim["source_ref"], *request["source_refs"]])
+    shared = prior_costs["original_request_ids"]
     budget = budget_context(person, tables["Budget"], finance, tables["people"], tables["latest"], tables["visible_finance"])
+    additional = None if entitlement is None else max(0, entitlement - (current_finance["current_obligation_cents"] or 0))
+    budget["additional_unaccepted_cents"] = additional
+    if additional is not None and budget["remaining_cents"] is not None and additional > budget["remaining_cents"]:
+        budget["sufficient"] = False
     if not budget["sufficient"]:
         issue("shared_budget", "Actual shared funding is deficient or unresolved", person["Budget owner"], budget["source_refs"])
     blocking = [item for item in issues if item["blocking"]]
     return dict(revision=claim["revision"], source_ref=claim["source_ref"], employee=claim["employee"], trip=claim["trip"],
-        material_changes=changes, full_recheck_steps=["evidence", "calculations", "eligibility", "current approvals", "budget and obligations", "Finance history"],
+        material_changes=changes, source_disposition=disposition, clean_nonpayment=clean_nonpayment,
+        disposition_reason=claim["reason"] if disposition == "withdrawn" else "; ".join(row["Reason"] for row in reviews if row["Decision reference"] in {entry["decision_id"] for entry in rejected}),
+        full_recheck_steps=["evidence", "calculations", "eligibility", "current approvals", "budget and obligations", "Finance history"],
         revision_history=[dict(revision=v["revision"], arrival_batch=v["batch"], source_ref=v["source_ref"], trip=v["trip"], employee=v["employee"]) for v in history],
-        lines=lines, calculated_entitlement_cents=entitlement, issues=issues, authority=authority,
+        lines=lines, calculated_entitlement_cents=entitlement, total_reviewed_cents=total_reviewed,
+        prior_costs=prior_costs, permission=permission, issues=issues, authority=authority,
         finance=current_finance, original_requests={key: finance["requests"][key] for key in current_finance["request_ids"]},
         calculated_balance_cents=balance, finance_resolution_required=resolution_required, current_resolution_event_ids=resolutions,
         budget=budget, shared_cost_request_ids=shared, arrangements_paused=bool(relevant),
@@ -306,8 +343,8 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
 
 
 def inspect(manifest, claim_ids, through_batch=4):
-    if not 1 <= through_batch <= 4 or not claim_ids or len(set(claim_ids)) != len(claim_ids):
-        raise SourceError("Select distinct claim IDs and a batch from 1 through 4")
+    if type(through_batch) is not int or through_batch < 1 or not claim_ids or len(set(claim_ids)) != len(claim_ids):
+        raise SourceError("Select distinct claim IDs and a positive integer batch")
     sources = Sources(manifest)
     versions = claim_versions(sources, through_batch)
     if not set(claim_ids) <= {claim["id"] for claim in versions}:
@@ -346,9 +383,9 @@ def inspect(manifest, claim_ids, through_batch=4):
                 continue
             history = sorted([v for v in visible if v["id"] == identity], key=lambda v: v["revision"])
             subjects[identity] = _recheck(latest[identity], history, sources, tables, receipts, reviews, packets, cancellation, finance)
-        batches.append(dict(batch_id=batch, claims=subjects, cancellation_processes=cancellation,
+        batches.append(dict(batch_id=batch, claims=subjects, cancellation_processes=cancellation, finance_state=finance,
                             finance_replayed_event_ids=finance["replayed_event_ids"]))
-    return dict(mode="offline retained-source full-recheck verification", scope="Current domestic claim rechecks; no dispatch, operational snapshot or completion acceptance",
+    return dict(mode="retained-source full-recheck verification", scope="All selected current claims; no dispatch or completion acceptance",
         source_run_id=sources.data["run_id"], source_manifest_sha256=sha256(sources.path.read_bytes()).hexdigest(),
         case_clock=sources.data["case_clock"], case_timezone=sources.data["case_timezone"], batches=batches)
 

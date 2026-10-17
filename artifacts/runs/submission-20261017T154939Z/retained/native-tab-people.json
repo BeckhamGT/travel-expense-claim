@@ -1,0 +1,1484 @@
+{
+  "spreadsheetId": "1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit",
+  "properties": {
+    "title": "travel-registers",
+    "locale": "zh_TW",
+    "timeZone": "America/Los_Angeles"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 346358653,
+        "title": "People",
+        "index": 0,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 26,
+          "frozenRowCount": 5,
+          "frozenColumnCount": 1,
+          "hideGridlines": true,
+          "rowGroupControlAfter": true,
+          "columnGroupControlAfter": true
+        }
+      },
+      "data": [
+        {
+          "rowData": [
+            {
+              "values": [
+                {
+                  "formattedValue": "People",
+                  "userEnteredValue": {
+                    "stringValue": "People"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "People"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "Synthetic business records. SRC-D-3.",
+                  "userEnteredValue": {
+                    "stringValue": "Synthetic business records. SRC-D-3."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Synthetic business records. SRC-D-3."
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "Dates are local calendar dates. Amounts follow the stated currency. Empty optional entries are blank.",
+                  "userEnteredValue": {
+                    "stringValue": "Dates are local calendar dates. Amounts follow the stated currency. Empty optional entries are blank."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Dates are local calendar dates. Amounts follow the stated currency. Empty optional entries are blank."
+                  }
+                }
+              ]
+            },
+            {},
+            {
+              "values": [
+                {
+                  "formattedValue": "Employee ID",
+                  "userEnteredValue": {
+                    "stringValue": "Employee ID"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Employee ID"
+                  }
+                },
+                {
+                  "formattedValue": "Department",
+                  "userEnteredValue": {
+                    "stringValue": "Department"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Department"
+                  }
+                },
+                {
+                  "formattedValue": "Project",
+                  "userEnteredValue": {
+                    "stringValue": "Project"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Project"
+                  }
+                },
+                {
+                  "formattedValue": "Budget period",
+                  "userEnteredValue": {
+                    "stringValue": "Budget period"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Budget period"
+                  }
+                },
+                {
+                  "formattedValue": "Payee ID",
+                  "userEnteredValue": {
+                    "stringValue": "Payee ID"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Payee ID"
+                  }
+                },
+                {
+                  "formattedValue": "Administration reviewer",
+                  "userEnteredValue": {
+                    "stringValue": "Administration reviewer"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Administration reviewer"
+                  }
+                },
+                {
+                  "formattedValue": "Budget owner",
+                  "userEnteredValue": {
+                    "stringValue": "Budget owner"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Budget owner"
+                  }
+                },
+                {
+                  "formattedValue": "Supervisor",
+                  "userEnteredValue": {
+                    "stringValue": "Supervisor"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Supervisor"
+                  }
+                },
+                {
+                  "formattedValue": "Director",
+                  "userEnteredValue": {
+                    "stringValue": "Director"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Director"
+                  }
+                },
+                {
+                  "formattedValue": "Finance officer",
+                  "userEnteredValue": {
+                    "stringValue": "Finance officer"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Finance officer"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-01",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-01"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-01",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-01"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-02",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-02"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-02"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-02",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-02"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-02"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-03",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-03"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-03"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-03",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-03"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-03"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-04",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-04"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-04"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-04",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-04"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-04"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-05",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-05"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-05"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-05",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-05"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-05"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-06",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-06"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-06"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-06",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-06"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-06"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-07",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-07"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-07"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-07",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-07"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-07"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-08",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-08"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-08"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-08",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-08"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-08"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-09",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-09"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-09"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-09",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-09"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-09"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-10",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-10"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-10"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-10",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-10"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-10"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-11",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-11"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-11"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-11",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-11"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-11"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-12",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-12"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-12"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-12",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-12"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-12"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-13",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-13"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-13"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-13",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-13"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-13"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EMP-14",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-14"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-14"
+                  }
+                },
+                {
+                  "formattedValue": "Consulting",
+                  "userEnteredValue": {
+                    "stringValue": "Consulting"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Consulting"
+                  }
+                },
+                {
+                  "formattedValue": "Client-A",
+                  "userEnteredValue": {
+                    "stringValue": "Client-A"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Client-A"
+                  }
+                },
+                {
+                  "formattedValue": "2026",
+                  "userEnteredValue": {
+                    "stringValue": "2026"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "2026"
+                  }
+                },
+                {
+                  "formattedValue": "EMP-14",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-14"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-14"
+                  }
+                },
+                {
+                  "formattedValue": "ADMIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "ADMIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "ADMIN-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "LEAD-01",
+                  "userEnteredValue": {
+                    "stringValue": "LEAD-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "LEAD-01"
+                  }
+                },
+                {
+                  "formattedValue": "DIR-01",
+                  "userEnteredValue": {
+                    "stringValue": "DIR-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "DIR-01"
+                  }
+                },
+                {
+                  "formattedValue": "FIN-01",
+                  "userEnteredValue": {
+                    "stringValue": "FIN-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FIN-01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

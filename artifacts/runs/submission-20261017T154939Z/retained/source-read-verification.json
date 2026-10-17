@@ -1,0 +1,19 @@
+{
+  "pdf_pages": 229,
+  "native_populated_values_compared": 13703,
+  "native_export_mismatches": [],
+  "workbook_tabs": [
+    "People",
+    "Trips",
+    "Merchant payments",
+    "FX",
+    "Caps",
+    "Budget",
+    "Review ledger",
+    "Review packets",
+    "Finance activity",
+    "Travel cancellations"
+  ],
+  "policy_fresh_browser_paragraphs": 16,
+  "policy_original_representation": "Fresh browser wording matched all 16 normalized paragraph lengths/fingerprints. Identical earlier original text representation retained explicitly; no paraphrase or unobserved substitution."
+}

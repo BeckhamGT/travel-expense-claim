@@ -235,6 +235,7 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
                     "claim_id": claim_id, "employee_id": candidates[0]["Employee ID"],
                     "finance_officer": row["Finance officer"], "payee_id": row["Payee ID"], "currency": "EUR",
                     "accepted_time": stamp.isoformat().replace("+00:00", "Z"),
+                    "accepted_arrival_batch": arrival,
                     "initial_obligation_cents": obligation, "current_obligation_cents": obligation,
                     "paid_cents": 0, "refunded_cents": 0, "net_paid_cents": 0,
                     "status": "accepted", "retry_authorized": False, "retry_needed": False,
@@ -298,6 +299,7 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
         request["source_refs"] = sorted(set(request["source_refs"]) | set(refs))
         admitted[event_id] = {
             "event_id": event_id, "type": kind, "claim_id": claim_id, "request_id": request_id,
+            "arrival_batch": arrival,
             "time": stamp.isoformat().replace("+00:00", "Z"), "amount_cents": amount,
             "obligation_cents": obligation, "original_event_id": row.get("Original activity reference"),
             "source_refs": refs,

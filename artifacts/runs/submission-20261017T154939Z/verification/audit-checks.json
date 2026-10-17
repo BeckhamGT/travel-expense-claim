@@ -1,0 +1,14 @@
+{
+  "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -q",
+  "tests_run": 189,
+  "passed": true,
+  "scope": "Full retained native-source primary cases plus component/adverse checks; all four chains and CSV checked in an isolated offline copy with completion acceptance false. Production sealing/replay still requires actual learner choice 3.",
+  "original_interview_sha256": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2",
+  "original_interview_bytes": 29179,
+  "original_interview_matches_download": true,
+  "skill_validator": "pass using existing scanner runtime PyYAML after general runtime lacked module",
+  "native_source_binding": "../sources.json",
+  "financial_completion_choice_adopted": false,
+  "production_seal_run": false,
+  "production_replay_run": false
+}

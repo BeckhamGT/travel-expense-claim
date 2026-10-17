@@ -129,9 +129,10 @@ class FullRecheckTests(unittest.TestCase):
                 selected = next(v for v in changed if v["id"] == "C09" and v["revision"] == revision)
                 selected["lines"][0]["cost_id"] = "COST-01"
                 with patch("travel_expense_claim.recheck.claim_versions", return_value=changed):
-                    current = inspect(MANIFEST, ["C01"])["batches"][2]["claims"]["C01"]
-                self.assertEqual("REQ-C09" in current["shared_cost_request_ids"], should_hold)
-                self.assertEqual(current["current_recheck_supported"], not should_hold)
+                    current = inspect(MANIFEST, ["C01", "C09"])["batches"][2]["claims"]
+                self.assertTrue(current["C01"]["current_recheck_supported"])
+                self.assertEqual("REQ-C01" in current["C09"]["shared_cost_request_ids"], should_hold)
+                self.assertEqual(current["C09"]["current_recheck_supported"], not should_hold)
 
     def with_tables(self, transform):
         original = Sources.table
