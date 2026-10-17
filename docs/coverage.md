@@ -1,6 +1,6 @@
 # Project D requirements and evidence coverage
 
-Status: source review complete; implementation and business-run verification pending. This map records requirements and coverage, not learner decisions. No arrival batch has been consumed. The four learner choices remain for the captured conversation, with financial-completion acceptance after a real result.
+Status: source review complete; learner choice 1 adopted in the captured conversation before implementation. Business-run verification and the remaining three choices are pending. No operational arrival-batch snapshot has been consumed. Financial-completion acceptance follows inspection of a real result.
 
 ## Evidence retained
 
@@ -12,7 +12,7 @@ Status: source review complete; implementation and business-run verification pen
 
 ## Coverage map
 
-Implementation locations below are proposed component responsibilities under `skills/travel-expense-claim/`; none exists yet. Verification marked pending has not been performed. The existing public `snapshot.schema.json` remains authoritative.
+`src/travel_expense_claim/independence.py` and `verify_independence.py` implement the first scoped dependency component. Other locations below are proposed responsibilities for the eventual `skills/travel-expense-claim/` package. Verification marked pending has not been performed. The existing public `snapshot.schema.json` remains authoritative.
 
 | Requirement / rule | Interview or native source | Implementation location | Verification evidence | Remaining gap |
 |---|---|---|---|---|
@@ -24,7 +24,7 @@ Implementation locations below are proposed component responsibilities under `sk
 | Deadline: two calendar months inclusive, month-end clamp | Policy ¶5; original cost first-filing dates | Pending eligibility review | Inspected boundary cases C110–C113 and C12 late exception | Focused month-end and revised-cost tests pending |
 | Separate permit/claim reviews, stable roles, strict director threshold | Interview 353, 361, 377–389; policy ¶4, ¶6–7; People; Review ledger/packets | Pending decision admission/readiness | C04 combined owner/supervisor response; P02 permit and C02 claim routes differ; C99–C101 threshold boundaries | Validate subjects, revisions, actors, packet/source/budget versions; C119 director reply missing |
 | Whole budget ledger without double-counted settled commitments | Policy ¶6; Budget rows 6–8; packet budget references | Pending budget context | Prior allocation/obligations retained with settled/refund columns | Validate allocation less net settled less remaining commitments across all accepted requests |
-| Incomplete claims and independent work | Interview 361, 369; policy ¶12; C08/C01/P122 evidence below | Pending orchestration | Concrete source examples inspected | **Learner choice 1 required before implementation governs processing** |
+| Incomplete claims and independent work | Captured choice adopted 2026-10-17; interview 361/369; policy ¶2/6–9/12–16; C08/C01/P122 source records below | `src/travel_expense_claim/independence.py`; `verify_independence.py` | `tests/test_independence.py`: 21 passing focused tests, including native source replay and isolated adverse cases; `artifacts/verification/choice-1/independence.json` | Initial review/tracking component implemented; full orchestration and later-batch behavior remain pending |
 | Corrections invalidate dependent review even at unchanged totals | Interview 397–429; policy ¶8; updates C09/C18/C19 | Pending revision and dependency handling | Old/new identities and amount-only versus cancellation exceptions inspected | **Learner choice 2 required**; tests for recomputation, approvals and held replacements pending |
 | Local repair queue and partial responses | Interview 369, 477, 509; ledger returns C09/C21 | Pending repair queue and report | Return reasons/affected fields/owners retained | **Learner choice 4 required**; supported portions may resolve while remaining facts stay open |
 | Stable requests, prior-cost/prepayment exclusion | Policy ¶9; updates p3 C24/C03; Finance activity | Pending obligation ledger | Shared COST-03 and distinct COST-24 preserved | Replay must not duplicate prior committed/settled cost; tests pending |
@@ -33,7 +33,7 @@ Implementation locations below are proposed component responsibilities under `sk
 | Financial/operational completion | Interview 461, 469; policy ¶11, ¶16 | Pending report/readiness/closure | Source prerequisites inspected; no result yet | **Learner choice 3 after inspecting an actual result**; no premature financial-completion claim |
 | Schema and sealed batch chain | Full `snapshot.schema.json`; assignment | Pending snapshot writer/semantic validator | Schema read in full; descriptive invariants identified | Validate shape plus hashes, references, uniqueness, availability, money and legal state transitions |
 | CSV, report, operations handoff, exact commands | Assignment | Required `claims.csv`, `report.md`, `README.md` | No operational outputs produced in this review | All implementation/run/replay/handoff work pending |
-| Real capture linked to revision | Actual Entire session `01a14282-ba9a-7540-aafd-73a472f91b04` | Entire-managed Git records | Active recorded session and one existing local temporary checkpoint observed | Verify recorded checkpoint after first meaningful commit; remote sync/access remains unverified |
+| Real capture linked to revision | Actual Entire session `01a14282-ba9a-7540-aafd-73a472f91b04` | Entire-managed Git records | Review commit `66617a89e770f2321eff9c25e8b256f6349ba1cd` carries checkpoint `01M53ZCEXS5AC3C790T9N8CD3E`; recorded metadata and 7,623,756-byte full transcript inspected, including this interview and source-review run | Remote sync/access remains unverified; this capture check was added after the review commit |
 
 ## Record coverage controls
 
@@ -57,7 +57,9 @@ Arrival is distinct from business time. Packets inherit availability from their 
 - **P122 / T122 revision 1:** Trips row 128 shows EUR 500 estimate and no commitment. Review ledger/packets rows 301–303 describe its separate permit route. Travel cancellations row 6 is a batch-one request, row 7 is batch-two confirmation, and row 14 redelivers confirmation in batch 4. There is no claim to invent. A pending valid cancellation pauses new affected arrangements even if independent work continues elsewhere.
 - Policy ¶12 permits independently progressing unaffected work or conservatively holding the batch with its business cost explained. Interview 361/369 establishes that incompleteness does not inherently block independent work. The policy permits a chosen conservative hold; it does not turn C08 into a dependency of C01. Shared evidence, authority, prior obligations and budget still require dependency checks.
 
-No approach has been adopted by the learner yet. The remaining three choices likewise remain unmade. Policy minimums constrain every choice: partial evidence is not partial-payment authority; an accepted request is not payment; business cancellation is not Finance cancellation.
+On 2026-10-17 Beckham chose to progress demonstrably independent work while holding the affected incomplete claim or process. His reason cites the interview at 11:25 PM (lines 361/369): avoid delaying supported work because another case is incomplete. His constraint requires checking shared evidence, actual budget availability, applicable approval authority and financial obligations; sharing a reviewer or source file alone is insufficient to establish a dependency. Genuine dependencies hold only the dependent work and must be explained. Revisit independence when later evidence changes these links. This is the user's adopted constraint, recorded here before implementing it; the captured conversation remains the original statement.
+
+The remaining three choices are unmade. Policy minimums constrain every choice: partial evidence is not partial-payment authority; an accepted request is not payment; business cancellation is not Finance cancellation. This component will not select correction-recheck scope, repair-queue organization or financial-completion acceptance.
 
 ## Open scope and ownership
 
@@ -66,10 +68,10 @@ No approach has been adopted by the learner yet. The remaining three choices lik
 | Missing GBP exchange rate | FX contains EUR/USD only; COST-22 GBP 45 and COST-116-2 GBP 10 need payment-date rates | Finance: supply exact applicable rates or explicit authorized disposition; retain affected money as unknown |
 | Missing BE lodging cap | Caps contains NL lodging/meals only; T23 is BE | Finance: define applicable cap or explicit authorized disposition; never borrow NL rates |
 | Missing current human responses | For example C119 EUR 1,000.01 has no director reply | Applicable directory reviewer via Administration: wait for authorized scenario evidence; fabricate nothing |
-| First learner constraint | C08/C01/P122 examples above | Beckham: choose and explain progression/hold boundaries in captured conversation |
+| First learner constraint | C08/C01/P122 examples above; captured choice adopted 2026-10-17 | Coding agent: implement and verify scoped holds and actual dependency checks, without later-batch leakage |
 | Remaining learner constraints | Revalidation, repair organization, and final acceptance | Beckham: decide at their appropriate evidence stage, before each governs affected work |
 | Source-version interpretation | Supplied policy slug says 2026-1; live page and all review packets identify POL-2026.2 | Current evidence consistently supports retaining POL-2026.2. Raise any later conflicting native version for clarification instead of silently mixing it |
-| Capture remote pairing | Local session/checkpoint exists; earlier checkpoint listing could not reach remote | Coding agent: inspect recorded checkpoint after first meaningful commit, and verify sync when network/auth allow; facilitator repairs genuinely missing capture |
+| Capture remote pairing | First meaningful review commit and its real checkpoint are paired locally; earlier restricted checkpoint listing could not reach remote | Coding agent: verify remote sync and facilitator access when authorized; facilitator repairs genuinely missing capture |
 
 No native retrieval scope remains missing. The rate, cap and reply gaps are supplied business facts to report and own, not failed source downloads. No follow-up interview has been run or scripted.
 
@@ -77,4 +79,16 @@ No native retrieval scope remains missing. The rate, cap and reply gaps are supp
 
 The schema alone does not enforce correct predecessor/source bytes, temporal availability, key uniqueness, actor/role authority, decision/request/cost references, rounded totals, admitted-money reconciliation, valid closure or cancellation authority. Enable date-time format checks. Keep Finance activity IDs separate from cancellation IDs and resolve every cancellation issue reference to `issues[].record_id`. Exercise all supplied branches, including exact threshold/cap boundaries, line rounding, first-filing dates, personal/unknown categories, returns, stale reviews, post-acceptance changes, partial settlements, failed attempts, linked refunds, overpayments, cancellation before and after commitment/payment, original requests after reassignment, and unchanged replay. Additional isolated checks supplement the primary run.
 
-No implementation tests, operational run, financial conclusion or submission claim is recorded as complete here.
+## Choice 1 implementation verification
+
+The adopted constraint was recorded in this map before code was written. The source-backed command in README produces `artifacts/verification/choice-1/independence.json`, explicitly labelled offline retained-source verification. It binds the unchanged source manifest by SHA-256; it is not an operational snapshot or a financial-readiness verdict.
+
+- C08 remains held. Its exact missing settled proof identifies EMP-01, claim revision 1, COST-08/R-COST-08, INITIAL p8, RECEIPTS p4, and the complete merchant tab. Entitlement remains null. Its own missing amount/reviews are not a shared budget deficit or authority defect affecting unrelated subjects.
+- C01 may continue independent review/observation of REQ-C01. Batch-one acceptance is 10,000 cents; confirmed paid is 0, no settlement event is visible, and financial closure is false.
+- P122 remains a permit process, with no claim row. It may continue administrative/cancellation tracking; TC122 is requested, arrangements and payment readiness remain paused, and SUP-01 owns the awaited confirmation. This does not establish affordability of a new arrangement.
+- The actual shared budget is checked across all 100 unique batch-one accepted obligations (1,183,415 cents) and prior obligations. Remaining funds are 316,585 cents: 2,000,000 allocation minus 200,000 prior net settled minus 300,000 prior remaining commitments minus 1,183,415 new accepted commitments. C01 is included once; C08 has no accepted obligation. Unknown C08 entitlement is not recorded as zero commitment or payment readiness.
+- Focused tests cover direct/transitive actual prerequisites, missing/cyclic prerequisites, shared context without a dependency, deficient shared evidence, exact payment identity/status, real budget exhaustion, request conflicts, current actor/subject/revision/packet authority, material packet facts, later returns/rejections, invalid cancellation requests, and future-batch payloads that must not change batch one.
+
+The initial source replay caught a receipt-label parser error (the source says `Employee`, not `Employee ID`). The parser now handles the explicit label variants, reads all 203 records, and the same command succeeds. Independent review also exposed omitted material packet fields and later return handling; regression checks now pass. These are actual verification findings and repairs, not fabricated learner mistakes.
+
+21 implementation tests and the initial offline dependency verification are complete. No operational run, final entitlement conclusion, financial closure or submission claim is recorded as complete here. Remaining learner choices 2–4 are unchanged.

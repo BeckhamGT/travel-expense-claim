@@ -2,6 +2,26 @@
 
 Build a reusable Agent Skill for Alderbridge Consulting's travel reimbursement workflow.
 
+## Implemented component: independent work
+
+The first implemented component applies the learner's captured choice to progress work whose own evidence, budget, authority and obligation dependencies are demonstrated. `src/travel_expense_claim/independence.py` propagates explicit prerequisites without treating a shared reviewer or source file as a dependency. It requires source references for all four dependency domains.
+
+The source-backed verification is an **offline replay of retained evidence**, not a fresh-source run or a completed reimbursement workflow. From the repository root, Python 3.10 or newer with standard-library timezone data is sufficient:
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+PYTHONPATH=src python3 -m travel_expense_claim.verify_independence \
+  --sources artifacts/runs/review-20261017033849Z/sources.json \
+  --subject claim:C08:1 --subject claim:C01:1 --subject permit:P122:1 \
+  --output artifacts/verification/choice-1/independence.json
+```
+
+The verifier checks retained hashes, reads all initial claim/evidence records and the shared budget, filters decision/Finance/cancellation deliveries by arrival before joining, and writes the requested subjects' gate results and provenance. A known business hold is a successful inspection, not a failed command. Missing, incompatible or corrupted required sources cause a nonzero exit with the error; no output is written. An identical replay preserves the existing output; a distinct result requires a new output path. Subject IDs are invocation inputs, not implementation constants.
+
+The demonstrated results are C08 held with unknown entitlement, C01's existing accepted request awaiting settlement evidence, and P122's independent cancellation tracking with arrangements paused. Progress permission applies to the stated review/tracking scope; it does not authorize dispatch, bookings, payment or financial closure. The permit estimate is not an accepted Finance commitment, and this component does not establish its affordability for new arrangements.
+
+The [coverage map](docs/coverage.md) records exact policy, interview, source and code/test references. Correction revalidation, operational repair-queue organization, the full four-batch workflow, final monetary reconciliation and acceptance remain pending the applicable learner decisions and implementation. A new live processing run must freshly attempt all five native sources; this offline verification does not claim to do so.
+
 ## Start
 
 1. Read the [full Project D task](https://private-pecorino-70e.notion.site/Travel-expense-claim-Task-and-submission-3da0b700541e81249039eff895f77c98) for the scope, workflow and deliverables.

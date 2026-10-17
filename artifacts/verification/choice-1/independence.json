@@ -1,0 +1,271 @@
+{
+  "batch_id": 1,
+  "case_clock": "2026-11-15",
+  "mode": "offline retained-source verification",
+  "scope": "Independence gate and observed initial facts only; not a financial-readiness verdict or schema snapshot",
+  "source_binding": {
+    "path": "artifacts/runs/review-20261017033849Z/sources.json",
+    "sha256": "23895ede4a65fa089ad8b73812b9182e4f1d8aff85516aa5d93d4b8a43aff5a5"
+  },
+  "source_run_id": "review-20261017033849Z",
+  "subjects": {
+    "claim:C01:1": {
+      "budget_remaining_cents": 316585,
+      "confirmed_paid_cents": 0,
+      "current_decision_refs": [
+        "REGISTERS-REVIEW-LEDGER:row6",
+        "REGISTERS-REVIEW-LEDGER:row7",
+        "REGISTERS-REVIEW-LEDGER:row8"
+      ],
+      "dependency_checks": [
+        {
+          "domain": "evidence",
+          "fact": "C01 revision 1 / COST-01: receipt and matching settled merchant proof verified",
+          "next_action": "Supply matching settled merchant proof for R-COST-01; retain the existing matched receipt",
+          "owner": "EMP-01",
+          "satisfied": true,
+          "source_refs": [
+            "INITIAL:page1",
+            "RECEIPTS:page1",
+            "REGISTERS-MERCHANT-PAYMENTS:row6"
+          ]
+        },
+        {
+          "domain": "budget",
+          "fact": "Shared budget ('Consulting', 'Client-A', '2026'): remaining 316585 cents after 100 observed accepted obligations; own amount known",
+          "next_action": "Resolve actual funding deficit/unknown commitment before dependent financial readiness",
+          "owner": "LEAD-01",
+          "satisfied": true,
+          "source_refs": [
+            "REGISTERS-BUDGET:row6",
+            "REGISTERS-BUDGET:row7",
+            "REGISTERS-BUDGET:row8",
+            "REGISTERS-FINANCE-ACTIVITY:all-visible-batch1-accepted-requests"
+          ]
+        },
+        {
+          "domain": "obligations",
+          "fact": "Prior/shared cost obligations checked; no competing accepted request for this cost",
+          "next_action": "Resolve duplicate cost/request basis with Finance; preserve existing transfers",
+          "owner": "FIN-01",
+          "satisfied": true,
+          "source_refs": [
+            "INITIAL-PAGES:all-claims",
+            "REGISTERS-FINANCE-ACTIVITY:visible-batch1"
+          ]
+        },
+        {
+          "domain": "authority",
+          "fact": "Exact subject/revision/current packet roles: administration, budget_owner, supervisor; required: administration, budget_owner, supervisor",
+          "next_action": "Obtain only applicable actor/role replies; another subject's approval cannot substitute",
+          "owner": "ADMIN-01",
+          "satisfied": true,
+          "source_refs": [
+            "REGISTERS-REVIEW-LEDGER:row6",
+            "REGISTERS-REVIEW-LEDGER:row7",
+            "REGISTERS-REVIEW-LEDGER:row8"
+          ]
+        }
+      ],
+      "director_requirement": "not_required_for_observed_amount",
+      "entitlement_assessment": "pending full monetary implementation; never inferred from accepted request",
+      "entitlement_cents": null,
+      "financially_closed": false,
+      "holds": [],
+      "may_continue": true,
+      "progress_scope": "Continue independent review and observation of existing request; no dispatch or closure authority",
+      "recorded_obligation_cents": 10000,
+      "recorded_request_ids": [
+        "REQ-C01"
+      ],
+      "recorded_request_status": "accepted",
+      "revision": 1,
+      "subject_id": "C01",
+      "subject_type": "claim",
+      "trip_id": "T01",
+      "trip_revision": 1,
+      "visible_settlement_event_ids": []
+    },
+    "claim:C08:1": {
+      "budget_remaining_cents": 316585,
+      "confirmed_paid_cents": 0,
+      "current_decision_refs": [],
+      "dependency_checks": [
+        {
+          "domain": "evidence",
+          "fact": "C08 revision 1 / COST-08: receipt and matching settled merchant proof missing, ambiguous or incompatible",
+          "next_action": "Supply matching settled merchant proof for R-COST-08; retain the existing matched receipt",
+          "owner": "EMP-01",
+          "satisfied": false,
+          "source_refs": [
+            "INITIAL:page8",
+            "RECEIPTS:page4",
+            "REGISTERS-MERCHANT-PAYMENTS:complete-tab"
+          ]
+        },
+        {
+          "domain": "budget",
+          "fact": "Shared budget ('Consulting', 'Client-A', '2026'): remaining 316585 cents after 100 observed accepted obligations; own amount not yet established",
+          "next_action": "Resolve actual funding deficit/unknown commitment before dependent financial readiness",
+          "owner": "LEAD-01",
+          "satisfied": false,
+          "source_refs": [
+            "REGISTERS-BUDGET:row6",
+            "REGISTERS-BUDGET:row7",
+            "REGISTERS-BUDGET:row8",
+            "REGISTERS-FINANCE-ACTIVITY:all-visible-batch1-accepted-requests"
+          ]
+        },
+        {
+          "domain": "obligations",
+          "fact": "Prior/shared cost obligations checked; no competing accepted request for this cost",
+          "next_action": "Resolve duplicate cost/request basis with Finance; preserve existing transfers",
+          "owner": "FIN-01",
+          "satisfied": true,
+          "source_refs": [
+            "INITIAL-PAGES:all-claims",
+            "REGISTERS-FINANCE-ACTIVITY:visible-batch1"
+          ]
+        },
+        {
+          "domain": "authority",
+          "fact": "Exact subject/revision/current packet roles: ; required: administration, budget_owner, supervisor",
+          "next_action": "Obtain only applicable actor/role replies; another subject's approval cannot substitute",
+          "owner": "ADMIN-01",
+          "satisfied": false,
+          "source_refs": [
+            "REGISTERS-REVIEW-LEDGER:visible-batch1"
+          ]
+        }
+      ],
+      "director_requirement": "unknown_pending_entitlement",
+      "entitlement_assessment": "pending full monetary implementation; never inferred from accepted request",
+      "entitlement_cents": null,
+      "financially_closed": false,
+      "holds": [
+        {
+          "domain": "evidence",
+          "fact": "C08 revision 1 / COST-08: receipt and matching settled merchant proof missing, ambiguous or incompatible",
+          "next_action": "Supply matching settled merchant proof for R-COST-08; retain the existing matched receipt",
+          "owner": "EMP-01",
+          "satisfied": false,
+          "source_refs": [
+            "INITIAL:page8",
+            "RECEIPTS:page4",
+            "REGISTERS-MERCHANT-PAYMENTS:complete-tab"
+          ]
+        },
+        {
+          "domain": "budget",
+          "fact": "Shared budget ('Consulting', 'Client-A', '2026'): remaining 316585 cents after 100 observed accepted obligations; own amount not yet established",
+          "next_action": "Resolve actual funding deficit/unknown commitment before dependent financial readiness",
+          "owner": "LEAD-01",
+          "satisfied": false,
+          "source_refs": [
+            "REGISTERS-BUDGET:row6",
+            "REGISTERS-BUDGET:row7",
+            "REGISTERS-BUDGET:row8",
+            "REGISTERS-FINANCE-ACTIVITY:all-visible-batch1-accepted-requests"
+          ]
+        },
+        {
+          "domain": "authority",
+          "fact": "Exact subject/revision/current packet roles: ; required: administration, budget_owner, supervisor",
+          "next_action": "Obtain only applicable actor/role replies; another subject's approval cannot substitute",
+          "owner": "ADMIN-01",
+          "satisfied": false,
+          "source_refs": [
+            "REGISTERS-REVIEW-LEDGER:visible-batch1"
+          ]
+        }
+      ],
+      "may_continue": false,
+      "progress_scope": "Continue independent review and observation of existing request; no dispatch or closure authority",
+      "recorded_obligation_cents": null,
+      "recorded_request_ids": [],
+      "recorded_request_status": "not_observed",
+      "revision": 1,
+      "subject_id": "C08",
+      "subject_type": "claim",
+      "trip_id": "T08",
+      "trip_revision": 1,
+      "visible_settlement_event_ids": []
+    },
+    "permit:P122:1": {
+      "arrangements_paused": true,
+      "budget_remaining_cents": 316585,
+      "cancellation_id": "TC122",
+      "cancellation_next_action": "Await source-bound supervisor confirmation; keep affected arrangements paused",
+      "cancellation_owner": "SUP-01",
+      "cancellation_source_ref": "REGISTERS-TRAVEL-CANCELLATIONS:row6",
+      "cancellation_status": "requested",
+      "claim_id": null,
+      "current_decision_refs": [
+        "REGISTERS-REVIEW-LEDGER:row301",
+        "REGISTERS-REVIEW-LEDGER:row302",
+        "REGISTERS-REVIEW-LEDGER:row303"
+      ],
+      "dependency_checks": [
+        {
+          "domain": "evidence",
+          "fact": "Separate permit process with no committed or merchant-paid cost observed",
+          "next_action": "Retain trip/permit evidence without inventing a claim",
+          "owner": "Administration",
+          "satisfied": true,
+          "source_refs": [
+            "REGISTERS-TRIPS:row128",
+            "REGISTERS-MERCHANT-PAYMENTS:complete-tab"
+          ]
+        },
+        {
+          "domain": "budget",
+          "fact": "Shared budget ('Consulting', 'Client-A', '2026'): remaining 316585 cents after 100 observed accepted obligations; own amount known",
+          "next_action": "Resolve actual funding deficit/unknown commitment before dependent financial readiness",
+          "owner": "LEAD-01",
+          "satisfied": true,
+          "source_refs": [
+            "REGISTERS-BUDGET:row6",
+            "REGISTERS-BUDGET:row7",
+            "REGISTERS-BUDGET:row8",
+            "REGISTERS-FINANCE-ACTIVITY:all-visible-batch1-accepted-requests"
+          ]
+        },
+        {
+          "domain": "obligations",
+          "fact": "Prior/shared cost obligations checked; no competing accepted request for this cost",
+          "next_action": "Resolve duplicate cost/request basis with Finance; preserve existing transfers",
+          "owner": "FIN-01",
+          "satisfied": true,
+          "source_refs": [
+            "INITIAL-PAGES:all-claims",
+            "REGISTERS-FINANCE-ACTIVITY:visible-batch1"
+          ]
+        },
+        {
+          "domain": "authority",
+          "fact": "Exact subject/revision/current packet roles: administration, budget_owner, supervisor; required: administration, budget_owner, supervisor",
+          "next_action": "Obtain only applicable actor/role replies; another subject's approval cannot substitute",
+          "owner": "ADMIN-01",
+          "satisfied": true,
+          "source_refs": [
+            "REGISTERS-REVIEW-LEDGER:row301",
+            "REGISTERS-REVIEW-LEDGER:row302",
+            "REGISTERS-REVIEW-LEDGER:row303"
+          ]
+        }
+      ],
+      "director_requirement": "not_required_for_observed_amount",
+      "financially_closed": false,
+      "holds": [],
+      "may_continue": true,
+      "payment_readiness_paused": true,
+      "progress_scope": "Independent administrative/cancellation tracking only; estimate affordability and funded arrangements are not established",
+      "recorded_estimate_cents": 50000,
+      "revision": 1,
+      "subject_id": "P122",
+      "subject_type": "permit",
+      "trip_id": "T122",
+      "trip_revision": 1
+    }
+  }
+}
