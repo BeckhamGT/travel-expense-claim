@@ -19,6 +19,8 @@ Follow the course's [Entire setup lesson](https://classroom.google.com/c/ODcyMjA
 
 ## Full-source preview and final run
 
+The completed [operations handoff](artifacts/runs/submission-20261017T154939Z/report.md) covers all 121 claims and all four batches. All four learner choices are adopted; production sealing, unchanged offline replay and 189 tests pass. Fourteen business cases remain owned and open; they are included in the handoff. [Final verification](artifacts/runs/submission-20261017T154939Z/verification/final-checks.json) records actual results.
+
 The fresh collection is `artifacts/runs/submission-20261017T154939Z/sources.json`. It covers all five native locations: three complete PDFs (120/7/102 pages), 16 policy paragraphs and all ten populated workbook tabs. All 13,703 populated native workbook values match the fresh XLSX export. The policy's supplied old-version URL resolves to POL-2026.2. The exercise clock is **2026-11-15 Europe/Amsterdam**; local calendar dates and UTC event timestamps retain their distinct meanings.
 
 Preview the real result before learner financial-completion adoption:
@@ -75,7 +77,7 @@ Missing/corrupt required source bytes, incompatible layouts, invalid manifest/sc
 
 ## Resume and handoff
 
-For a new authorized source batch, attempt all five native locations again and retain complete relevant version/event history in a new run. Add `prior_run` and `change_reason` to its manifest. Run the same preview/seal/verify commands with its actual manifest path; the runner observes all supplied positive arrival numbers in order. Revisit adopted constraints when changed evidence alters their basis. A corrupt predecessor can be diagnosed or rebuilt from complete retained history in a new explicitly linked run; preserve the original and never invent historical execution times.
+For a new authorized source batch, attempt all five native locations again and retain complete relevant version/event history in a new run. Add `prior_run` and `change_reason` to its manifest. Run the same preview/seal/verify commands with its actual manifest path; the runner observes supplied arrival numbers in order; this assignment and schema support batches 1–4. A later batch outside that schema requires an explicit schema/implementation revision and verification before sealing; it is not a supported resume operation. Revisit adopted constraints when changed evidence alters their basis. A corrupt predecessor can be diagnosed or rebuilt from complete retained history in a new explicitly linked run; preserve the original and never invent historical execution times.
 
 Before submission, commit all required files, inspect the actual `Entire-Checkpoint` trailer plus its Git ref/full transcript, publish code and checkpoint refs when authorized, and compare their origin objects. Entire's installed pre-push hook synchronizes the real checkpoint refs alongside `git push origin main`. Public repository visibility permits reading code/interview evidence; facilitator-specific account/tool access is reported only to the extent actually verified. Prepare the repository URL, full commit, run/report and real capture refs for the learner's Classroom private comment. The learner submits.
 

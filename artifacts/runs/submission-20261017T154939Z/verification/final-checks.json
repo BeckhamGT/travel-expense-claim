@@ -1,0 +1,152 @@
+{
+  "run_id": "submission-20261017T154939Z",
+  "observed_at": "2026-10-17T17:30:04.322437+00:00",
+  "financial_completion_choice_adopted": true,
+  "production_seal": {
+    "command": "PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow seal --sources artifacts/runs/submission-20261017T154939Z/sources.json --completion-accepted",
+    "exit_code": 0
+  },
+  "production_offline_replay": {
+    "command": "PYTHONPATH=src /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow verify --sources artifacts/runs/submission-20261017T154939Z/sources.json --completion-accepted",
+    "exit_code": 0,
+    "stdout": {
+      "mode": "verify",
+      "run_id": "submission-20261017T154939Z",
+      "batches": [
+        {
+          "batch_id": 1,
+          "claims": 120,
+          "statuses": {
+            "pending": 102,
+            "held": 14,
+            "closed-no-payment": 2,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1352416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 0,
+          "refunded_cents": 0,
+          "net_paid_cents": 0,
+          "accepted_obligation_cents": 1183415,
+          "request_count": 100,
+          "finance_event_count": 100,
+          "budget_remaining_cents": 316585
+        },
+        {
+          "batch_id": 2,
+          "claims": 120,
+          "statuses": {
+            "closed-reimbursed": 95,
+            "held": 16,
+            "closed-no-payment": 2,
+            "pending": 5,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1352416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 1153915,
+          "refunded_cents": 0,
+          "net_paid_cents": 1153915,
+          "accepted_obligation_cents": 1183415,
+          "request_count": 100,
+          "finance_event_count": 200,
+          "budget_remaining_cents": 315585
+        },
+        {
+          "batch_id": 3,
+          "claims": 121,
+          "statuses": {
+            "closed-reimbursed": 96,
+            "held": 14,
+            "pending": 7,
+            "closed-no-payment": 2,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1354416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 1164415,
+          "refunded_cents": 1000,
+          "net_paid_cents": 1163415,
+          "accepted_obligation_cents": 1193415,
+          "request_count": 104,
+          "finance_event_count": 210,
+          "budget_remaining_cents": 304585
+        },
+        {
+          "batch_id": 4,
+          "claims": 121,
+          "statuses": {
+            "closed-reimbursed": 103,
+            "held": 12,
+            "closed-no-payment": 2,
+            "pending": 2,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1354416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 1206415,
+          "refunded_cents": 3000,
+          "net_paid_cents": 1203415,
+          "accepted_obligation_cents": 1193415,
+          "request_count": 104,
+          "finance_event_count": 219,
+          "budget_remaining_cents": 296585
+        }
+      ]
+    },
+    "all_retained_files_and_outputs_bytes_and_mtimes_unchanged": true,
+    "files_checked": 39
+  },
+  "original_interview": {
+    "byte_equal_to_supplied_export": true,
+    "bytes": 29179,
+    "sha256": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2"
+  },
+  "sealed_outputs": {
+    "batches/1.json": {
+      "sha256": "26a114d30bb3b17f20ddaa28433e8edd3c5185f962e133a10e355598f4aa0141",
+      "mtime_ns": 1792258139470146959
+    },
+    "batches/2.json": {
+      "sha256": "a7b13dd89c63b1e0da6be1087602236c52fd1da0dbed4ed50557fb51166d172b",
+      "mtime_ns": 1792258139546644013
+    },
+    "batches/3.json": {
+      "sha256": "b73fcfc644613e9d1b5cbe5b96951ebb9baa939977cb42bbc11aba716a9dda25",
+      "mtime_ns": 1792258139652309583
+    },
+    "batches/4.json": {
+      "sha256": "a6db8da2fef010626eedf30712f8c2f07146b7f99557a108d371177b803c7572",
+      "mtime_ns": 1792258139787848714
+    },
+    "claims.csv": {
+      "sha256": "7c6b2cf97fbc53e5f7fc0d3e0f4d5bb44998f65f55d68553d402e7c2c766cbda",
+      "mtime_ns": 1792258139797677290
+    },
+    "repair-queue.json": {
+      "sha256": "08829e965757f2532f967e564615fa936827cc668f121650cee8ab5a51ea9095",
+      "mtime_ns": 1792258139797789749
+    },
+    "report.md": {
+      "sha256": "9c806a85608345dab9f6ced82b94d519dc213cba9553100f6348a69a2a29570b",
+      "mtime_ns": 1792258139797898041
+    },
+    "summary.json": {
+      "sha256": "1776c81b3bfaf03772d5568c215b5b00c5976196b3d280cc25d9f848ebc4ed16",
+      "mtime_ns": 1792258139797982374
+    }
+  },
+  "publication_check": "Performed after final commit; actual commit/checkpoint refs reported separately, not inferred here.",
+  "final_test_suite": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -q",
+    "exit_code": 0,
+    "tests_run": 189,
+    "elapsed_seconds": 7.397,
+    "result": "OK"
+  },
+  "implementation_or_verification_gaps_in_required_scope": []
+}
