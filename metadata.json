@@ -1,0 +1,59 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M55A7AB3VZSE1W136XYQEHKC",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    ".gitattributes",
+    ".gitignore",
+    "README.md",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-budget.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-caps.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-finance-activity.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-fx.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-merchant-payments.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-people.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-review-ledger.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-review-packets.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-travel-cancellations.json",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-trips.json",
+    "docs/coverage.md",
+    "docs/source-acquisition.md",
+    "requirements.txt",
+    "skills/travel-expense-claim/SKILL.md",
+    "src/travel_expense_claim/authority.py",
+    "src/travel_expense_claim/eligibility.py",
+    "src/travel_expense_claim/finance.py",
+    "src/travel_expense_claim/obligations.py",
+    "src/travel_expense_claim/recheck.py",
+    "src/travel_expense_claim/repair_queue.py",
+    "src/travel_expense_claim/snapshots.py",
+    "src/travel_expense_claim/verify_independence.py",
+    "src/travel_expense_claim/workflow.py",
+    "tests/test_eligibility.py",
+    "tests/test_obligations.py",
+    "tests/test_primary_run.py",
+    "tests/test_recheck.py",
+    "tests/test_repair_queue.py",
+    "tests/test_snapshots.py",
+    "tests/test_workflow.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 988872,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 44436224,
+    "output_tokens": 147345,
+    "api_call_count": 270,
+    "subagent_tokens_complete": false
+  }
+}
