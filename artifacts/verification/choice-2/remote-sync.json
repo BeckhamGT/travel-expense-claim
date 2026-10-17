@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-17T04:53:45Z",
+  "operation": "read-only git ls-remote origin code and Entire refs",
+  "expected_commit": "fe6aa27532edea504e26c8cb5c349813d4e12391",
+  "expected_checkpoint": "01M5420G39TKTVAF2QVFVX7HF8",
+  "advertised_refs": [
+    {
+      "object_id": "c3b2f46ce3d3294735e5c51b19e0cb2e98b228ea",
+      "ref": "refs/heads/main"
+    }
+  ],
+  "code_synchronized": false,
+  "checkpoint_synchronized": false,
+  "conclusion": "Remote main remains at starter commit; previous implementation and checkpoint are not published. No push was performed by this verification."
+}

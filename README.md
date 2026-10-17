@@ -20,7 +20,22 @@ The verifier checks retained hashes, reads all initial claim/evidence records an
 
 The demonstrated results are C08 held with unknown entitlement, C01's existing accepted request awaiting settlement evidence, and P122's independent cancellation tracking with arrangements paused. Progress permission applies to the stated review/tracking scope; it does not authorize dispatch, bookings, payment or financial closure. The permit estimate is not an accepted Finance commitment, and this component does not establish its affordability for new arrangements.
 
-The [coverage map](docs/coverage.md) records exact policy, interview, source and code/test references. Correction revalidation, operational repair-queue organization, the full four-batch workflow, final monetary reconciliation and acceptance remain pending the applicable learner decisions and implementation. A new live processing run must freshly attempt all five native sources; this offline verification does not claim to do so.
+The [coverage map](docs/coverage.md) records exact policy, interview, source and code/test references. Operational repair-queue organization, the full four-batch workflow and financial-completion acceptance remain pending the applicable learner decisions and implementation. A new live processing run must freshly attempt all five native sources; this offline verification does not claim to do so.
+
+## Implemented component: full correction recheck
+
+The learner chose a full recheck after material corrections. The scoped domestic-claim observer now rebuilds evidence, per-line Decimal arithmetic, filing eligibility, current approvals, actual shared budget/cost obligations and Finance history for every visible revision. Previous source versions and requests remain intact. Old approvals cannot authorize the current revision, and an amount-only Finance exception cannot resolve cancellation eligibility.
+
+```bash
+PYTHONPATH=src python3 -m travel_expense_claim.recheck \
+  --sources artifacts/runs/review-20261017033849Z/sources.json \
+  --claim C09 --claim C19 --claim C01 --claim C08 --through-batch 4 \
+  --output artifacts/verification/choice-2/full-rechecks.json
+```
+
+The [focused result and source references](artifacts/verification/choice-2/report.md) explain C09's unchanged-total identity correction and C19's amount/cancellation revisions. The command also observes all visible supplied Finance commitments and separate cancellation processes, including P122 without a claim. It filters arrivals before joining current versions, decision packets and financial events. Known gaps hold the affected work; a demonstrable shared deficit or conflicting obligation holds dependent work. Exact redelivery does not duplicate money. Identical output is preserved; a distinct output requires a new path.
+
+This is retained-source verification, not an operational snapshot writer, dispatch system or completed project Skill. International permit eligibility remains an explicit hold in this component. Current-resolution proof requires an agreeing supplied Finance event, current applicable reviews, and business time no earlier than those reviews and relevant cancellation; delivery batch alone cannot prove revision context. More ambiguous Finance evidence requires clarification rather than inferred authority. Financial-completion acceptance and repair-queue organization remain learner choices 3 and 4.
 
 ## Start
 
