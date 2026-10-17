@@ -1,0 +1,75 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M53ZCEXS5AC3C790T9N8CD3E",
+  "session_id": "01a14282-ba9a-7540-aafd-73a472f91b04",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-17T03:44:42.898594Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "artifacts/runs/review-20261017033849Z/retained/drive-metadata.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-budget.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-caps.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-finance-activity.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-fx.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-merchant-payments.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-people.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-review-ledger.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-review-packets.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-travel-cancellations.json",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-trips.json",
+    "artifacts/runs/review-20261017033849Z/retained/policy.txt",
+    "artifacts/runs/review-20261017033849Z/retained/workbook-metadata.json",
+    "docs/coverage.md"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "6dc6643ea476",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 487420,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 9098112,
+    "output_tokens": 23070,
+    "api_call_count": 63,
+    "subagent_tokens_complete": false
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-17T03:44:42.811198Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 176003,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 176003,
+    "total_lines_changed": 176003,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 88,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 88
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 88,
+      "user_lines_removed": 0,
+      "agent_lines_added": 581,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 88
+      }
+    }
+  ]
+}
