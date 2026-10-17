@@ -1,0 +1,64 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M543V52NXMGX1TTABXTY5S45",
+  "session_id": "01a14282-ba9a-7540-aafd-73a472f91b04",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-17T05:02:38.410756Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "README.md",
+    "artifacts/verification/choice-2/report.md",
+    "docs/coverage.md",
+    "src/travel_expense_claim/authority.py",
+    "src/travel_expense_claim/cancellations.py",
+    "src/travel_expense_claim/finance.py",
+    "src/travel_expense_claim/monetary.py",
+    "src/travel_expense_claim/recheck.py",
+    "tests/test_authority.py",
+    "tests/test_cancellations.py",
+    "tests/test_finance.py",
+    "tests/test_monetary.py",
+    "tests/test_recheck.py"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "cf76a5a4052b",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 666831,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 23609088,
+    "output_tokens": 85257,
+    "api_call_count": 156,
+    "subagent_tokens_complete": false
+  },
+  "session_metrics": {
+    "turn_count": 4
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-17T05:02:38.294942Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 21578,
+    "human_modified": 12,
+    "human_removed": 0,
+    "total_committed": 21578,
+    "total_lines_changed": 21590,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 88,
+      "user_lines_removed": 0,
+      "agent_lines_added": 581,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 88
+      }
+    }
+  ]
+}

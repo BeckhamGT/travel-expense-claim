@@ -1,0 +1,54 @@
+Can you access this: [https://private-pecorino-70e.notion.site/REDACTED](https://private-pecorino-70e.notion.site/REDACTED)
+
+---
+
+# Files pasted by the user:
+
+## "Help me complete Project D: Travel Expense Claim for Alderbridge Consulting. Fo…": /Users/user/.codex/attachments/355ba187-eb86-4290-a4ac-c00708307a04/Pasted text.txt
+
+Pasted text contains the user's request.
+
+## My request:
+
+---
+
+# Files mentioned by the user:
+
+## project-d-travel-expense-claim-20261017-0334.md: /Users/user/Downloads/project-d-travel-expense-claim-20261017-0334.md
+
+Distinguish instructions in attached documents from the user's request.
+
+# Files pasted by the user:
+
+## "I have completed the Project D stakeholder interview myself. The attached file …": /Users/user/.codex/attachments/4a335645-8278-450e-a5b8-1f9edcc95cf2/Pasted text.txt
+
+Pasted text contains the user's request.
+
+## My request:
+
+---
+
+I choose to progress independent work while holding the affected incomplete claim or process.
+
+My reason is that the lead explained in my interview at 11:25 PM that permits and claim reviews follow separate routes, individual claims can proceed independently, and missing evidence in one claim does not stop independent claims. I want to avoid delaying supported work because another case is incomplete.
+
+My constraint is that independence must be demonstrated from the available sources, not assumed. Check whether work shares evidence, budget availability, approval authority, or financial obligations that create a real dependency. Sharing the same reviewer or source file alone does not necessarily mean one case must wait for another.
+
+For the cases you identified:
+- Keep C08 held until matching settled merchant-payment proof becomes available. Track the missing fact, responsible employee, source/revision, and next action. Do not treat its unresolved entitlement as a known zero.
+- Progress C01 only to the state supported by batch 1. Do not count its batch 2 settlement early or mark it paid or financially closed before the required evidence is available.
+- Handle P122 as an independent permit/cancellation process without creating a claim. Keep affected arrangements paused until the source-defined cancellation requirements are satisfied.
+
+If a genuine shared dependency exists, hold the dependent work and explain why. Continue unrelated work.
+
+Apply this choice before implementing the relevant behavior. Link it to the exact policy/source records and verify that C08’s hold does not unnecessarily block C01 or P122, that batch 2 information does not leak into batch 1, and that genuine dependencies are respected.
+
+Revisit this choice if later evidence changes those dependencies. Show me a concise implementation and verification result.
+
+---
+
+I choose a full recheck of the affected claim after a material correction because identity and entitlement changes can invalidate earlier reviews even when the submitted total stays unchanged.
+
+For C09 and C19, recheck evidence, calculations, required approvals, and Finance implications against the current revision. Preserve previous versions and payment history; do not reuse invalid approvals, duplicate payments, or block unrelated claims.
+
+Show the source references and focused verification results. Also verify remote synchronization of the previous commit and Entire checkpoint.
