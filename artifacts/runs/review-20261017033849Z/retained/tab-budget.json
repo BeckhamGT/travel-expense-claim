@@ -1,0 +1,94 @@
+{
+  "title": "Budget",
+  "sheet_state": "visible",
+  "rows": [
+    [
+      "Budget",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Synthetic business records. SRC-D-3.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Dates are local calendar dates. Amounts follow the stated currency. Empty optional entries are blank.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Ledger reference",
+      "Department",
+      "Project",
+      "Budget period",
+      "Entry type",
+      "Obligation reference",
+      "Allocation or commitment (EUR)",
+      "Settled (EUR)",
+      "Refunded (EUR)"
+    ],
+    [
+      "B-ALLOC",
+      "Consulting",
+      "Client-A",
+      "2026",
+      "allocation",
+      null,
+      20000.0,
+      0.0,
+      0.0
+    ],
+    [
+      "B-OLD1",
+      "Consulting",
+      "Client-A",
+      "2026",
+      "obligation",
+      "OLD-1",
+      3000.0,
+      2000.0,
+      0.0
+    ],
+    [
+      "B-OLD2",
+      "Consulting",
+      "Client-A",
+      "2026",
+      "obligation",
+      "OLD-2",
+      2000.0,
+      0.0,
+      0.0
+    ]
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Caps",
+  "sheet_state": "visible",
+  "rows": [
+    [
+      "Caps",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Synthetic business records. SRC-D-3.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Original currency per night/day. Dates inclusive.",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Cap reference",
+      "Destination",
+      "Category",
+      "Currency",
+      "Effective from",
+      "Effective to",
+      "Amount per unit"
+    ],
+    [
+      "CAP-lodging",
+      "NL",
+      "lodging",
+      "EUR",
+      "2026-01-01 00:00:00",
+      "2026-12-31 00:00:00",
+      150.0
+    ],
+    [
+      "CAP-meals",
+      "NL",
+      "meals",
+      "EUR",
+      "2026-01-01 00:00:00",
+      "2026-12-31 00:00:00",
+      40.0
+    ]
+  ]
+}

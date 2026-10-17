@@ -1,0 +1,48 @@
+{
+  "title": "FX",
+  "sheet_state": "visible",
+  "rows": [
+    [
+      "FX",
+      null,
+      null,
+      null
+    ],
+    [
+      "Synthetic business records. SRC-D-3.",
+      null,
+      null,
+      null
+    ],
+    [
+      "EUR per original unit. Local rate dates.",
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Rate reference",
+      "Rate date",
+      "Currency",
+      "EUR per currency unit"
+    ],
+    [
+      "FX-EUR",
+      "2026-09-01 00:00:00",
+      "EUR",
+      1.0
+    ],
+    [
+      "FX-USD",
+      "2026-09-01 00:00:00",
+      "USD",
+      0.9
+    ]
+  ]
+}
