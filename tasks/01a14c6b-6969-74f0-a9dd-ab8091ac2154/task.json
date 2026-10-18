@@ -1,0 +1,19 @@
+{
+  "tool_use_id": "01a14c6b-6969-74f0-a9dd-ab8091ac2154",
+  "agent_id": "01a14c6b-6969-74f0-a9dd-ab8091ac2154",
+  "subagent_type": "default",
+  "files": [
+    "tests/test_repair_queue.py",
+    "src/travel_expense_claim/repair_queue.py",
+    "tests/test_workflow.py"
+  ],
+  "token_usage": {
+    "input_tokens": 60341,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2160128,
+    "output_tokens": 11954,
+    "api_call_count": 27
+  },
+  "started_at": "2026-10-17T20:31:11.549735-04:00",
+  "completed_at": "2026-10-17T22:02:46.501224-04:00"
+}

@@ -1,0 +1,18 @@
+{
+  "tool_use_id": "01a14c6b-5416-7743-8e4c-8105621a1c34",
+  "agent_id": "01a14c6b-5416-7743-8e4c-8105621a1c34",
+  "subagent_type": "default",
+  "files": [
+    "tests/test_finance.py",
+    "src/travel_expense_claim/finance.py"
+  ],
+  "token_usage": {
+    "input_tokens": 123128,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 3052288,
+    "output_tokens": 21691,
+    "api_call_count": 33
+  },
+  "started_at": "2026-10-17T20:31:06.212134-04:00",
+  "completed_at": "2026-10-17T22:02:46.501211-04:00"
+}

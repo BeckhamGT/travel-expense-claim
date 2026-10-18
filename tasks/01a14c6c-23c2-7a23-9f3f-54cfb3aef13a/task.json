@@ -1,0 +1,26 @@
+{
+  "tool_use_id": "01a14c6c-23c2-7a23-9f3f-54cfb3aef13a",
+  "agent_id": "01a14c6c-23c2-7a23-9f3f-54cfb3aef13a",
+  "subagent_type": "default",
+  "files": [
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-budget.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-caps.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-finance-activity.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-fx.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-merchant-payments.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-people.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-review-ledger.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-review-packets.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-travel-cancellations.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-trips.json"
+  ],
+  "token_usage": {
+    "input_tokens": 68954,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2100096,
+    "output_tokens": 8509,
+    "api_call_count": 24
+  },
+  "started_at": "2026-10-17T20:31:59.395306-04:00",
+  "completed_at": "2026-10-17T22:02:46.501284-04:00"
+}

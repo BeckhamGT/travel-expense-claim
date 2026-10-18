@@ -1,0 +1,54 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M56WJEYZETEBYWDQBM56MREX",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-initial.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-receipts.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-registers.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-updates.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-sheet-metadata.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-budget.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-caps.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-finance-activity.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-fx.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-merchant-payments.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-people.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-review-ledger.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-review-packets.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-travel-cancellations.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-trips.json",
+    "artifacts/runs/clarification-20261018T054954Z/verification/operational-results.json",
+    "artifacts/runs/clarification-20261018T054954Z/verification/replay-results.json",
+    "artifacts/runs/clarification-20261018T054954Z/verification/report.md",
+    "artifacts/runs/clarification-20261018T054954Z/verification/verify_clarification.py",
+    "docs/source-acquisition.md",
+    "skills/travel-expense-claim/SKILL.md",
+    "src/travel_expense_claim/business_definitions.py",
+    "src/travel_expense_claim/recheck.py",
+    "src/travel_expense_claim/snapshots.py",
+    "src/travel_expense_claim/verify_independence.py",
+    "src/travel_expense_claim/workflow.py",
+    "tests/test_business_definitions.py",
+    "tests/test_recheck.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2255689,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 76029952,
+    "output_tokens": 290771,
+    "api_call_count": 487,
+    "subagent_tokens_complete": false
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M56WJEYZETEBYWDQBM56MREX",
+  "session_id": "01a14282-ba9a-7540-aafd-73a472f91b04",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-18T06:53:19.332734Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-initial.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-receipts.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-registers.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-updates.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-sheet-metadata.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-budget.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-caps.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-finance-activity.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-fx.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-merchant-payments.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-people.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-review-ledger.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-review-packets.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-travel-cancellations.json",
+    "artifacts/runs/clarification-20261018T054954Z/retained/native-tab-trips.json",
+    "artifacts/runs/clarification-20261018T054954Z/verification/operational-results.json",
+    "artifacts/runs/clarification-20261018T054954Z/verification/replay-results.json",
+    "artifacts/runs/clarification-20261018T054954Z/verification/report.md",
+    "artifacts/runs/clarification-20261018T054954Z/verification/verify_clarification.py",
+    "docs/source-acquisition.md",
+    "skills/travel-expense-claim/SKILL.md",
+    "src/travel_expense_claim/business_definitions.py",
+    "src/travel_expense_claim/recheck.py",
+    "src/travel_expense_claim/snapshots.py",
+    "src/travel_expense_claim/verify_independence.py",
+    "src/travel_expense_claim/workflow.py",
+    "tests/test_business_definitions.py",
+    "tests/test_recheck.py"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "4b8c1f9a9999",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2255689,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 76029952,
+    "output_tokens": 290771,
+    "api_call_count": 487,
+    "subagent_tokens_complete": false
+  },
+  "session_metrics": {
+    "turn_count": 10
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-18T06:53:19.026467Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 339444,
+    "human_modified": 8,
+    "human_removed": 0,
+    "total_committed": 339444,
+    "total_lines_changed": 340027,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 88,
+      "user_lines_removed": 0,
+      "agent_lines_added": 581,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 88
+      }
+    }
+  ]
+}
