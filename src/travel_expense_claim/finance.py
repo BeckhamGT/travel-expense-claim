@@ -78,11 +78,11 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
     """
     day = date.fromisoformat(case_clock) if isinstance(case_clock, str) else case_clock
     cutoff = datetime.combine(day + timedelta(days=1), time(), ZoneInfo(case_timezone))
-    requests, admitted, holds, rejected, replayed = {}, {}, [], [], []
+    requests, admitted, holds, resolved_holds, rejected, replayed = {}, {}, [], [], [], []
     claims = {key: {
         "request_ids": [], "admitted_event_ids": [], "paid_cents": 0,
         "refunded_cents": 0, "net_paid_cents": 0,
-        "current_obligation_cents": None, "resolution_event_ids": [], "holds": [],
+        "current_obligation_cents": None, "resolution_event_ids": [], "holds": [], "resolved_holds": [],
     } for key in claims_by_id}
 
     def hold(code, reason, row, refs, *, affected=()):
@@ -108,6 +108,39 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
         rejected.append({key: item[key] for key in (
             "code", "reason", "event_id", "claim_id", "request_id", "source_refs",
         )})
+
+    def resolve_refunded_late_transfers(request_id, request, event_id, stamp, refs):
+        """Resolve only a proved recovery, never every hold on the request.
+
+        A balance by itself says nothing about which transfer was recovered.
+        Keep the original late-transfer issue until its own admitted linked
+        refunds recover it fully and a later, valid Finance resolution agrees
+        with both the current obligation and all observed net money.  Other
+        invalid or conflicting deliveries remain independent blocking holds.
+        """
+        if request["net_paid_cents"] != request["current_obligation_cents"]:
+            return
+        for item in list(holds):
+            if item["code"] != "settlement_after_cancellation" or item["request_id"] != request_id:
+                continue
+            transfer = admitted.get(item["event_id"])
+            if not transfer or stamp <= _utc(transfer["time"]):
+                continue
+            refunds = [event for event in admitted.values()
+                       if event["type"] == "refund" and event["request_id"] == request_id
+                       and event["original_event_id"] == transfer["event_id"]]
+            if sum(event["amount_cents"] for event in refunds) != transfer["amount_cents"]:
+                continue
+            history = dict(item, status="resolved", resolved_by_event_id=event_id,
+                           resolved_at=stamp.isoformat().replace("+00:00", "Z"),
+                           resolution_evidence_event_ids=[*[event["event_id"] for event in refunds], event_id],
+                           resolution_source_refs=sorted(set(refs) | {ref for event in refunds for ref in event["source_refs"]}))
+            resolved_holds.append(history)
+            request["resolved_holds"].append(history)
+            claims[request["claim_id"]]["resolved_holds"].append(history)
+            holds.remove(item)
+            for claim in claims.values():
+                claim["holds"] = [hold for hold in claim["holds"] if hold is not item]
 
     # Source row order is not an authorization.  Exact redelivery has one effect;
     # conflicting later payloads do not overwrite the earliest established one.
@@ -241,6 +274,7 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
                     "status": "accepted", "retry_authorized": False, "retry_needed": False,
                     "cancellation_requested": False, "cancelled": False,
                     "admitted_event_ids": [], "resolution_event_ids": [], "source_refs": [],
+                    "resolved_holds": [],
                 }
                 claims[claim_id]["request_ids"].append(request_id)
             elif obligation != request["current_obligation_cents"] or request["cancelled"]:
@@ -293,6 +327,7 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
                 continue
             request["resolution_event_ids"].append(event_id)
             request["status"] = kind
+            resolve_refunded_late_transfers(request_id, request, event_id, stamp, refs)
 
         request["net_paid_cents"] = request["paid_cents"] - request["refunded_cents"]
         request["admitted_event_ids"].append(event_id)
@@ -320,5 +355,6 @@ def summarize_finance(rows, people, claims_by_id, case_clock, case_timezone):
     return {
         "claims": claims, "requests": requests, "admitted_events": list(admitted.values()),
         "admitted_event_ids": list(admitted), "holds": holds,
+        "resolved_holds": resolved_holds,
         "rejected_events": rejected, "replayed_event_ids": sorted(replayed),
     }

@@ -17,39 +17,64 @@ The processing dependency is pinned `jsonschema`; all arithmetic, event reductio
 
 Follow the course's [Entire setup lesson](https://classroom.google.com/c/ODcyMjA4NTkwNDk2/m/ODc0NzI2NzQzMzQ2/details). Verify `entire status` reports Enabled, Codex and sync target origin, then inspect a real commit-linked checkpoint. Configuration alone is insufficient. Genuinely missing assessed capture requires facilitator repair before further assessed implementation.
 
-## Full-source preview and final run
+## Current linked run and preserved assessment
 
-The completed [operations handoff](artifacts/runs/submission-20261017T154939Z/report.md) covers all 121 claims and all four batches. All four learner choices are adopted; production sealing, unchanged offline replay and 189 tests pass. Fourteen business cases remain owned and open; they are included in the handoff. [Final verification](artifacts/runs/submission-20261017T154939Z/verification/final-checks.json) records actual results.
+The assessed revision is `d11fb0607cded870f51308226cdc2db686460c0a`; its [original handoff](artifacts/runs/submission-20261017T154939Z/report.md), sources, snapshots and interview remain unchanged. Its 79.1/100 assessment prompted targeted continuation, recovery and repair-ownership corrections; private “No evidence” checkpoints are not inferred from that score.
 
-The fresh collection is `artifacts/runs/submission-20261017T154939Z/sources.json`. It covers all five native locations: three complete PDFs (120/7/102 pages), 16 policy paragraphs and all ten populated workbook tabs. All 13,703 populated native workbook values match the fresh XLSX export. The policy's supplied old-version URL resolves to POL-2026.2. The exercise clock is **2026-11-15 Europe/Amsterdam**; local calendar dates and UTC event timestamps retain their distinct meanings.
+The new collection is `artifacts/runs/revision-20261018T003113Z/sources.json`, linked to that graded manifest by `prior_run` path/hash and `change_reason`. Fresh access covers all five locations, 229 PDF pages, 16 policy paragraphs and ten native tabs; 13,703 values match the fresh XLSX. Business content is unchanged, including the missing definitions. The old URL slug resolves to POL-2026.2. The exercise clock remains **2026-11-15 Europe/Amsterdam**.
 
-Preview the real result before learner financial-completion adoption:
+The new run has now consumed all four batches in separate invocations. See its [operational report](artifacts/runs/revision-20261018T003113Z/report.md) and [before/after verification](artifacts/runs/revision-20261018T003113Z/verification/report.md). The full suite passed 211 tests; independent native reconciliation found no mismatches, and offline replay preserved all 57 files then present. These checks complete the authorized technical revision; [missing definitions](docs/follow-up-topics.md) remain human follow-up. No assessment resubmission has been made.
+
+All four learner choices remain adopted in the real captured conversation. Changed evidence would require revisiting affected choices; a new run alone does not invent a new learner decision. The financial-completion flag supplies no evidence, review, transfer or approval.
+
+## Preview, consume one batch, then wait
+
+Preview is unsealed inspection of a selected retained-source prefix. It consumes no operational batch:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow preview \
-  --sources artifacts/runs/submission-20261017T154939Z/sources.json \
-  --output-dir artifacts/runs/submission-20261017T154939Z/inspection
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json \
+  --through-batch 1 \
+  --output-dir artifacts/runs/revision-20261018T003113Z/inspection/batch-1
 ```
 
-The retained `preview/report.md` is the original inspection result; later implementation refinements preserve it. The command above writes the current `inspection/report.md`. An identical replay is preserved; for a distinct preview use another `--output-dir` rather than overwrite either result. Sealed run paths remain fixed under the manifest's run directory.
-
-Only **after the learner's captured choice 3** accepts the financial-completion conditions and full delivery scope, seal all observed arrival batches:
+Start only batch 1. The command seals its state/view, reports owned waiting work and exits. It does not consume batches 2–4:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow seal \
-  --sources artifacts/runs/submission-20261017T154939Z/sources.json \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 1 \
   --completion-accepted
+PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow status \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json
 ```
 
-The adoption flag supplies no evidence, review, Finance event or payment. Every case must independently satisfy the source conditions. Legitimate unresolved cases remain owned and traceable; they do not reduce the assigned all-record scope.
+Continue only when the next supplied arrival is intentionally consumed. These exact native C20 task IDs demonstrate separate partial facts; obtain other task IDs from the queue/status, never guess them:
+
+```bash
+PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 2 --completion-accepted
+PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 3 \
+  --task RQ-65c94a8a3837096ec1a0f284 --completion-accepted
+PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow status \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json \
+  --task RQ-e20eaf20f448b036b947421a
+PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 4 \
+  --task RQ-e20eaf20f448b036b947421a --completion-accepted
+```
+
+Batch 3 proves C20's linked refund and resolves only its overpayment fact; its separate Finance-resolution item and claim remain held despite zero balance. Batch 4 supplies the actual resolution. `--task` traces that existing item's before/after state; independent work still progresses under choice 1. Later batches are fixed exercise inputs, not responses caused by local drafts.
 
 The run writes:
 
 - `batches/1.json` through `batches/4.json`: UTF-8 `travel-claim-snapshot/2` snapshots, exact source hash and immediate predecessor chain.
 - `claims.csv`: exactly one current row per claim and the required nine columns; unknown money is blank. Cancellation processes without claims never create claim rows.
-- `report.md`: operations handoff, full amounts/states, owned next evidence/actions and significant batch/queue updates.
+- `report.md`: current operations handoff, amounts/states, owned next evidence/actions, missing-definition escalations and queue changes.
 - `repair-queue.json`: per-subject/revision/fact items, owner-based views, unsent local drafts, evidence-verification records and preserved history.
 - `summary.json`: independently checkable batch totals and cardinalities.
+- `stages/<batch>/`: immutable CSV/report/queue/summary and `operation.json` for each actual consumption, including resumed tasks and actual UTC observation time.
+- `run-state.json`: source/implementation hashes, consumed cursor and sealed-file bindings. Top-level outputs are validated current projections of the latest stage; earlier stage views remain sealed.
 
 Every source revision, receipt/paid proof, calculation, decision packet, accepted request, transfer/refund and cancellation has retained provenance. Current entitlement and current authorized obligation are distinct where withdrawal, rejection or a later correction changes the obligation. Prepaid costs are explicitly linked and excluded from the new obligation. Business cancellation never releases a Finance commitment by itself.
 
@@ -58,12 +83,14 @@ Every source revision, receipt/paid proof, calculation, decision packet, accepte
 ```bash
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow verify \
-  --sources artifacts/runs/submission-20261017T154939Z/sources.json \
+  --sources artifacts/runs/revision-20261018T003113Z/sources.json \
   --completion-accepted
 git diff --check
 ```
 
-`verify` reconstructs every cumulative batch from retained history, compares exact sealed bytes, validates Draft 2020-12 with explicit RFC3339 date-time checks, verifies all retained source/predecessor hashes and references, and checks CSV/queue/report/summary agreement. It performs no fresh native read and changes no output: this is an **offline replay**. Same input and implementation preserve event/request identity and money; distinct sealed content is rejected.
+`verify` reconstructs only consumed prefixes and validates every sealed stage, predecessor, source/prior-run binding, implementation hash and current projection. It performs no fresh native access or mutation: this is an **offline replay**. Repeating an already consumed `continue --batch N` with identical inputs is also a no-op; it preserves bytes/mtimes and never moves the cursor backward. A changed implementation requires a new linked run; use the graded commit's original code to reproduce its historical runner.
+
+Replay stdout echoes the stored `resumed_tasks` transition; `replay: true` means it did not perform that transition again. `open_work_by_owner` counts open repair items; ordinary settlement waits also appear in the claim handoff. Queue `proven_facts` retains the original requested issue label: a resolved overpayment item means evidence addressed that issue, not that an overpayment remains true. Its source references, history and current money establish the result. “Fresh applicable-version observation” in an offline replay means a current applicable source observation, not another native fetch or a human reply.
 
 Tests include the ordinary path across twelve employees, strict thresholds, caps/FX/per-line rounding, deadlines and filing-before-payment, exact review/role/source bindings, unknown evidence/definitions, returns and partial repairs, withdrawals/rejections, corrections, prepaid links, partial settlements/retries, linked refunds, overpayments, later transfers and separate no-claim cancellations. Isolated adverse fixtures supplement the complete native primary run.
 
@@ -75,9 +102,20 @@ Exit zero means the requested processing/verification operation completed, inclu
 
 Missing/corrupt required source bytes, incompatible layouts, invalid manifest/schema/chain/reference state or distinct existing sealed content cause a nonzero error naming the failing prerequisite. Keep the evidence and failed acquisition observation. Raise missing definitions or access with Finance/lead/facilitator; do not guess or label unimplemented checks as business uncertainty. No retry changes approvals, sends requests, books travel or moves money.
 
-## Resume and handoff
+## Explicit recovery and human follow-up
 
-For a new authorized source batch, attempt all five native locations again and retain complete relevant version/event history in a new run. Add `prior_run` and `change_reason` to its manifest. Run the same preview/seal/verify commands with its actual manifest path; the runner observes supplied arrival numbers in order; this assignment and schema support batches 1–4. A later batch outside that schema requires an explicit schema/implementation revision and verification before sealing; it is not a supported resume operation. Revisit adopted constraints when changed evidence alters their basis. A corrupt predecessor can be diagnosed or rebuilt from complete retained history in a new explicitly linked run; preserve the original and never invent historical execution times.
+Missing/corrupt snapshots, stage views, projections, cursor, changed implementation or interrupted publications fail before continuation. `seal` cannot silently adopt or recreate historical files. Preserve the damaged run. Obtain fresh attempts at all five locations and complete history in a **distinct** run, with `prior_run: {run_id, path, sha256}` binding the prior `sources.json` and a nonempty `change_reason`. Then:
+
+```bash
+PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow recover \
+  --sources artifacts/runs/<new-fresh-run>/sources.json \
+  --from-run artifacts/runs/<damaged-run>/sources.json \
+  --through-batch 2 --completion-accepted
+```
+
+Recovery reconstructs complete retained history through the explicitly selected batch in the new run. Its operations record actual recovery times and the old source binding; they do not invent historical execution times or repair the old files. Continue from that new cursor normally. This schema supports batches 1–4; a later batch requires a separately verified schema/implementation revision.
+
+[Prioritized follow-up topics](docs/follow-up-topics.md) identify missing GBP FX, applicable lodging caps and entertainment treatment. Those cases remain unknown/held. Finance owns the definition; the learner raises package omissions with the lead/facilitator. An unsent draft is not evidence that clarification was obtained. Returned reviewers and evidence providers remain distinct. Hypothetical Finance recovery fixtures are supplemental, never supplied outcomes for C18.
 
 Before submission, commit all required files, inspect the actual `Entire-Checkpoint` trailer plus its Git ref/full transcript, publish code and checkpoint refs when authorized, and compare their origin objects. Entire's installed pre-push hook synchronizes the real checkpoint refs alongside `git push origin main`. Public repository visibility permits reading code/interview evidence; facilitator-specific account/tool access is reported only to the extent actually verified. Prepare the repository URL, full commit, run/report and real capture refs for the learner's Classroom private comment. The learner submits.
 

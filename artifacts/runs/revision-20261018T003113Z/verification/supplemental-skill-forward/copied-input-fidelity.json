@@ -1,0 +1,140 @@
+[
+  {
+    "path": "src/travel_expense_claim/independence.py",
+    "original_sha256": "e75b34a633c4dd8fd1a2a85fb69d429a32b631945346e9ccf220f1ebfba9b6ca",
+    "copy_sha256": "e75b34a633c4dd8fd1a2a85fb69d429a32b631945346e9ccf220f1ebfba9b6ca",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/snapshots.py",
+    "original_sha256": "ad025e41cc31391cd1539d1452c1c6235f460e99f256d470ea2118232f5fa707",
+    "copy_sha256": "ad025e41cc31391cd1539d1452c1c6235f460e99f256d470ea2118232f5fa707",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/finance.py",
+    "original_sha256": "a8941c0bd77d9c758fc63950ff021744db92da5a2bc925ec0437867a23db4e47",
+    "copy_sha256": "a8941c0bd77d9c758fc63950ff021744db92da5a2bc925ec0437867a23db4e47",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/monetary.py",
+    "original_sha256": "95b712b9b3463a53fb230dd2b97303690cd8a8d77a0e368cda84dec7061a9cac",
+    "copy_sha256": "95b712b9b3463a53fb230dd2b97303690cd8a8d77a0e368cda84dec7061a9cac",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/obligations.py",
+    "original_sha256": "367af5471eb569ad001c208adea3dd4822d9ad42ca2757b541d02d38937b54c5",
+    "copy_sha256": "367af5471eb569ad001c208adea3dd4822d9ad42ca2757b541d02d38937b54c5",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/__init__.py",
+    "original_sha256": "4c06ae0bc1d63a5f6eee3dde4b9fec1e07287811bd21b37731c8f655acd91604",
+    "copy_sha256": "4c06ae0bc1d63a5f6eee3dde4b9fec1e07287811bd21b37731c8f655acd91604",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/continuation.py",
+    "original_sha256": "6913dc038ad7701a36060b14ffceacef06d0228ff49c45d60ea1f6205a0511d3",
+    "copy_sha256": "6913dc038ad7701a36060b14ffceacef06d0228ff49c45d60ea1f6205a0511d3",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/authority.py",
+    "original_sha256": "b0bf74561b26d8bc39cfcc4030ebc46c152e4321141ed7b3b4522f0feeed5e25",
+    "copy_sha256": "b0bf74561b26d8bc39cfcc4030ebc46c152e4321141ed7b3b4522f0feeed5e25",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/recheck.py",
+    "original_sha256": "7cf3de44bd691b32688f02b8aa14449a62214bdd9fd7ab8ffe30d20a922f4624",
+    "copy_sha256": "7cf3de44bd691b32688f02b8aa14449a62214bdd9fd7ab8ffe30d20a922f4624",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/workflow.py",
+    "original_sha256": "595c421a60f574ff7a9739c157dd9936c5af3861035e35dbdded1a463582afa6",
+    "copy_sha256": "595c421a60f574ff7a9739c157dd9936c5af3861035e35dbdded1a463582afa6",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/cancellations.py",
+    "original_sha256": "0c889e664959b23b40995f1838d5d4927cc378c3b22b76dc174042c40f5b88c0",
+    "copy_sha256": "0c889e664959b23b40995f1838d5d4927cc378c3b22b76dc174042c40f5b88c0",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/verify_independence.py",
+    "original_sha256": "387b37b27a0f05f29e753fb2ee0634b5971bfead08731a82f28f1d18c62e4ce2",
+    "copy_sha256": "387b37b27a0f05f29e753fb2ee0634b5971bfead08731a82f28f1d18c62e4ce2",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/eligibility.py",
+    "original_sha256": "26bd89e5c1cc0526cd164cd514217d810dd27d48363381f81f04d8f24628cf51",
+    "copy_sha256": "26bd89e5c1cc0526cd164cd514217d810dd27d48363381f81f04d8f24628cf51",
+    "matches": true
+  },
+  {
+    "path": "src/travel_expense_claim/repair_queue.py",
+    "original_sha256": "cc24f14ed4e06f8e888929dcf5ab743a6f460d99a09797fc6415dc7c3fa1752b",
+    "copy_sha256": "cc24f14ed4e06f8e888929dcf5ab743a6f460d99a09797fc6415dc7c3fa1752b",
+    "matches": true
+  },
+  {
+    "path": "skills/travel-expense-claim/SKILL.md",
+    "original_sha256": "474e1f9df4d0daa260fa5173b383d2c59309f6de02a86ad18557987ed60f8d8e",
+    "copy_sha256": "474e1f9df4d0daa260fa5173b383d2c59309f6de02a86ad18557987ed60f8d8e",
+    "matches": true
+  },
+  {
+    "path": "docs/source-acquisition.md",
+    "original_sha256": "4e653c87915a19daff7a53c3d418eb8d12af56bf38d0d3aad5ac28d71d299f95",
+    "copy_sha256": "4e653c87915a19daff7a53c3d418eb8d12af56bf38d0d3aad5ac28d71d299f95",
+    "matches": true
+  },
+  {
+    "path": "docs/coverage.md",
+    "original_sha256": "1e106ad61a167212762456b765582dc61b237d439724c09ead250c62c85281f3",
+    "copy_sha256": "3c79752fcc187783a009ec5849635303fb903dca0c95b821a5990dafe368f9a0",
+    "matches": false
+  },
+  {
+    "path": "docs/follow-up-topics.md",
+    "original_sha256": "484285b4d64f668f1d7fa9b89fd6ec524726ba184ab82ac21e97b4608d6f33a9",
+    "copy_sha256": "484285b4d64f668f1d7fa9b89fd6ec524726ba184ab82ac21e97b4608d6f33a9",
+    "matches": true
+  },
+  {
+    "path": "interviews/project-d-travel-expense-claim-20261017-0334.md",
+    "original_sha256": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2",
+    "copy_sha256": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2",
+    "matches": true
+  },
+  {
+    "path": "README.md",
+    "original_sha256": "70446491e524d1951cd630499cc2c2b5c221a703a88fa198f35059865aae0d83",
+    "copy_sha256": "70446491e524d1951cd630499cc2c2b5c221a703a88fa198f35059865aae0d83",
+    "matches": true
+  },
+  {
+    "path": "snapshot.schema.json",
+    "original_sha256": "108176da5e8fca8daa73e1924d33b6c3ad0feab3bd6dce443a28983a6ac45c19",
+    "copy_sha256": "108176da5e8fca8daa73e1924d33b6c3ad0feab3bd6dce443a28983a6ac45c19",
+    "matches": true
+  },
+  {
+    "path": "requirements.txt",
+    "original_sha256": "44ff0dc2f1e40311b8239e83146749ab9d9cee2a650e699f5464755d552ee20d",
+    "copy_sha256": "44ff0dc2f1e40311b8239e83146749ab9d9cee2a650e699f5464755d552ee20d",
+    "matches": true
+  },
+  {
+    "path": "AGENTS.md",
+    "original_sha256": "230eb4827477016cd684f52a840036d59f03faef4af55b00baa11ceff50bd08f",
+    "copy_sha256": "230eb4827477016cd684f52a840036d59f03faef4af55b00baa11ceff50bd08f",
+    "matches": true
+  }
+]

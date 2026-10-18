@@ -1,0 +1,223 @@
+{
+  "mode": "supplemental diagnostic probes only; retained original corpus and sealed run unchanged",
+  "actual_offline_replay": {
+    "exit_code": 0,
+    "last_stderr": null,
+    "stdout_summary": {
+      "mode": "verify",
+      "run_id": "submission-20261017T154939Z",
+      "batches": [
+        {
+          "batch_id": 1,
+          "claims": 120,
+          "statuses": {
+            "pending": 102,
+            "held": 14,
+            "closed-no-payment": 2,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1352416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 0,
+          "refunded_cents": 0,
+          "net_paid_cents": 0,
+          "accepted_obligation_cents": 1183415,
+          "request_count": 100,
+          "finance_event_count": 100,
+          "budget_remaining_cents": 316585
+        },
+        {
+          "batch_id": 2,
+          "claims": 120,
+          "statuses": {
+            "closed-reimbursed": 95,
+            "held": 16,
+            "closed-no-payment": 2,
+            "pending": 5,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1352416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 1153915,
+          "refunded_cents": 0,
+          "net_paid_cents": 1153915,
+          "accepted_obligation_cents": 1183415,
+          "request_count": 100,
+          "finance_event_count": 200,
+          "budget_remaining_cents": 315585
+        },
+        {
+          "batch_id": 3,
+          "claims": 121,
+          "statuses": {
+            "closed-reimbursed": 96,
+            "held": 14,
+            "pending": 7,
+            "closed-no-payment": 2,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1354416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 1164415,
+          "refunded_cents": 1000,
+          "net_paid_cents": 1163415,
+          "accepted_obligation_cents": 1193415,
+          "request_count": 104,
+          "finance_event_count": 210,
+          "budget_remaining_cents": 304585
+        },
+        {
+          "batch_id": 4,
+          "claims": 121,
+          "statuses": {
+            "closed-reimbursed": 103,
+            "held": 12,
+            "closed-no-payment": 2,
+            "pending": 2,
+            "withdrawn": 1,
+            "rejected": 1
+          },
+          "known_allowed_cents": 1354416,
+          "unknown_claims": 6,
+          "gross_paid_cents": 1206415,
+          "refunded_cents": 3000,
+          "net_paid_cents": 1203415,
+          "accepted_obligation_cents": 1193415,
+          "request_count": 104,
+          "finance_event_count": 219,
+          "budget_remaining_cents": 296585
+        }
+      ]
+    }
+  },
+  "single_batch_option": {
+    "exit_code": 2,
+    "last_stderr": "workflow.py: error: unrecognized arguments: --batch 1",
+    "stdout_summary": null
+  },
+  "missing_prior_verify": {
+    "exit_code": 1,
+    "last_stderr": "travel_expense_claim.verify_independence.SourceError: Missing or distinct sealed replay: /private/tmp/project-d-diagnostic-copy-zc7slxt0/submission-20261017T154939Z/batches/2.json",
+    "stdout_summary": null
+  },
+  "missing_prior_seal_reconstructs_in_same_run": {
+    "exit_code": 0,
+    "same_bytes": true,
+    "warning_or_explicit_rebuild_required": false
+  },
+  "corrupt_prior_verify": {
+    "exit_code": 1,
+    "last_stderr": "travel_expense_claim.verify_independence.SourceError: Missing or distinct sealed replay: /private/tmp/project-d-diagnostic-copy-zc7slxt0/submission-20261017T154939Z/batches/2.json",
+    "stdout_summary": null
+  },
+  "corrupt_prior_seal": {
+    "exit_code": 1,
+    "last_stderr": "travel_expense_claim.snapshots.SnapshotError: Distinct sealed snapshot preserved; create a new run",
+    "stdout_summary": null
+  },
+  "corrupt_outputs_preserved": true,
+  "future_finance_isolation": {
+    "batches_1_2_3_identical": [
+      true,
+      true,
+      true
+    ],
+    "batch_4_changed": true
+  },
+  "late_transfer_recovery_probe": {
+    "net_paid_cents": 0,
+    "obligation_cents": 0,
+    "balance_cents": 0,
+    "admitted_diagnostic_refund": true,
+    "admitted_diagnostic_resolution": true,
+    "hold_codes_remaining": [
+      "settlement_after_cancellation"
+    ],
+    "expected_recovery_of_late_transfer_issue_demonstrated": false
+  },
+  "primary_queue": {
+    "items": 89,
+    "statuses": {
+      "superseded": 22,
+      "open": 60,
+      "resolved": 7
+    },
+    "response_kinds": {
+      "evidence_verification": 8
+    },
+    "c20_same_revision_partial_fact_updates": [
+      {
+        "code": "overpayment",
+        "status": "resolved",
+        "history": [
+          {
+            "batch_id": 2,
+            "from_status": null,
+            "item_id": "RQ-65c94a8a3837096ec1a0f284",
+            "reason": "New or reopened missing fact/return",
+            "run_id": "submission-20261017T154939Z",
+            "source_refs": [
+              "INITIAL:page20",
+              "REGISTERS-FINANCE-ACTIVITY:row26",
+              "REGISTERS-FINANCE-ACTIVITY:row45"
+            ],
+            "to_status": "open"
+          },
+          {
+            "batch_id": 3,
+            "from_status": "open",
+            "item_id": "RQ-65c94a8a3837096ec1a0f284",
+            "reason": "Only this requested fact is now demonstrated by current evidence",
+            "run_id": "submission-20261017T154939Z",
+            "source_refs": [
+              "INITIAL:page20",
+              "REGISTERS-FINANCE-ACTIVITY:row26",
+              "REGISTERS-FINANCE-ACTIVITY:row27",
+              "REGISTERS-FINANCE-ACTIVITY:row45"
+            ],
+            "to_status": "resolved"
+          }
+        ]
+      },
+      {
+        "code": "finance_resolution",
+        "status": "resolved",
+        "history": [
+          {
+            "batch_id": 2,
+            "from_status": null,
+            "item_id": "RQ-e20eaf20f448b036b947421a",
+            "reason": "New or reopened missing fact/return",
+            "run_id": "submission-20261017T154939Z",
+            "source_refs": [
+              "INITIAL:page20",
+              "REGISTERS-FINANCE-ACTIVITY:row26",
+              "REGISTERS-FINANCE-ACTIVITY:row45"
+            ],
+            "to_status": "open"
+          },
+          {
+            "batch_id": 4,
+            "from_status": "open",
+            "item_id": "RQ-e20eaf20f448b036b947421a",
+            "reason": "Only this requested fact is now demonstrated by current evidence",
+            "run_id": "submission-20261017T154939Z",
+            "source_refs": [
+              "INITIAL:page20",
+              "REGISTERS-FINANCE-ACTIVITY:row26",
+              "REGISTERS-FINANCE-ACTIVITY:row27",
+              "REGISTERS-FINANCE-ACTIVITY:row28",
+              "REGISTERS-FINANCE-ACTIVITY:row45"
+            ],
+            "to_status": "resolved"
+          }
+        ]
+      }
+    ],
+    "c116_source_resolution_responses": 0
+  },
+  "original_run_bytes_and_mtimes_unchanged": true
+}

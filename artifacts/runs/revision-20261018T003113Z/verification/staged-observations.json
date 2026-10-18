@@ -1,0 +1,564 @@
+{
+  "run_id": "revision-20261018T003113Z",
+  "mode": "Actual separate operational invocations on freshly collected native sources; supplied batch arrivals are not fabricated human replies",
+  "observations": [
+    {
+      "batch": 1,
+      "cursor": 1,
+      "later_batches_absent": true,
+      "C01_paid_cents": 0,
+      "C08_allowed_cents": null,
+      "C09_next_owner": "EMP-01",
+      "C09_returning_reviewer": "LEAD-01",
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "c1ab6859e7e60c019912d5b4a8a1660ecedcf3178d1508b43096650638468d4c"
+        },
+        "stages/1/summary.json": {
+          "sha256": "2d2eeb71c63baf631bfdd4fdf9557415dcb4b11cbcc9513b20bdf13f7aa8490f"
+        },
+        "stages/1/report.md": {
+          "sha256": "2897000d534698e5c695a0034b2feeaccfe421f79dd699b659e745eb55bd3868"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "bb6bcafb0c46c608cb6e5a17a806eafaafb3fafa61632658658833d024e6dc12"
+        },
+        "stages/1/operation.json": {
+          "sha256": "522042e2f05dcadac9f6e0f8bf7d933a6dd62df79ddc0287634f41b37a3ffd43"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "9116d840c3bdde4d06c10601577344ba15c7d0759d37fe98ff8cd8e6f14a2899"
+        }
+      },
+      "mtime_note": "The initial tool-channel JSON used numeric nanoseconds; only SHA-256 is retained here to avoid claiming lost integer precision. Subsequent baselines use exact decimal strings. The independent offline forward-test separately checks exact batch-1 to batch-2 mtimes."
+    },
+    {
+      "batch": 2,
+      "cursor": 2,
+      "later_batches_absent": true,
+      "C20": {
+        "status": "held",
+        "paid_cents": 11000,
+        "refunded_cents": 0,
+        "balance_cents": -1000,
+        "current_resolution_event_ids": []
+      },
+      "C20_items": [
+        {
+          "item_id": "RQ-65c94a8a3837096ec1a0f284",
+          "code": "overpayment",
+          "status": "open",
+          "owner": "FIN-01"
+        },
+        {
+          "item_id": "RQ-e20eaf20f448b036b947421a",
+          "code": "finance_resolution",
+          "status": "open",
+          "owner": "FIN-01"
+        }
+      ],
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "c1ab6859e7e60c019912d5b4a8a1660ecedcf3178d1508b43096650638468d4c",
+          "mtime_ns": "1792284169692280839"
+        },
+        "batches/2.json": {
+          "sha256": "b936eec77808a72488d2a42906af754ac21ff81b1bff8f3fa701f86a5b8213b4",
+          "mtime_ns": "1792284204897648009"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "bb6bcafb0c46c608cb6e5a17a806eafaafb3fafa61632658658833d024e6dc12",
+          "mtime_ns": "1792284169699196649"
+        },
+        "stages/1/operation.json": {
+          "sha256": "522042e2f05dcadac9f6e0f8bf7d933a6dd62df79ddc0287634f41b37a3ffd43",
+          "mtime_ns": "1792284169699587729"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "9116d840c3bdde4d06c10601577344ba15c7d0759d37fe98ff8cd8e6f14a2899",
+          "mtime_ns": "1792284169699312732"
+        },
+        "stages/1/report.md": {
+          "sha256": "2897000d534698e5c695a0034b2feeaccfe421f79dd699b659e745eb55bd3868",
+          "mtime_ns": "1792284169699412689"
+        },
+        "stages/1/summary.json": {
+          "sha256": "2d2eeb71c63baf631bfdd4fdf9557415dcb4b11cbcc9513b20bdf13f7aa8490f",
+          "mtime_ns": "1792284169699494605"
+        },
+        "stages/2/claims.csv": {
+          "sha256": "3683b41858ba065869892d54fb61a285ec5a9aa2a29513ed83bcfc582daa257e",
+          "mtime_ns": "1792284204905090565"
+        },
+        "stages/2/operation.json": {
+          "sha256": "705fa7a293953b663fae1fff7270e50d0d41408ba7be5e23749ff5fce54d517b",
+          "mtime_ns": "1792284204905487853"
+        },
+        "stages/2/repair-queue.json": {
+          "sha256": "de3020738661ccc81409b1464de6914a8cba68705eb76745be3ed9a58f6d0a27",
+          "mtime_ns": "1792284204905213272"
+        },
+        "stages/2/report.md": {
+          "sha256": "a572f62eb4d5d1feafc7d6eab4eaa7b8a3434b9b0c07629275ba877c70586689",
+          "mtime_ns": "1792284204905316396"
+        },
+        "stages/2/summary.json": {
+          "sha256": "1e92ec8cfb3ba7fdd5cb71cf3f4323df53813cdd0093246826fdfbdb1a400190",
+          "mtime_ns": "1792284204905404479"
+        }
+      },
+      "prior_sealed_files_unchanged": true,
+      "prior_mtime_comparison": "initial tool-channel numeric precision"
+    },
+    {
+      "batch": 3,
+      "cursor": 3,
+      "later_batches_absent": true,
+      "C20": {
+        "status": "held",
+        "paid_cents": 10000,
+        "refunded_cents": 1000,
+        "balance_cents": 0,
+        "current_resolution_event_ids": []
+      },
+      "C20_items": [
+        {
+          "item_id": "RQ-65c94a8a3837096ec1a0f284",
+          "code": "overpayment",
+          "status": "resolved",
+          "owner": "FIN-01",
+          "responses": [
+            {
+              "basis": "Fresh applicable-version observation proves this fact; not a fabricated human reply",
+              "batch_id": 3,
+              "kind": "evidence_verification",
+              "proven_facts": [
+                "Net confirmed reimbursement exceeds the current accepted obligation"
+              ],
+              "revision": 1,
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row27",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "subject_id": "C20",
+              "subject_type": "claim"
+            }
+          ],
+          "history": [
+            {
+              "batch_id": 2,
+              "from_status": null,
+              "item_id": "RQ-65c94a8a3837096ec1a0f284",
+              "reason": "New or reopened missing fact/return",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "open"
+            },
+            {
+              "batch_id": 3,
+              "from_status": "open",
+              "item_id": "RQ-65c94a8a3837096ec1a0f284",
+              "reason": "Only this requested fact is now demonstrated by current evidence",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row27",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "resolved"
+            }
+          ]
+        },
+        {
+          "item_id": "RQ-e20eaf20f448b036b947421a",
+          "code": "finance_resolution",
+          "status": "open",
+          "owner": "FIN-01",
+          "responses": [],
+          "history": [
+            {
+              "batch_id": 2,
+              "from_status": null,
+              "item_id": "RQ-e20eaf20f448b036b947421a",
+              "reason": "New or reopened missing fact/return",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "open"
+            }
+          ]
+        }
+      ],
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "c1ab6859e7e60c019912d5b4a8a1660ecedcf3178d1508b43096650638468d4c",
+          "mtime_ns": "1792284169692280839"
+        },
+        "batches/2.json": {
+          "sha256": "b936eec77808a72488d2a42906af754ac21ff81b1bff8f3fa701f86a5b8213b4",
+          "mtime_ns": "1792284204897648009"
+        },
+        "batches/3.json": {
+          "sha256": "5ea8ad11250ce5efe90990b0f69873050b991499f24b6b6beb3780ca18b626d5",
+          "mtime_ns": "1792284314242657188"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "bb6bcafb0c46c608cb6e5a17a806eafaafb3fafa61632658658833d024e6dc12",
+          "mtime_ns": "1792284169699196649"
+        },
+        "stages/1/operation.json": {
+          "sha256": "522042e2f05dcadac9f6e0f8bf7d933a6dd62df79ddc0287634f41b37a3ffd43",
+          "mtime_ns": "1792284169699587729"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "9116d840c3bdde4d06c10601577344ba15c7d0759d37fe98ff8cd8e6f14a2899",
+          "mtime_ns": "1792284169699312732"
+        },
+        "stages/1/report.md": {
+          "sha256": "2897000d534698e5c695a0034b2feeaccfe421f79dd699b659e745eb55bd3868",
+          "mtime_ns": "1792284169699412689"
+        },
+        "stages/1/summary.json": {
+          "sha256": "2d2eeb71c63baf631bfdd4fdf9557415dcb4b11cbcc9513b20bdf13f7aa8490f",
+          "mtime_ns": "1792284169699494605"
+        },
+        "stages/2/claims.csv": {
+          "sha256": "3683b41858ba065869892d54fb61a285ec5a9aa2a29513ed83bcfc582daa257e",
+          "mtime_ns": "1792284204905090565"
+        },
+        "stages/2/operation.json": {
+          "sha256": "705fa7a293953b663fae1fff7270e50d0d41408ba7be5e23749ff5fce54d517b",
+          "mtime_ns": "1792284204905487853"
+        },
+        "stages/2/repair-queue.json": {
+          "sha256": "de3020738661ccc81409b1464de6914a8cba68705eb76745be3ed9a58f6d0a27",
+          "mtime_ns": "1792284204905213272"
+        },
+        "stages/2/report.md": {
+          "sha256": "a572f62eb4d5d1feafc7d6eab4eaa7b8a3434b9b0c07629275ba877c70586689",
+          "mtime_ns": "1792284204905316396"
+        },
+        "stages/2/summary.json": {
+          "sha256": "1e92ec8cfb3ba7fdd5cb71cf3f4323df53813cdd0093246826fdfbdb1a400190",
+          "mtime_ns": "1792284204905404479"
+        },
+        "stages/3/claims.csv": {
+          "sha256": "7eb0b90aa05390e91c5d37f0992ced807ebea91c6af7625867032e80188d5225",
+          "mtime_ns": "1792284314250727446"
+        },
+        "stages/3/operation.json": {
+          "sha256": "8dd852d02eca31ce0a72ba630e7de672977eb7879eeda2ebb43cac193ed30a9a",
+          "mtime_ns": "1792284314251132734"
+        },
+        "stages/3/repair-queue.json": {
+          "sha256": "5a1e9227ecde69d46e899d9f607e825c9455f3957a451fc3db81cc19a1501981",
+          "mtime_ns": "1792284314250846361"
+        },
+        "stages/3/report.md": {
+          "sha256": "3902f035d5a8c83a5db15625c03b325ce153d4cb1d87aa5f23729a4da3096b38",
+          "mtime_ns": "1792284314250950485"
+        },
+        "stages/3/summary.json": {
+          "sha256": "50e026de58eef24f2b1433e4ea2036d2a32a18e7d25843daf2eb6de028747399",
+          "mtime_ns": "1792284314251040693"
+        }
+      },
+      "prior_sealed_files_unchanged": true,
+      "prior_mtime_comparison": "exact decimal nanosecond strings"
+    },
+    {
+      "batch": 4,
+      "cursor": 4,
+      "C20": {
+        "status": "closed-reimbursed",
+        "paid_cents": 10000,
+        "refunded_cents": 1000,
+        "balance_cents": 0,
+        "current_resolution_event_ids": [
+          "F-C20-3"
+        ]
+      },
+      "C20_items": [
+        {
+          "item_id": "RQ-65c94a8a3837096ec1a0f284",
+          "code": "overpayment",
+          "status": "resolved",
+          "owner": "FIN-01",
+          "responses": [
+            {
+              "basis": "Fresh applicable-version observation proves this fact; not a fabricated human reply",
+              "batch_id": 3,
+              "kind": "evidence_verification",
+              "proven_facts": [
+                "Net confirmed reimbursement exceeds the current accepted obligation"
+              ],
+              "revision": 1,
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row27",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "subject_id": "C20",
+              "subject_type": "claim"
+            }
+          ],
+          "history": [
+            {
+              "batch_id": 2,
+              "from_status": null,
+              "item_id": "RQ-65c94a8a3837096ec1a0f284",
+              "reason": "New or reopened missing fact/return",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "open"
+            },
+            {
+              "batch_id": 3,
+              "from_status": "open",
+              "item_id": "RQ-65c94a8a3837096ec1a0f284",
+              "reason": "Only this requested fact is now demonstrated by current evidence",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row27",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "resolved"
+            }
+          ]
+        },
+        {
+          "item_id": "RQ-e20eaf20f448b036b947421a",
+          "code": "finance_resolution",
+          "status": "resolved",
+          "owner": "FIN-01",
+          "responses": [
+            {
+              "basis": "Fresh applicable-version observation proves this fact; not a fabricated human reply",
+              "batch_id": 4,
+              "kind": "evidence_verification",
+              "proven_facts": [
+                "Post-acceptance material correction/cancellation needs current explicit Finance resolution"
+              ],
+              "revision": 1,
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row27",
+                "REGISTERS-FINANCE-ACTIVITY:row28",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "subject_id": "C20",
+              "subject_type": "claim"
+            }
+          ],
+          "history": [
+            {
+              "batch_id": 2,
+              "from_status": null,
+              "item_id": "RQ-e20eaf20f448b036b947421a",
+              "reason": "New or reopened missing fact/return",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "open"
+            },
+            {
+              "batch_id": 4,
+              "from_status": "open",
+              "item_id": "RQ-e20eaf20f448b036b947421a",
+              "reason": "Only this requested fact is now demonstrated by current evidence",
+              "run_id": "revision-20261018T003113Z",
+              "source_refs": [
+                "INITIAL:page20",
+                "REGISTERS-FINANCE-ACTIVITY:row26",
+                "REGISTERS-FINANCE-ACTIVITY:row27",
+                "REGISTERS-FINANCE-ACTIVITY:row28",
+                "REGISTERS-FINANCE-ACTIVITY:row45"
+              ],
+              "to_status": "resolved"
+            }
+          ]
+        }
+      ],
+      "preserved_cases": {
+        "C18": {
+          "status": "held",
+          "allowed_cents": 10000,
+          "authorized_obligation_cents": 0,
+          "paid_cents": 10000,
+          "refunded_cents": 0,
+          "balance_cents": -10000,
+          "next_owner": "FIN-01"
+        },
+        "C19": {
+          "status": "closed-reimbursed",
+          "allowed_cents": 8000,
+          "authorized_obligation_cents": 8000,
+          "paid_cents": 8000,
+          "refunded_cents": 2000,
+          "balance_cents": 0,
+          "next_owner": null
+        },
+        "C22": {
+          "status": "held",
+          "allowed_cents": null,
+          "authorized_obligation_cents": null,
+          "paid_cents": 0,
+          "refunded_cents": 0,
+          "balance_cents": null,
+          "next_owner": "FIN-01"
+        },
+        "C23": {
+          "status": "held",
+          "allowed_cents": null,
+          "authorized_obligation_cents": null,
+          "paid_cents": 0,
+          "refunded_cents": 0,
+          "balance_cents": null,
+          "next_owner": "FIN-01"
+        },
+        "C116": {
+          "status": "held",
+          "allowed_cents": null,
+          "authorized_obligation_cents": null,
+          "paid_cents": 0,
+          "refunded_cents": 0,
+          "balance_cents": null,
+          "next_owner": "FIN-01"
+        },
+        "C117": {
+          "status": "held",
+          "allowed_cents": null,
+          "authorized_obligation_cents": null,
+          "paid_cents": 0,
+          "refunded_cents": 0,
+          "balance_cents": null,
+          "next_owner": "FIN-01"
+        }
+      },
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "c1ab6859e7e60c019912d5b4a8a1660ecedcf3178d1508b43096650638468d4c",
+          "mtime_ns": "1792284169692280839"
+        },
+        "batches/2.json": {
+          "sha256": "b936eec77808a72488d2a42906af754ac21ff81b1bff8f3fa701f86a5b8213b4",
+          "mtime_ns": "1792284204897648009"
+        },
+        "batches/3.json": {
+          "sha256": "5ea8ad11250ce5efe90990b0f69873050b991499f24b6b6beb3780ca18b626d5",
+          "mtime_ns": "1792284314242657188"
+        },
+        "batches/4.json": {
+          "sha256": "acefdcf4fa61e1b99c14912b8abe680109ff6f3cf3e04a55b0d34e6f79174f1d",
+          "mtime_ns": "1792284326787018296"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "bb6bcafb0c46c608cb6e5a17a806eafaafb3fafa61632658658833d024e6dc12",
+          "mtime_ns": "1792284169699196649"
+        },
+        "stages/1/operation.json": {
+          "sha256": "522042e2f05dcadac9f6e0f8bf7d933a6dd62df79ddc0287634f41b37a3ffd43",
+          "mtime_ns": "1792284169699587729"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "9116d840c3bdde4d06c10601577344ba15c7d0759d37fe98ff8cd8e6f14a2899",
+          "mtime_ns": "1792284169699312732"
+        },
+        "stages/1/report.md": {
+          "sha256": "2897000d534698e5c695a0034b2feeaccfe421f79dd699b659e745eb55bd3868",
+          "mtime_ns": "1792284169699412689"
+        },
+        "stages/1/summary.json": {
+          "sha256": "2d2eeb71c63baf631bfdd4fdf9557415dcb4b11cbcc9513b20bdf13f7aa8490f",
+          "mtime_ns": "1792284169699494605"
+        },
+        "stages/2/claims.csv": {
+          "sha256": "3683b41858ba065869892d54fb61a285ec5a9aa2a29513ed83bcfc582daa257e",
+          "mtime_ns": "1792284204905090565"
+        },
+        "stages/2/operation.json": {
+          "sha256": "705fa7a293953b663fae1fff7270e50d0d41408ba7be5e23749ff5fce54d517b",
+          "mtime_ns": "1792284204905487853"
+        },
+        "stages/2/repair-queue.json": {
+          "sha256": "de3020738661ccc81409b1464de6914a8cba68705eb76745be3ed9a58f6d0a27",
+          "mtime_ns": "1792284204905213272"
+        },
+        "stages/2/report.md": {
+          "sha256": "a572f62eb4d5d1feafc7d6eab4eaa7b8a3434b9b0c07629275ba877c70586689",
+          "mtime_ns": "1792284204905316396"
+        },
+        "stages/2/summary.json": {
+          "sha256": "1e92ec8cfb3ba7fdd5cb71cf3f4323df53813cdd0093246826fdfbdb1a400190",
+          "mtime_ns": "1792284204905404479"
+        },
+        "stages/3/claims.csv": {
+          "sha256": "7eb0b90aa05390e91c5d37f0992ced807ebea91c6af7625867032e80188d5225",
+          "mtime_ns": "1792284314250727446"
+        },
+        "stages/3/operation.json": {
+          "sha256": "8dd852d02eca31ce0a72ba630e7de672977eb7879eeda2ebb43cac193ed30a9a",
+          "mtime_ns": "1792284314251132734"
+        },
+        "stages/3/repair-queue.json": {
+          "sha256": "5a1e9227ecde69d46e899d9f607e825c9455f3957a451fc3db81cc19a1501981",
+          "mtime_ns": "1792284314250846361"
+        },
+        "stages/3/report.md": {
+          "sha256": "3902f035d5a8c83a5db15625c03b325ce153d4cb1d87aa5f23729a4da3096b38",
+          "mtime_ns": "1792284314250950485"
+        },
+        "stages/3/summary.json": {
+          "sha256": "50e026de58eef24f2b1433e4ea2036d2a32a18e7d25843daf2eb6de028747399",
+          "mtime_ns": "1792284314251040693"
+        },
+        "stages/4/claims.csv": {
+          "sha256": "70aecf200650eeb01c4cf44a44a67781edb15ac9efac9b3a07b39a97dbdb2807",
+          "mtime_ns": "1792284326795296386"
+        },
+        "stages/4/operation.json": {
+          "sha256": "fc2190fca7eeca6360fb7b1722247cc727cee080a6afd997250c8491bc1cab6e",
+          "mtime_ns": "1792284326795689382"
+        },
+        "stages/4/repair-queue.json": {
+          "sha256": "5f1e2063b2354ddc35bcbf299ea32f2486242f16ce7b16eeccfd1b8151b29b65",
+          "mtime_ns": "1792284326795401635"
+        },
+        "stages/4/report.md": {
+          "sha256": "a00fc5976284c34180db2d3e8ac996dc151b20b88b40f4d85dbb7961c5ef1260",
+          "mtime_ns": "1792284326795507050"
+        },
+        "stages/4/summary.json": {
+          "sha256": "1776c81b3bfaf03772d5568c215b5b00c5976196b3d280cc25d9f848ebc4ed16",
+          "mtime_ns": "1792284326795588008"
+        }
+      },
+      "prior_sealed_files_unchanged": true,
+      "prior_mtime_comparison": "exact decimal nanosecond strings"
+    }
+  ]
+}

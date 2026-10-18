@@ -51,7 +51,12 @@ class RepairQueueTests(unittest.TestCase):
     def test_native_c09_return_is_superseded_not_resolved_by_revision_two(self):
         result = self.build(self.native["batches"])
         item = next(item for item in result["items"] if item["subject_id"] == "C09" and item["code"] == "review_return")
-        self.assertEqual((item["revision"], item["owner"], item["status"]), (1, "LEAD-01", "superseded"))
+        self.assertEqual((item["revision"], item["owner"], item["status"]), (1, "EMP-01", "superseded"))
+        self.assertEqual(item["repair_provider_role"], "employee")
+        self.assertEqual(item["ownership_source_refs"], ["REGISTERS-PEOPLE:row6"])
+        self.assertEqual(item["returning_reviews"], [dict(decision_id="D-C09-1-claim-budget_owner-1",
+            reviewer="LEAD-01", roles=["budget_owner"], source_refs=["REGISTERS-REVIEW-LEDGER:row32"])])
+        self.assertEqual(item["requests"][0]["recipient"], "EMP-01")
         self.assertEqual(item["requested_facts"], ["Provide revised trip evidence."])
         self.assertEqual(item["affected_fields"], ["trip", "amount", "evidence"])
         self.assertEqual(item["superseded_by"], {"revision": 2, "source_ref": "UPDATES:page1"})
@@ -64,9 +69,62 @@ class RepairQueueTests(unittest.TestCase):
         returns = [item for item in result["items"] if item["subject_id"] == "C21" and item["code"] == "review_return"]
         self.assertEqual(len(returns), 1)
         self.assertEqual((returns[0]["owner"], returns[0]["status"]), ("LEAD-01", "open"))
+        self.assertEqual(returns[0]["repair_provider_role"], "budget_owner")
+        self.assertEqual(returns[0]["returning_reviews"], [dict(decision_id="D-C21-1-claim-budget_owner-1",
+            reviewer="LEAD-01", roles=["budget_owner"], source_refs=["REGISTERS-REVIEW-LEDGER:row57"])])
         self.assertEqual(returns[0]["origin_decision_ids"], ["D-C21-1-claim-budget_owner-1"])
         duplicates = [item for item in result["items"] if item["subject_id"] == "C21" and item["code"] == "approval_reply" and item["roles"] == ["budget_owner"]]
         self.assertEqual(duplicates, [])
+
+    def test_supplemental_evidence_task_routes_by_responsibility_not_subject_or_returning_role(self):
+        person = dict(self.people[2])
+        row = dict(self.reviews[0], **{"Decision reference": "D-SUPPLEMENTAL", "Subject type": "claim",
+            "Subject reference": "SUPPLEMENTAL", "Revision": 1, "Review roles": "supervisor",
+            "Reviewer": person["Supervisor"], "Outcome": "return", "Reason": "Claim evidence is missing.",
+            "Repair requested": "Provide revised trip evidence.", "_ref": "supplemental:review"})
+        observation = observed()
+        observation["authority"]["rejected_decisions"] = [dict(decision_id="D-SUPPLEMENTAL",
+            reason="Current reviewer outcome is return", source_refs=[row["_ref"]])]
+        result = self.build([dict(batch_id=1, claims={"SUPPLEMENTAL": observation})], reviews=[row])
+        item = result["items"][0]
+        self.assertEqual((item["owner"], item["repair_provider_role"]), ("EMP-03", "employee"))
+        self.assertEqual(item["returning_reviews"][0]["reviewer"], "SUP-01")
+        self.assertEqual(item["origin_decision_ids"], ["D-SUPPLEMENTAL"])
+
+    def test_supplemental_unknown_return_task_escalates_without_guessing_evidence_provider(self):
+        person = dict(self.people[2])
+        row = dict(self.reviews[0], **{"Decision reference": "D-UNKNOWN", "Subject type": "claim",
+            "Subject reference": "SUPPLEMENTAL", "Revision": 1, "Review roles": "supervisor",
+            "Reviewer": person["Supervisor"], "Outcome": "return", "Reason": "Unspecified repair required.",
+            "Repair requested": "Resolve an unspecified new responsibility.", "_ref": "supplemental:review"})
+        observation = observed()
+        observation["authority"]["rejected_decisions"] = [dict(decision_id="D-UNKNOWN",
+            reason="Current reviewer outcome is return", source_refs=[row["_ref"]])]
+        result = self.build([dict(batch_id=1, claims={"SUPPLEMENTAL": observation})], reviews=[row])
+        item = result["items"][0]
+        self.assertEqual((item["owner"], item["repair_provider_role"]), ("ADMIN-01", "administration_escalation"))
+        self.assertEqual(item["status"], "open")
+        self.assertIn("responsible provider", item["next_action"])
+        self.assertEqual(item["requested_facts"], [row["Repair requested"]])
+        self.assertEqual(item["returning_reviews"][0]["reviewer"], "SUP-01")
+
+    def test_supplemental_repeated_return_preserves_each_decision_and_original_request_history(self):
+        row = next(row for row in self.reviews if row.get("Decision reference") == "D-C09-1-claim-budget_owner-1")
+        later = {**row, "Decision reference": "D-SUPPLEMENTAL-LATER", "Arrival batch": 2,
+                 "_ref": "supplemental:later-return"}
+        first = deepcopy(self.native["batches"][0]["claims"]["C09"])
+        second = deepcopy(first)
+        second["authority"]["rejected_decisions"] = [dict(decision_id=later["Decision reference"],
+            reason="Current reviewer outcome is return", source_refs=[later["_ref"]])]
+        result = self.build([dict(batch_id=1, claims={"C09": first}), dict(batch_id=2, claims={"C09": second})],
+                            reviews=[row, later])
+        item = next(item for item in result["items"] if item["code"] == "review_return")
+        self.assertEqual(item["origin_decision_ids"], [row["Decision reference"], later["Decision reference"]])
+        self.assertEqual([context["decision_id"] for context in item["returning_reviews"]], item["origin_decision_ids"])
+        self.assertEqual(len(item["requests"]), 1)
+        self.assertEqual(item["requests"][0]["recipient"], "EMP-01")
+        self.assertIn(row["_ref"], item["requests"][0]["source_refs"])
+        self.assertEqual([event["to_status"] for event in item["history"]], ["open"])
 
     def test_partial_c116_definition_resolves_only_the_proven_cost_fact(self):
         cap, fx = issue("missing_cap", "COST-116-1"), issue("missing_rate", "COST-116-2")

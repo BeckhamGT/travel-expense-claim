@@ -1,0 +1,15 @@
+Setup: python3 heredoc copies src, skills, docs, README.md, snapshot.schema.json, requirements.txt, AGENTS.md, original interview, all 21 retained manifest files, source-read-verification.json, original manifest and linked prior manifest. Copied manifest receives distinct offline test run_id and exact prior link.
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg/workspace
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow seal --sources /private/tmp/travel-skill-forward-c7xz9wyg/workspace/artifacts/runs/offline-skill-forward-test-20261018T004145Z/sources.json --batch 1 --completion-accepted
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg/workspace
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow status --sources /private/tmp/travel-skill-forward-c7xz9wyg/workspace/artifacts/runs/offline-skill-forward-test-20261018T004145Z/sources.json
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg/workspace
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow continue --sources /private/tmp/travel-skill-forward-c7xz9wyg/workspace/artifacts/runs/offline-skill-forward-test-20261018T004145Z/sources.json --batch 2 --task RQ-d506ea23d238f50ef3326f3a --completion-accepted
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg/workspace
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow status --sources /private/tmp/travel-skill-forward-c7xz9wyg/workspace/artifacts/runs/offline-skill-forward-test-20261018T004145Z/sources.json --task RQ-d506ea23d238f50ef3326f3a
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg/workspace
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow continue --sources /private/tmp/travel-skill-forward-c7xz9wyg/workspace/artifacts/runs/offline-skill-forward-test-20261018T004145Z/sources.json --batch 2 --task RQ-d506ea23d238f50ef3326f3a --completion-accepted
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg/workspace
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /Users/user/fellowship/travel-expense-claim/.venv/bin/python -m travel_expense_claim.workflow verify --sources /private/tmp/travel-skill-forward-c7xz9wyg/workspace/artifacts/runs/offline-skill-forward-test-20261018T004145Z/sources.json --completion-accepted
+cwd=/private/tmp/travel-skill-forward-c7xz9wyg
+python3 independent_checks.py

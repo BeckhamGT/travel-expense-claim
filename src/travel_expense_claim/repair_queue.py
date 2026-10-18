@@ -37,6 +37,26 @@ def _financial_sources(observation):
         request.get("source_refs", []) for request in observation.get("original_requests", {}).values()])
 
 
+def _return_route(row, person):
+    """Route established repair tasks independently of who returned the review.
+
+    Interview lines 151/159/175 assign missing claim evidence to the employee,
+    and line 167 assigns funding decisions to the budget owner. These are task
+    routes, never subject-ID or returning-role special cases. An unfamiliar
+    request needs administrative routing rather than an inferred provider.
+    """
+    task = " ".join(str(row.get("Repair requested", "")).casefold().split()).rstrip(".")
+    if task == "provide revised trip evidence" and person.get("Employee ID"):
+        return (person["Employee ID"], "employee", row["Repair requested"],
+                "Employee supplies missing claim evidence (interview lines 151/159/175)")
+    if task == "obtain funding decision" and person.get("Budget owner"):
+        return (person["Budget owner"], "budget_owner", row["Repair requested"],
+                "Directory budget owner controls funding decisions (interview line 167)")
+    return (person.get("Administration reviewer") or "Unassigned administration", "administration_escalation",
+            "Establish the responsible provider for the returned task, then obtain its source-bound repair",
+            "Unrecognized task responsibility requires administrative escalation (interview lines 159/175)")
+
+
 def _proof(item, observation, review_rows, processes):
     """A missing issue alone is insufficient; require the relevant positive fact."""
     if observation.get("revision") != item["revision"]:
@@ -125,7 +145,8 @@ def build_queue(run_id, batches, versions, reviews, people):
     ``batches`` is the ordered cumulative recheck output. Line-specific issues
     should carry ``cost_id`` and may carry ``requested_facts``. Current approval
     gaps expand into exact directory roles; admitted returns retain their own
-    reason, affected fields and reviewer. A new claim revision supersedes old
+    reason, affected fields and reviewer, separately from the repair provider.
+    A new claim revision supersedes old
     work, never resolves it using a reply for another version.
     """
     if not isinstance(run_id, str) or not run_id.strip():
@@ -176,6 +197,14 @@ def build_queue(run_id, batches, versions, reviews, people):
         item["source_refs"] = _sources(item["source_refs"], spec["source_refs"])
         for key in ("owner", "next_action", "requested_facts", "missing_fact"):
             item[key] = spec[key]
+        if spec["code"] == "review_return":
+            item["origin_decision_ids"] = _sources(item.get("origin_decision_ids"), spec.get("origin_decision_ids"))
+            for context in spec.get("returning_reviews", []):
+                if context not in item["returning_reviews"]:
+                    item["returning_reviews"].append(dict(context))
+            item["returning_reviews"].sort(key=lambda context: context["decision_id"])
+            for key in ("repair_provider_role", "ownership_basis", "ownership_source_refs"):
+                item[key] = spec[key]
         if resolved_by:
             proof_refs = _sources(spec["source_refs"], _refs(resolved_by))
             if item["status"] != "resolved":
@@ -217,10 +246,14 @@ def build_queue(run_id, batches, versions, reviews, people):
                 if not roles or any(role not in ROLE_FIELDS or person.get(ROLE_FIELDS[role]) != row.get("Reviewer") for role in roles):
                     continue
                 returned_roles.update(roles)
+                owner, provider_role, next_action, ownership_basis = _return_route(row, person)
                 spec = dict(subject_type="claim", subject_id=subject_id, revision=revision, code="review_return", cost_id=None,
-                    roles=roles, owner=row["Reviewer"], missing_fact=row["Reason"],
+                    roles=roles, owner=owner, repair_provider_role=provider_role,
+                    ownership_basis=ownership_basis, ownership_source_refs=_sources([person.get("_ref")]),
+                    returning_reviews=[dict(decision_id=row["Decision reference"], reviewer=row["Reviewer"],
+                        roles=roles, source_refs=_sources([row.get("_ref")]))], missing_fact=row["Reason"],
                     requested_facts=[row["Repair requested"]], affected_fields=list(_refs(row.get("Affected fields"))),
-                    next_action=row["Repair requested"], source_refs=_sources(rejected.get("source_refs"), [row.get("_ref"), observation.get("source_ref")]),
+                    next_action=next_action, source_refs=_sources(rejected.get("source_refs"), [row.get("_ref"), observation.get("source_ref")]),
                     origin_decision_ids=[row["Decision reference"]])
                 active.add(observe(spec, batch_id))
             for issue in observation.get("issues", []):

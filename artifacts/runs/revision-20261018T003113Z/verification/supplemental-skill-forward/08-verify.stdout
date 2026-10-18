@@ -1,0 +1,21 @@
+{
+  "mode": "verify",
+  "verified_batches": [
+    1,
+    2
+  ],
+  "run_id": "offline-skill-forward-test-20261018T004145Z",
+  "current_batch": 2,
+  "next_batch": 3,
+  "state": "awaiting-explicit-continuation",
+  "open_work_by_owner": {
+    "SUP-01": 16,
+    "LEAD-01": 15,
+    "ADMIN-01": 20,
+    "FIN-01": 14,
+    "EMP-01": 2,
+    "EMP-03": 2,
+    "DIR-01": 1
+  },
+  "selected_tasks": []
+}

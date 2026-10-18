@@ -1,0 +1,24 @@
+{
+  "scope": "Supplemental offline checks; retained source values parsed independently of implementation. Does not certify all business rules or fresh native source access.",
+  "passed": true,
+  "observations": [
+    {
+      "batch": 1,
+      "retained_finance_events": 100,
+      "retained_accepted_cents": 1183415,
+      "retained_gross_cents": 0,
+      "retained_refund_cents": 0,
+      "open_repair_items": 65,
+      "closed_reimbursed": 0
+    },
+    {
+      "batch": 2,
+      "retained_finance_events": 200,
+      "retained_accepted_cents": 1183415,
+      "retained_gross_cents": 1153915,
+      "retained_refund_cents": 0,
+      "open_repair_items": 70,
+      "closed_reimbursed": 95
+    }
+  ]
+}

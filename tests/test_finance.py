@@ -96,6 +96,83 @@ class NativeFinanceTests(unittest.TestCase):
         self.assertEqual({hold["claim_id"] for hold in result["holds"]}, {"C18"})
         self.assertEqual(sum(item["paid_cents"] for item in result["claims"].values()), 1206415)
         self.assertEqual(sum(item["refunded_cents"] for item in result["claims"].values()), 3000)
+        c18 = result["requests"]["REQ-C18"]
+        self.assertEqual((c18["current_obligation_cents"], c18["net_paid_cents"], c18["balance_cents"]),
+                         (0, 10000, -10000))
+        self.assertIn("settlement_after_cancellation", {hold["code"] for hold in c18["holds"]})
+
+
+class SupplementalLateTransferRecoveryTests(unittest.TestCase):
+    """Hypothetical recovery fixtures, never additional supplied C18 outcomes."""
+
+    def setUp(self):
+        self.accept = event("accepted", "accepted", 1, obligation=100)
+        self.cancel = event("cancelled", "cancelled", 2)
+        self.late = event("late", "settled", 3, amount=100)
+        self.refund = event("late-refund", "refund", 4, amount=100, original="late")
+        self.resolution = event("late-resolution", "resolution", 4, obligation=0,
+                                stamp="2026-09-14 13:00:00 UTC")
+        self.rows = [self.accept, self.cancel, self.late]
+
+    def late_holds(self, result):
+        return [hold for hold in result["holds"] if hold["code"] == "settlement_after_cancellation"]
+
+    def test_linked_refund_and_later_same_request_resolution_resolve_only_the_late_hold(self):
+        result = summary([*self.rows, self.refund, self.resolution])
+        request = result["requests"]["REQ-A"]
+        self.assertEqual((request["paid_cents"], request["refunded_cents"], request["net_paid_cents"]),
+                         (10000, 10000, 0))
+        self.assertEqual(self.late_holds(result), [])
+        self.assertEqual(request["holds"], [])
+        history = request["resolved_holds"]
+        self.assertEqual(len(history), 1)
+        self.assertEqual(history[0]["event_id"], "late")
+        self.assertEqual(history[0]["source_refs"], ["isolated-fixture:late:batch3"])
+        self.assertEqual(history[0]["resolved_by_event_id"], "late-resolution")
+        self.assertEqual(history[0]["resolution_evidence_event_ids"], ["late-refund", "late-resolution"])
+        self.assertEqual(history[0]["resolution_source_refs"],
+                         ["isolated-fixture:late-refund:batch4", "isolated-fixture:late-resolution:batch4"])
+        self.assertEqual(result["resolved_holds"], history)
+        self.assertEqual(result["claims"]["A"]["resolved_holds"], history)
+
+    def test_refund_or_matching_resolution_alone_never_resolves_the_hold(self):
+        for additions in ([self.refund], [self.resolution]):
+            with self.subTest(additions=additions):
+                result = summary([*self.rows, *additions])
+                self.assertEqual(len(self.late_holds(result)), 1)
+
+    def test_resolution_before_refund_or_with_remaining_money_cannot_clear_the_hold(self):
+        stale = {**self.resolution, "Activity time (UTC)": "2026-09-14 11:00:00 UTC"}
+        partial = {**self.refund, "Amount (EUR)": 60}
+        for additions in ([stale, self.refund], [partial, self.resolution]):
+            with self.subTest(additions=additions):
+                result = summary([*self.rows, *additions])
+                self.assertEqual(len(self.late_holds(result)), 1)
+
+    def test_other_request_resolution_cannot_clear_this_request_hold(self):
+        other = [event("accept-B", "accepted", 1, claim="B", request="REQ-B", obligation=100),
+                 event("cancel-B", "cancelled", 2, claim="B", request="REQ-B"),
+                 event("resolve-B", "resolution", 4, claim="B", request="REQ-B", obligation=0)]
+        result = summary([*self.rows, self.refund, *other])
+        self.assertEqual(len(self.late_holds(result)), 1)
+        self.assertEqual(result["requests"]["REQ-B"]["resolution_event_ids"], ["resolve-B"])
+
+    def test_successful_late_recovery_does_not_clear_invalid_or_conflicting_deliveries(self):
+        invalid = event("invalid", "settled", 4, amount=1, **{"Payee ID": "EMP-02"})
+        conflicting = {**self.late, "Arrival batch": 4, "Amount (EUR)": 99,
+                       "_ref": "isolated-fixture:conflicting-redelivery"}
+        result = summary([*self.rows, self.refund, self.resolution, invalid, conflicting])
+        self.assertEqual(self.late_holds(result), [])
+        self.assertEqual({hold["code"] for hold in result["holds"]}, {"request_conflict", "event_conflict"})
+        self.assertEqual(result["requests"]["REQ-A"]["net_paid_cents"], 0)
+
+    def test_later_new_late_transfer_reopens_the_hold_without_rewriting_resolved_history(self):
+        later = event("later-late", "settled", 4, amount=10,
+                      stamp="2026-09-14 14:00:00 UTC")
+        result = summary([*self.rows, self.refund, self.resolution, later])
+        self.assertEqual([hold["event_id"] for hold in self.late_holds(result)], ["later-late"])
+        self.assertEqual([hold["event_id"] for hold in result["resolved_holds"]], ["late"])
+        self.assertEqual(result["requests"]["REQ-A"]["net_paid_cents"], 1000)
 
 
 class FinanceAdmissionTests(unittest.TestCase):

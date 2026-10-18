@@ -1,0 +1,109 @@
+{
+  "populated_values": 13703,
+  "mismatches": [],
+  "features": {
+    "native_notes": 0,
+    "native_hyperlinks": 0,
+    "native_validations": 0,
+    "formulas": 0,
+    "xlsx_comments": 0,
+    "external_links": 0,
+    "hidden_sheets": [],
+    "hidden_rows": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    },
+    "hidden_columns": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    }
+  },
+  "tabs": [
+    {
+      "title": "People",
+      "sheet_id": 346358653,
+      "max_row": 19,
+      "max_column": 10,
+      "populated_values": 153
+    },
+    {
+      "title": "Trips",
+      "sheet_id": 1638508794,
+      "max_row": 128,
+      "max_column": 15,
+      "populated_values": 1626
+    },
+    {
+      "title": "Merchant payments",
+      "sheet_id": 2006903626,
+      "max_row": 206,
+      "max_column": 9,
+      "populated_values": 1821
+    },
+    {
+      "title": "FX",
+      "sheet_id": 777323076,
+      "max_row": 7,
+      "max_column": 4,
+      "populated_values": 15
+    },
+    {
+      "title": "Caps",
+      "sheet_id": 768624731,
+      "max_row": 7,
+      "max_column": 7,
+      "populated_values": 24
+    },
+    {
+      "title": "Budget",
+      "sheet_id": 1700439189,
+      "max_row": 8,
+      "max_column": 9,
+      "populated_values": 38
+    },
+    {
+      "title": "Review ledger",
+      "sheet_id": 492252124,
+      "max_row": 312,
+      "max_column": 13,
+      "populated_values": 3702
+    },
+    {
+      "title": "Review packets",
+      "sheet_id": 2147088768,
+      "max_row": 312,
+      "max_column": 16,
+      "populated_values": 3763
+    },
+    {
+      "title": "Finance activity",
+      "sheet_id": 43269773,
+      "max_row": 225,
+      "max_column": 13,
+      "populated_values": 2434
+    },
+    {
+      "title": "Travel cancellations",
+      "sheet_id": 1608282833,
+      "max_row": 14,
+      "max_column": 14,
+      "populated_values": 127
+    }
+  ]
+}

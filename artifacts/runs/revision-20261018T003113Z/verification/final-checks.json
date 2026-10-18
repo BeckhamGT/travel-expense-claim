@@ -1,0 +1,296 @@
+{
+  "mode": "Current uncommitted implementation/run pairing checked before final commit; final Git/Entire publication verified separately",
+  "graded_commit": "d11fb0607cded870f51308226cdc2db686460c0a",
+  "HEAD_observed": "d11fb0607cded870f51308226cdc2db686460c0a",
+  "run_id": "revision-20261018T003113Z",
+  "source_sha256": "02d38e092921badf1264aad2e0475cd6919696d95efc103fb7765a655d683283",
+  "implementation_sha256": "4ecd2681e41e0d9abe0d8d0f3cf1bfe872ed6f265506fe79e419b7a74dad82a8",
+  "original_interview_sha256": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2",
+  "original_supplied_export_comparison": "Byte-identical to the original user-supplied export on this host",
+  "historical_79_files_unchanged": {
+    "artifacts/runs/review-20261017033849Z/retained/claims-initial.pages.json": "47f58278045af707269011142db6c7b439ff8264753f6ff67df3c88daae20b5f",
+    "artifacts/runs/review-20261017033849Z/retained/claims-initial.pdf": "b42a28754b1877363e1a25ed4fa1f3865915f44ec9995f7ed15fc9b6eefb08b7",
+    "artifacts/runs/review-20261017033849Z/retained/claims-initial.txt": "28ea8b06570fda2b782fb351a5209cc9aa178a36938311592496792cf2297809",
+    "artifacts/runs/review-20261017033849Z/retained/claims-updates.pages.json": "493836163efb323e6868aeb0dcf34e99e1698595e0facc4a8c451236a821a845",
+    "artifacts/runs/review-20261017033849Z/retained/claims-updates.pdf": "03c15787d18e2928457cd0164b573dc03a3baade0ed26a391ba79c73a568da3b",
+    "artifacts/runs/review-20261017033849Z/retained/claims-updates.txt": "b9e002a70abf3ed7c6a4b1946db75b6c955e9ae42f3843f73d6480dc24fa38d7",
+    "artifacts/runs/review-20261017033849Z/retained/drive-metadata.json": "8c6c6438cf95f1c9fdefa045e771e3b8211d443508c51777675ad49738b7f9f6",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-budget.json": "fd751302f3415c17da635cce2caeb1a3104d445f4673b3fba5466ad7013114f0",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-caps.json": "d64d611b896a2c5024bedc1bcb67370e9ed46513d8e110e5d35f089f048d3ee7",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-finance-activity.json": "0c236c40583cde3776893ade24128c7b118aaacf1e8492f39efa2e2b8b25b2e6",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-fx.json": "58063a5cc25f0d356fa4a7b1a9c9e764027527863b89c86a9a9f8d840006b9f4",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-merchant-payments.json": "d8ba7de2383c11ac9b0e0cc62d7bbb37edf9e5d52be8b22be409b2a83939d0c6",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-people.json": "8991831129d1e9bc80c8994c563a502a5b34247b2b9191d554f7b9930b325e85",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-review-ledger.json": "fdba1d113e38dff83bfcb529e29f2afae256aae611a049f59d3508fb668aa7e0",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-review-packets.json": "800c4b87aa3730ee5d50ea4bd7120397b21498f2fdccee230cb17566d7f90dc4",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-travel-cancellations.json": "39c85c94cf11a0906791a16fa4a64fc4adfe0daf49d0dcf4412d73c6e9fb5417",
+    "artifacts/runs/review-20261017033849Z/retained/native-tab-trips.json": "970cba58664a2e1eea005a1df72668580b3a47d067a6c615fb09aa8d8386c2c9",
+    "artifacts/runs/review-20261017033849Z/retained/policy.txt": "61e2354bded6673c3582e66bd293aea03ca262cee71396c5cd52ba557cbadb30",
+    "artifacts/runs/review-20261017033849Z/retained/receipts.pages.json": "8f13cb3c372a2e960ff77ef39ca6bca064ee9aff1decacd80966ed1952c98457",
+    "artifacts/runs/review-20261017033849Z/retained/receipts.pdf": "4c3dc47f187ccc5cdd0112e18afaadd3b6363bbb4d96793205ef8f3d4c06fcc8",
+    "artifacts/runs/review-20261017033849Z/retained/receipts.txt": "6e98123db10b71a5409c8fc0a8847c73b8eb5680e8f8195c071a37d579d4afaf",
+    "artifacts/runs/review-20261017033849Z/retained/tab-budget.json": "d8a22faf2989db2f5275c90c433f3e107ac564b07e873cd94b0d8a60c1af5acb",
+    "artifacts/runs/review-20261017033849Z/retained/tab-caps.json": "648eaafdac84cfb9bf466cb99211323ff6b13a20bc20f884233bad79c3b27036",
+    "artifacts/runs/review-20261017033849Z/retained/tab-finance-activity.json": "72d2d954090aa39615413160adc9d176b5d285756a37e426a197f74ac8c51587",
+    "artifacts/runs/review-20261017033849Z/retained/tab-fx.json": "7943266edd8323cb8d680aa029f67201e0127fe7397ae637b29fab24cde50e6d",
+    "artifacts/runs/review-20261017033849Z/retained/tab-merchant-payments.json": "d005ac25527839f061d68ce760501d6cee49b87df984cdc9e41478198dd2665b",
+    "artifacts/runs/review-20261017033849Z/retained/tab-people.json": "88be9ce724b5827d5b63d172ed63998b12025860f645206f0b7ae98737a33c45",
+    "artifacts/runs/review-20261017033849Z/retained/tab-review-ledger.json": "fe64bdf9c7ea80bf9fadec8cdb586c82f1809662a73d230bbf4aed0c5c643aac",
+    "artifacts/runs/review-20261017033849Z/retained/tab-review-packets.json": "acfda442a23c70761d2190fb248f16b38da62e0f79df73f789a0a89bc8dfc987",
+    "artifacts/runs/review-20261017033849Z/retained/tab-travel-cancellations.json": "8694feb37379324869ec2027b692b95ea23d1a2baaf6d0f57295ca0edf9902b7",
+    "artifacts/runs/review-20261017033849Z/retained/tab-trips.json": "ce1ca8e4a9979fb0df22ba9762aa3aedd3e88996358bc4a5dfad9d970a2a4045",
+    "artifacts/runs/review-20261017033849Z/retained/travel-registers.xlsx": "e6236172a286fd0bd75d1ab2112d5f0f507810ee056aa84d3968b8cdfae52ab4",
+    "artifacts/runs/review-20261017033849Z/retained/workbook-metadata.json": "649847e91077c65996c0e6cb96695ee8fdbb720a823e394d86d4ac9de305b9bd",
+    "artifacts/runs/review-20261017033849Z/sources.json": "23895ede4a65fa089ad8b73812b9182e4f1d8aff85516aa5d93d4b8a43aff5a5",
+    "artifacts/runs/submission-20261017T154939Z/batches/1.json": "26a114d30bb3b17f20ddaa28433e8edd3c5185f962e133a10e355598f4aa0141",
+    "artifacts/runs/submission-20261017T154939Z/batches/2.json": "a7b13dd89c63b1e0da6be1087602236c52fd1da0dbed4ed50557fb51166d172b",
+    "artifacts/runs/submission-20261017T154939Z/batches/3.json": "b73fcfc644613e9d1b5cbe5b96951ebb9baa939977cb42bbc11aba716a9dda25",
+    "artifacts/runs/submission-20261017T154939Z/batches/4.json": "a6db8da2fef010626eedf30712f8c2f07146b7f99557a108d371177b803c7572",
+    "artifacts/runs/submission-20261017T154939Z/claims.csv": "7c6b2cf97fbc53e5f7fc0d3e0f4d5bb44998f65f55d68553d402e7c2c766cbda",
+    "artifacts/runs/submission-20261017T154939Z/inspection/repair-queue.json": "08829e965757f2532f967e564615fa936827cc668f121650cee8ab5a51ea9095",
+    "artifacts/runs/submission-20261017T154939Z/inspection/report.md": "2877f6a74ce57845d6d21754792261aaf3dfca1814c38b6d558f10c5100a84e2",
+    "artifacts/runs/submission-20261017T154939Z/inspection/summary.json": "d8e1f51560dc7fbd30f199ff425a0d28ee241330cb4afa11d3a4bfc9f1e834e3",
+    "artifacts/runs/submission-20261017T154939Z/preview/repair-queue.json": "fcfe1a00bdf3213e8ad08cf9610c85e86c2df5aab524d80aba44baaf626f7764",
+    "artifacts/runs/submission-20261017T154939Z/preview/report.md": "efb0a26a4292658be34073499429bf5902cbef0f98033ba29a001f0daf2fa0e5",
+    "artifacts/runs/submission-20261017T154939Z/preview/summary.json": "6076aebbb0d251073454b47438e34d7db878989cde40d0917fcb3237f1c1352a",
+    "artifacts/runs/submission-20261017T154939Z/repair-queue.json": "08829e965757f2532f967e564615fa936827cc668f121650cee8ab5a51ea9095",
+    "artifacts/runs/submission-20261017T154939Z/report.md": "9c806a85608345dab9f6ced82b94d519dc213cba9553100f6348a69a2a29570b",
+    "artifacts/runs/submission-20261017T154939Z/retained/claims-initial.pages.json": "47f58278045af707269011142db6c7b439ff8264753f6ff67df3c88daae20b5f",
+    "artifacts/runs/submission-20261017T154939Z/retained/claims-initial.pdf": "b42a28754b1877363e1a25ed4fa1f3865915f44ec9995f7ed15fc9b6eefb08b7",
+    "artifacts/runs/submission-20261017T154939Z/retained/claims-initial.txt": "7cecc9e269b0fbf1965c302851987c8c30edb083a05d4a6484038e67e415435d",
+    "artifacts/runs/submission-20261017T154939Z/retained/claims-updates.pages.json": "493836163efb323e6868aeb0dcf34e99e1698595e0facc4a8c451236a821a845",
+    "artifacts/runs/submission-20261017T154939Z/retained/claims-updates.pdf": "03c15787d18e2928457cd0164b573dc03a3baade0ed26a391ba79c73a568da3b",
+    "artifacts/runs/submission-20261017T154939Z/retained/claims-updates.txt": "6bb1479a43f6c28006339d3c502a828e54c6fde928f14916ac91abcf2428f3a8",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-budget.json": "fd751302f3415c17da635cce2caeb1a3104d445f4673b3fba5466ad7013114f0",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-caps.json": "d64d611b896a2c5024bedc1bcb67370e9ed46513d8e110e5d35f089f048d3ee7",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-finance-activity.json": "0c236c40583cde3776893ade24128c7b118aaacf1e8492f39efa2e2b8b25b2e6",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-fx.json": "58063a5cc25f0d356fa4a7b1a9c9e764027527863b89c86a9a9f8d840006b9f4",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-merchant-payments.json": "d8ba7de2383c11ac9b0e0cc62d7bbb37edf9e5d52be8b22be409b2a83939d0c6",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-people.json": "8991831129d1e9bc80c8994c563a502a5b34247b2b9191d554f7b9930b325e85",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-review-ledger.json": "fdba1d113e38dff83bfcb529e29f2afae256aae611a049f59d3508fb668aa7e0",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-review-packets.json": "800c4b87aa3730ee5d50ea4bd7120397b21498f2fdccee230cb17566d7f90dc4",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-travel-cancellations.json": "39c85c94cf11a0906791a16fa4a64fc4adfe0daf49d0dcf4412d73c6e9fb5417",
+    "artifacts/runs/submission-20261017T154939Z/retained/native-tab-trips.json": "970cba58664a2e1eea005a1df72668580b3a47d067a6c615fb09aa8d8386c2c9",
+    "artifacts/runs/submission-20261017T154939Z/retained/policy.txt": "61e2354bded6673c3582e66bd293aea03ca262cee71396c5cd52ba557cbadb30",
+    "artifacts/runs/submission-20261017T154939Z/retained/receipts.pages.json": "8f13cb3c372a2e960ff77ef39ca6bca064ee9aff1decacd80966ed1952c98457",
+    "artifacts/runs/submission-20261017T154939Z/retained/receipts.pdf": "4c3dc47f187ccc5cdd0112e18afaadd3b6363bbb4d96793205ef8f3d4c06fcc8",
+    "artifacts/runs/submission-20261017T154939Z/retained/receipts.txt": "4f044ea70cbae4a6beeb235d9cd4d3e79f749d69823d1d85352e01f7fc72dc9a",
+    "artifacts/runs/submission-20261017T154939Z/retained/source-read-verification.json": "6baf93035d3518cdaec0c298ff2675174d308ac6671fe98a9acaa84d45a602c8",
+    "artifacts/runs/submission-20261017T154939Z/retained/travel-registers.xlsx": "7f18138a49fdfdf3ba83e751780422370b79a41536fd7a9174002d215b036348",
+    "artifacts/runs/submission-20261017T154939Z/sources.json": "5a76310724feb90c09f9f8a2234df70f1b8c10ae4b2a1df774fd3c8dd54fc64d",
+    "artifacts/runs/submission-20261017T154939Z/summary.json": "1776c81b3bfaf03772d5568c215b5b00c5976196b3d280cc25d9f848ebc4ed16",
+    "artifacts/runs/submission-20261017T154939Z/verification/audit-checks.json": "ecb1ef10f6975d3fbe5dd03ab3b2671a5d29e6f9a0923638229e7bef86b7793b",
+    "artifacts/runs/submission-20261017T154939Z/verification/final-checks.json": "7cc437bd67afdeca402f06bdd7385097b7c8384d36efe918d90967508cc5ae77",
+    "artifacts/runs/submission-20261017T154939Z/verification/independent-source-crosschecks.json": "25b2664ca6a1bd190042c76a96eabbd4a68ff72a6be767ff8d7e397a1a097f10",
+    "artifacts/verification/choice-1/independence.json": "26aa189a0efb381806fdcb8333259287b24dbf647c8c30588cc0aab76a448213",
+    "artifacts/verification/choice-2/full-rechecks.json": "2f8e269eff8d44bd0cae64129c1c926ed963c26714bf93f58a0ca20d7df97b7e",
+    "artifacts/verification/choice-2/remote-sync.json": "b0fa81fd784842a2b9023897c746538683b50408485da98a5d279723e5719ded",
+    "artifacts/verification/choice-2/report.md": "0dc5a6e64a11c30c4c651ee93fc0dbce6db5b5863c6060cfe1bedd055e13c546",
+    "interviews/project-d-travel-expense-claim-20261017-0334.md": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2"
+  },
+  "original_schema_unchanged": true,
+  "source_bindings_verified": 21,
+  "operations": [
+    {
+      "batch_id": 1,
+      "implementation_sha256": "4ecd2681e41e0d9abe0d8d0f3cf1bfe872ed6f265506fe79e419b7a74dad82a8",
+      "observation": "Actual current execution; source business times are retained separately",
+      "observed_at": "2026-10-18T00:42:49.620646Z",
+      "operation": "seal",
+      "predecessor_sha256": null,
+      "resumed_tasks": [],
+      "run_id": "revision-20261018T003113Z",
+      "source_sha256": "02d38e092921badf1264aad2e0475cd6919696d95efc103fb7765a655d683283"
+    },
+    {
+      "batch_id": 2,
+      "implementation_sha256": "4ecd2681e41e0d9abe0d8d0f3cf1bfe872ed6f265506fe79e419b7a74dad82a8",
+      "observation": "Actual current execution; source business times are retained separately",
+      "observed_at": "2026-10-18T00:43:24.820199Z",
+      "operation": "continue",
+      "predecessor_sha256": "c1ab6859e7e60c019912d5b4a8a1660ecedcf3178d1508b43096650638468d4c",
+      "resumed_tasks": [],
+      "run_id": "revision-20261018T003113Z",
+      "source_sha256": "02d38e092921badf1264aad2e0475cd6919696d95efc103fb7765a655d683283"
+    },
+    {
+      "batch_id": 3,
+      "implementation_sha256": "4ecd2681e41e0d9abe0d8d0f3cf1bfe872ed6f265506fe79e419b7a74dad82a8",
+      "observation": "Actual current execution; source business times are retained separately",
+      "observed_at": "2026-10-18T00:45:14.136536Z",
+      "operation": "continue",
+      "predecessor_sha256": "b936eec77808a72488d2a42906af754ac21ff81b1bff8f3fa701f86a5b8213b4",
+      "resumed_tasks": [
+        {
+          "from_status": "open",
+          "item_id": "RQ-65c94a8a3837096ec1a0f284",
+          "owner": "FIN-01",
+          "resolution_scope": "This fact only; other facts, approval and Finance conditions remain independent",
+          "revision": 1,
+          "source_refs": [
+            "INITIAL:page20",
+            "REGISTERS-FINANCE-ACTIVITY:row26",
+            "REGISTERS-FINANCE-ACTIVITY:row27",
+            "REGISTERS-FINANCE-ACTIVITY:row45"
+          ],
+          "subject_id": "C20",
+          "to_status": "resolved"
+        }
+      ],
+      "run_id": "revision-20261018T003113Z",
+      "source_sha256": "02d38e092921badf1264aad2e0475cd6919696d95efc103fb7765a655d683283"
+    },
+    {
+      "batch_id": 4,
+      "implementation_sha256": "4ecd2681e41e0d9abe0d8d0f3cf1bfe872ed6f265506fe79e419b7a74dad82a8",
+      "observation": "Actual current execution; source business times are retained separately",
+      "observed_at": "2026-10-18T00:45:26.649440Z",
+      "operation": "continue",
+      "predecessor_sha256": "5ea8ad11250ce5efe90990b0f69873050b991499f24b6b6beb3780ca18b626d5",
+      "resumed_tasks": [
+        {
+          "from_status": "open",
+          "item_id": "RQ-e20eaf20f448b036b947421a",
+          "owner": "FIN-01",
+          "resolution_scope": "This fact only; other facts, approval and Finance conditions remain independent",
+          "revision": 1,
+          "source_refs": [
+            "INITIAL:page20",
+            "REGISTERS-FINANCE-ACTIVITY:row26",
+            "REGISTERS-FINANCE-ACTIVITY:row27",
+            "REGISTERS-FINANCE-ACTIVITY:row28",
+            "REGISTERS-FINANCE-ACTIVITY:row45"
+          ],
+          "subject_id": "C20",
+          "to_status": "resolved"
+        }
+      ],
+      "run_id": "revision-20261018T003113Z",
+      "source_sha256": "02d38e092921badf1264aad2e0475cd6919696d95efc103fb7765a655d683283"
+    }
+  ],
+  "repair_ownership": {
+    "C09": {
+      "item_id": "RQ-49889e8a3b21096064cd5cb9",
+      "before_owner": "LEAD-01",
+      "after_owner": "EMP-01",
+      "returning_reviews": [
+        {
+          "decision_id": "D-C09-1-claim-budget_owner-1",
+          "reviewer": "LEAD-01",
+          "roles": [
+            "budget_owner"
+          ],
+          "source_refs": [
+            "REGISTERS-REVIEW-LEDGER:row32"
+          ]
+        }
+      ],
+      "requested_facts": [
+        "Provide revised trip evidence."
+      ],
+      "ownership_basis": "Employee supplies missing claim evidence (interview lines 151/159/175)",
+      "source_refs": [
+        "INITIAL:page9",
+        "REGISTERS-REVIEW-LEDGER:row32",
+        "REGISTERS-REVIEW-PACKETS:row32"
+      ]
+    },
+    "C21": {
+      "item_id": "RQ-2422d2620804da715d421edf",
+      "before_owner": "LEAD-01",
+      "after_owner": "LEAD-01",
+      "returning_reviews": [
+        {
+          "decision_id": "D-C21-1-claim-budget_owner-1",
+          "reviewer": "LEAD-01",
+          "roles": [
+            "budget_owner"
+          ],
+          "source_refs": [
+            "REGISTERS-REVIEW-LEDGER:row57"
+          ]
+        }
+      ],
+      "requested_facts": [
+        "Obtain funding decision."
+      ],
+      "ownership_basis": "Directory budget owner controls funding decisions (interview line 167)",
+      "source_refs": [
+        "INITIAL:page21",
+        "REGISTERS-REVIEW-LEDGER:row57",
+        "REGISTERS-REVIEW-PACKETS:row57"
+      ]
+    }
+  },
+  "independent_source_errors": 0,
+  "focused_tests": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_finance.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 27 tests in 0.021s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_repair_queue.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 15 tests in 0.092s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_continuation.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 12 tests in 15.966s",
+        "",
+        "OK"
+      ]
+    }
+  ],
+  "output_hashes": {
+    "claims.csv": "70aecf200650eeb01c4cf44a44a67781edb15ac9efac9b3a07b39a97dbdb2807",
+    "repair-queue.json": "5f1e2063b2354ddc35bcbf299ea32f2486242f16ce7b16eeccfd1b8151b29b65",
+    "report.md": "a00fc5976284c34180db2d3e8ac996dc151b20b88b40f4d85dbb7961c5ef1260",
+    "summary.json": "1776c81b3bfaf03772d5568c215b5b00c5976196b3d280cc25d9f848ebc4ed16",
+    "run-state.json": "94b90484b7034c2d75348808183f1dd9635f5eab6d9778edfc27df7e28dfbb87"
+  }
+}

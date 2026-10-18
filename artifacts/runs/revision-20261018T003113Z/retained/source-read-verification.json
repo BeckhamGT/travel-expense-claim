@@ -1,0 +1,222 @@
+{
+  "run_id": "revision-20261018T003113Z",
+  "completed_at": "2026-10-18T00:34:57Z",
+  "scope": "Native collection only; no processing, closure, operational batch or submission check is asserted here.",
+  "five_native_urls_attempted": true,
+  "all_five_accessible": true,
+  "pdf_pages": 229,
+  "pdf_counts": {
+    "INITIAL": 120,
+    "UPDATES": 7,
+    "RECEIPTS": 102
+  },
+  "pdf_empty_pages": 0,
+  "raw_pdf_hashes_equal_prior": true,
+  "complete_extracted_page_arrays_equal_prior": true,
+  "native_populated_values_compared": 13703,
+  "native_export_mismatches": [],
+  "native_cell_data_equal_prior_all_ten_tabs": true,
+  "workbook_tabs": [
+    "People",
+    "Trips",
+    "Merchant payments",
+    "FX",
+    "Caps",
+    "Budget",
+    "Review ledger",
+    "Review packets",
+    "Finance activity",
+    "Travel cancellations"
+  ],
+  "workbook_comparison": "native-export-comparison.json",
+  "workbook_export_bytes_equal_prior": false,
+  "workbook_export_size_bytes": 124585,
+  "source_content_changes_observed": [],
+  "policy_fresh_browser_paragraphs": 16,
+  "policy_original_representation": "Fresh read of all paragraphs through browser scrolling. Every normalized paragraph length and both independently computed fingerprints matched the retained original wording. Identical earlier original plain-text representation retained explicitly; no paraphrase or unobserved substitution.",
+  "policy_fingerprint_method": "Collapse Unicode whitespace to one ASCII space, trim, then UTF-16 character count, FNV-1a32 and polynomial131_uint32; no substantive word normalization.",
+  "policy_comparison": [
+    {
+      "paragraph": 1,
+      "length": 449,
+      "fnv1a32": 1096351973,
+      "polynomial131_uint32": 4281097972,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 2,
+      "length": 487,
+      "fnv1a32": 1726601795,
+      "polynomial131_uint32": 1010415426,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 3,
+      "length": 1183,
+      "fnv1a32": 4185925795,
+      "polynomial131_uint32": 3813551828,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 4,
+      "length": 906,
+      "fnv1a32": 3811873613,
+      "polynomial131_uint32": 1548655048,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 5,
+      "length": 543,
+      "fnv1a32": 1841123391,
+      "polynomial131_uint32": 1245610272,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 6,
+      "length": 890,
+      "fnv1a32": 2581730681,
+      "polynomial131_uint32": 94194292,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 7,
+      "length": 562,
+      "fnv1a32": 4149949919,
+      "polynomial131_uint32": 1698099430,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 8,
+      "length": 519,
+      "fnv1a32": 2355259090,
+      "polynomial131_uint32": 1027735503,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 9,
+      "length": 454,
+      "fnv1a32": 3591169492,
+      "polynomial131_uint32": 2896687081,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 10,
+      "length": 676,
+      "fnv1a32": 1919193459,
+      "polynomial131_uint32": 1109192736,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 11,
+      "length": 857,
+      "fnv1a32": 144823538,
+      "polynomial131_uint32": 2741958211,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 12,
+      "length": 486,
+      "fnv1a32": 3879784158,
+      "polynomial131_uint32": 1968835747,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 13,
+      "length": 1017,
+      "fnv1a32": 2983858144,
+      "polynomial131_uint32": 3206442649,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 14,
+      "length": 1074,
+      "fnv1a32": 1129018431,
+      "polynomial131_uint32": 3166800842,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 15,
+      "length": 1598,
+      "fnv1a32": 684832020,
+      "polynomial131_uint32": 1878803659,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 16,
+      "length": 1569,
+      "fnv1a32": 1557844089,
+      "polynomial131_uint32": 1151089386,
+      "fresh_browser_equal": true
+    }
+  ],
+  "features": {
+    "native_notes": 0,
+    "native_hyperlinks": 0,
+    "native_validations": 0,
+    "formulas": 0,
+    "xlsx_comments": 0,
+    "external_links": 0,
+    "hidden_sheets": [],
+    "hidden_rows": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    },
+    "hidden_columns": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    }
+  },
+  "representative_visual_checks": [
+    {
+      "source": "INITIAL",
+      "page": 8,
+      "result": "C08 identity/trip/amount/table match extraction."
+    },
+    {
+      "source": "UPDATES",
+      "page": 2,
+      "result": "C19 r2 amount-only Finance exception and empty coverage match extraction."
+    },
+    {
+      "source": "RECEIPTS",
+      "page": 4,
+      "result": "R-COST-07 and R-COST-08 fields/amounts match extraction."
+    }
+  ],
+  "actual_failures_and_recovery": [
+    {
+      "operation": "Materialize four connector-returned authenticated file references",
+      "first_attempt": "Failed inside filesystem/network sandbox with urllib URLError: socket.gaierror [Errno 8] nodename nor servname provided, or not known. No source bytes were substituted.",
+      "diagnosis": "Connector fetch/export succeeded; sandbox DNS/network prevented materialization.",
+      "recovery": "Retried the same approved inbound references with require_escalated network access; all four complete files materialized successfully with expected sizes."
+    },
+    {
+      "operation": "Scroll newly loaded policy using initial accessibility index",
+      "first_attempt": "Detached accessibility element after Notion canonical URL update.",
+      "diagnosis": "The initial AX index belonged to the pre-redirect page.",
+      "recovery": "Refreshed AX state and scrolled current paragraph element; remaining policy paragraphs 14–16 loaded/read."
+    },
+    {
+      "operation": "Poppler representative rendering",
+      "observation": "Renderer exited 0 but emitted fontconfig missing-default-config and unwritable-cache warnings.",
+      "verification": "All three generated PNGs were opened and visually inspected; their text and layout remained clear. No native PDF bytes were edited."
+    }
+  ],
+  "no_business_definitions_invented": true
+}

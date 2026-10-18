@@ -40,7 +40,7 @@ def _record_id(subject, revision, code, fact):
     return "ISS-" + sha256(payload.encode()).hexdigest()[:24]
 
 
-def _claim_row(identity, observation, claim, accepted, person):
+def _claim_row(identity, observation, claim, accepted, person, current_repairs=()):
     paid = observation["finance"]["net_paid_cents"]
     allowed = observation["calculated_entitlement_cents"]
     disposition = observation["source_disposition"]
@@ -70,6 +70,10 @@ def _claim_row(identity, observation, claim, accepted, person):
             role_fields = {"administration":"Administration reviewer", "budget_owner":"Budget owner", "supervisor":"Supervisor", "director":"Director"}
             role = next((role for role in observation["authority"]["missing_roles"] if role in role_fields), "administration")
             owner = person[role_fields[role]]
+            returned = next((item for item in current_repairs if item["code"] == "review_return"), None)
+            if returned is not None:
+                owner = returned["owner"]
+                reason = returned["missing_fact"] + "; next action: " + returned["next_action"] + "; " + reason
     elif accepted and (financial_agreement or nonpayment_agreement):
         status, owner = ("closed-no-payment" if allowed == 0 else "closed-reimbursed"), None
         reason = "Known zero entitlement with no financial effect" if allowed == 0 else "Current approvals, entitlement, original obligation, net confirmed payment and required resolutions agree"
@@ -105,19 +109,22 @@ def _claim_row(identity, observation, claim, accepted, person):
         finance_resolution_required=observation["finance_resolution_required"],
         current_resolution_event_ids=observation["current_resolution_event_ids"],
         gross_paid_cents=observation["finance"]["paid_cents"], refunded_cents=observation["finance"]["refunded_cents"],
+        resolved_finance_holds=observation["finance"].get("resolved_holds", []),
         material_changes=observation["material_changes"], trip_retired_for_future_arrangements=observation["trip_retired_for_future_arrangements"])
 
 
-def build_run(manifest, completion_accepted=False):
+def build_run(manifest, completion_accepted=False, through_batch=None):
     sources = Sources(manifest)
-    versions = claim_versions(sources)
+    if through_batch is not None and (type(through_batch) is not int or not 1 <= through_batch <= 4):
+        raise SourceError("Choose a supplied batch from 1 through 4")
+    versions = claim_versions(sources, through_batch)
     identities = sorted({version["id"] for version in versions})
     observed_batches = [version["batch"] for version in versions]
     for name in ("Review ledger", "Finance activity", "Travel cancellations"):
         rows = sources.table(name)
         visible_at(rows, 1)  # Validate delivery metadata before selecting its maximum.
         observed_batches.extend(row["Arrival batch"] for row in rows)
-    observations = inspect(manifest, identities, through_batch=int(max(observed_batches)))
+    observations = inspect(manifest, identities, through_batch=through_batch or int(max(observed_batches)))
     people = {row["Employee ID"]: row for row in sources.table("People")}
     trips = sources.table("Trips")
     all_reviews, all_packets = sources.table("Review ledger"), sources.table("Review packets")
@@ -125,10 +132,23 @@ def build_run(manifest, completion_accepted=False):
     snapshots, summaries = [], []
     for batch in observations["batches"]:
         number = batch["batch_id"]
+        # Routing metadata can change while a fact remains open. Use only this
+        # prefix's queue, not the final item's later owner/request metadata.
+        batch_queue = build_queue(sources.data["run_id"], observations["batches"][:number], versions, all_reviews, people)
         visible = [version for version in versions if version["batch"] <= number]
         current = {identity: max((v for v in visible if v["id"] == identity), key=lambda v: v["revision"])
                    for identity in batch["claims"]}
-        claims = [_claim_row(identity, batch["claims"][identity], current[identity], completion_accepted, people[current[identity]["employee"]]) for identity in sorted(current)]
+        def active_repairs(identity):
+            result = []
+            for item in batch_queue["items"]:
+                if item["subject_id"] != identity or item["revision"] != current[identity]["revision"]:
+                    continue
+                history = [event for event in item["history"] if event["batch_id"] <= number]
+                if history and history[-1]["to_status"] == "open":
+                    result.append(item)
+            return result
+        claims = [_claim_row(identity, batch["claims"][identity], current[identity], completion_accepted,
+                             people[current[identity]["employee"]], active_repairs(identity)) for identity in sorted(current)]
         by_id = {claim["claim_id"]: claim for claim in claims}
         issues = []
         for identity, observed in batch["claims"].items():
@@ -151,6 +171,7 @@ def build_run(manifest, completion_accepted=False):
                 paid_cents=request["paid_cents"], refunded_cents=request["refunded_cents"], net_paid_cents=request["net_paid_cents"],
                 accepted_at=request["accepted_time"], accepted_arrival_batch=request["accepted_arrival_batch"],
                 source_ids=request["source_refs"], admitted_event_ids=request["admitted_event_ids"],
+                resolved_finance_holds=request.get("resolved_holds", []),
                 resolution_event_ids=request["resolution_event_ids"], retry_authorized=request["retry_authorized"], retry_needed=request["retry_needed"]))
         cancellations = []
         for process in batch["cancellation_processes"]["processes"]:
@@ -205,6 +226,7 @@ def build_run(manifest, completion_accepted=False):
             source_binding=dict(path="../sources.json", sha256=sha256(sources.path.read_bytes()).hexdigest()),
             claims=claims, requests=requests, travel_cancellations=cancellations, admitted_event_ids=finance["admitted_event_ids"], issues=issues,
             finance_events=finance["admitted_events"], rejected_finance_events=finance["rejected_events"],
+            resolved_finance_holds=finance.get("resolved_holds", []),
             replayed_finance_event_ids=finance["replayed_event_ids"], replayed_cancellation_event_ids=batch["cancellation_processes"]["replayed_event_ids"],
             decisions=reviews, review_packets=packets, permits=permits,
             budget_groups=list({tuple(obs["budget"]["group"]):obs["budget"] for obs in batch["claims"].values()}.values()),
@@ -223,7 +245,7 @@ def render_report(result, manifest, *, preview=False):
     sources = Sources(manifest)
     latest = result["snapshots"][-1]
     rows = ["# Travel expense operations handoff", "", f"Run: `{sources.data['run_id']}`. Case clock: `{sources.data['case_clock']} {sources.data['case_timezone']}`.", "",
-        "PREVIEW: real complete-source result for learner inspection; completion choice 3 is pending. No sealed operational snapshots or financial completion is claimed." if preview else "All supplied records and four arrival batches were processed. Business approvals, exceptions, bookings and money remain human-owned; all replies/outcomes are fixed supplied exercise facts.", "",
+        "PREVIEW: retained-source result for inspection; no sealed operational snapshots or financial completion is claimed." if preview else f"Consumed arrival batches 1–{latest['batch_id']} of 4. " + ("Waiting for explicit continuation; later batches have not been consumed." if latest['batch_id'] != '4' else "All four batches are included in the operational handoff.") + " Business approvals, exceptions, bookings and money remain human-owned; all replies/outcomes are fixed supplied exercise facts.", "",
         "Inputs are bound in `sources.json`; native content, full searchable PDF extractions and all ten workbook CellData tabs are retained. Earlier source-review and choice-verification artifacts remain unchanged.", "",
         "| Batch | Claims | Net paid cents | Accepted obligation cents | Budget remaining cents | Status counts |", "|---|---:|---:|---:|---:|---|"]
     for item in result["summaries"]:
@@ -242,6 +264,16 @@ def render_report(result, manifest, *, preview=False):
     for change in result["queue"]["changes"]:
         item = queue_items[change['item_id']]
         rows.append(f"| {change.get('batch_id',change.get('batch'))} | {item['subject_id']} / {item['revision']} | {change.get('item_id','')} | {change.get('from',change.get('from_status',''))} → {change.get('to',change.get('to_status',''))} | {str(change.get('reason','')).replace('|','/')} |")
+    returns = [item for item in result['queue']['items'] if item['code'] == 'review_return']
+    rows += ["", "### Returned work: provider and reviewer", "", "The provider supplies the repair; the returning reviewer retains approval authority. Superseded work remains historical.", "", "| Subject / revision | Repair provider | Returning reviewer / decision | Required repair | State |", "|---|---|---|---|---|"]
+    for item in returns:
+        contexts = item.get('returning_reviews', [])
+        reviewers = '; '.join(str(context.get('reviewer', context.get('returning_reviewer', ''))) + ' / ' + str(context.get('decision_id', '')) for context in contexts)
+        rows.append(f"| {item['subject_id']} / {item['revision']} | {item['owner']} | {reviewers} | {'; '.join(item['requested_facts'])} | {item['status']} |")
+    definitions = [item for item in result['queue']['items'] if item['status'] == 'open' and item['code'] in {'missing_rate','missing_cap','unknown_category'}]
+    rows += ["", "### Missing definitions and package escalation", "", "These are missing input/policy definitions, distinct from awaiting a normal reviewer reply (policy paragraph 7). Finance owns the definition; the learner raises unavailable package content with the lead or facilitator. Local drafts have not been sent. Keep affected entitlement unknown until a source-bound definition arrives.", "", "| Subject / revision / cost | Missing definition | Source references | Next action |", "|---|---|---|---|"]
+    for item in definitions:
+        rows.append(f"| {item['subject_id']} / {item['revision']} / {item.get('cost_id','')} | {item['missing_fact']} | {', '.join(item['source_refs'])} | Human follow-up with lead/{item['owner']}; escalate missing package content to facilitator; retain the actual response and applicable source revision |")
     rows += ["", "## Scope and verification boundaries", "", "The original interview is retained byte-for-byte under `interviews/`. Policy paragraphs 2–11 and 13–16 govern the arithmetic, evidence, decision bindings, original requests and cancellation consequences. Each line, issue, decision and financial event retains its exact source identity/locator in the batch result. The learner's captured choices and code/test evidence are mapped in `docs/coverage.md`.", "",
         "A complete business handoff may include legitimate owned unresolved cases: missing settled proof, applicable rates/caps, unknown categories, eligibility exceptions, returned work, missing discretionary replies or unresolved Finance effects. Implementation/verification gaps are separately recorded in the coverage map; they are not business holds. See README for validation, unchanged replay and safe resume commands. Sealed outputs change only in a new explicitly linked run.", ""]
     return "\n".join(rows)
@@ -249,40 +281,32 @@ def render_report(result, manifest, *, preview=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=("preview", "seal", "verify"))
+    parser.add_argument("mode", choices=("preview", "seal", "continue", "status", "verify", "recover"))
     parser.add_argument("--sources", type=Path, required=True)
     parser.add_argument("--schema", type=Path, default=Path("snapshot.schema.json"))
     parser.add_argument("--output-dir", type=Path, help="Optional distinct preview directory; sealed outputs always remain under their source run")
     parser.add_argument("--completion-accepted", action="store_true", help="Use only after the learner's captured source-grounded choice 3")
+    parser.add_argument("--batch", type=int, choices=range(1, 5), help="Consume exactly this next batch (or replay an already consumed batch)")
+    parser.add_argument("--through-batch", type=int, choices=range(1, 5), help="Preview/recovery prefix; does not invent historical consumption")
+    parser.add_argument("--task", action="append", default=[], help="Resume/inspect an existing exact repair item using only the next supplied batch")
+    parser.add_argument("--from-run", type=Path, help="Prior sources.json for explicit recovery into a distinct linked run")
     args = parser.parse_args()
-    if args.mode == "seal" and not args.completion_accepted:
+    if args.mode in {"seal", "continue", "recover"} and not args.completion_accepted:
         parser.error("Sealing the final workflow requires the learner's actual completion choice; preview remains available")
     if args.output_dir is not None and args.mode != "preview":
         parser.error("--output-dir applies only to preview; sealed paths are bound to the source run")
+    if args.mode != "preview":
+        from .continuation import operate
+        print(json.dumps(operate(args), indent=2))
+        return
+    if args.batch is not None or args.task or args.from_run:
+        parser.error("Preview takes --through-batch; operational batch/task controls apply to seal/continue/status")
     root = args.sources.resolve().parent
-    result = build_run(args.sources, args.completion_accepted)
-    if args.mode == "preview":
-        preview_dir = args.output_dir or root / "preview"
-        immutable(preview_dir / "summary.json", encoded(result["summaries"]))
-        immutable(preview_dir / "repair-queue.json", encoded(result["queue"]))
-        immutable(preview_dir / "report.md", render_report(result, args.sources, preview=True))
-    else:
-        previous = None
-        for snapshot in result["snapshots"]:
-            path = root / "batches" / (snapshot["batch_id"] + ".json")
-            if args.mode == "verify":
-                if not path.exists() or path.read_bytes() != encoded(snapshot):
-                    raise SourceError("Missing or distinct sealed replay: " + str(path))
-                validate_snapshot(snapshot, args.schema, args.sources, previous, snapshot_path=path)
-            else:
-                write_snapshot(path, snapshot, args.schema, args.sources, previous)
-            previous = path
-        for name, content in (("claims.csv", claims_csv(result["snapshots"][-1])), ("repair-queue.json", encoded(result["queue"])), ("report.md", render_report(result, args.sources)), ("summary.json", encoded(result["summaries"]))):
-            if args.mode == "verify":
-                if (root / name).read_bytes() != (content.encode() if isinstance(content,str) else content):
-                    raise SourceError("Run output differs on unchanged replay: " + name)
-            else:
-                immutable(root / name, content)
+    result = build_run(args.sources, args.completion_accepted, args.through_batch)
+    preview_dir = args.output_dir or root / "preview"
+    immutable(preview_dir / "summary.json", encoded(result["summaries"]))
+    immutable(preview_dir / "repair-queue.json", encoded(result["queue"]))
+    immutable(preview_dir / "report.md", render_report(result, args.sources, preview=True))
     print(json.dumps(dict(mode=args.mode, run_id=root.name, batches=result["summaries"]), indent=2))
 
 

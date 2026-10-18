@@ -1,0 +1,174 @@
+{
+  "run_id": "revision-20261018T003113Z",
+  "checks": [
+    {
+      "batch": 1,
+      "claims": 120,
+      "requests": 100,
+      "financial_identity_decision_and_cancellation_fields_match_graded": true,
+      "snapshot_sha256": "c1ab6859e7e60c019912d5b4a8a1660ecedcf3178d1508b43096650638468d4c"
+    },
+    {
+      "batch": 2,
+      "claims": 120,
+      "requests": 100,
+      "financial_identity_decision_and_cancellation_fields_match_graded": true,
+      "snapshot_sha256": "b936eec77808a72488d2a42906af754ac21ff81b1bff8f3fa701f86a5b8213b4"
+    },
+    {
+      "batch": 3,
+      "claims": 121,
+      "requests": 104,
+      "financial_identity_decision_and_cancellation_fields_match_graded": true,
+      "snapshot_sha256": "5ea8ad11250ce5efe90990b0f69873050b991499f24b6b6beb3780ca18b626d5"
+    },
+    {
+      "batch": 4,
+      "claims": 121,
+      "requests": 104,
+      "financial_identity_decision_and_cancellation_fields_match_graded": true,
+      "snapshot_sha256": "acefdcf4fa61e1b99c14912b8abe680109ff6f3cf3e04a55b0d34e6f79174f1d"
+    }
+  ],
+  "native_money_against_snapshots": [
+    {
+      "batch": 1,
+      "unique_native_events": 100,
+      "gross_paid_cents": 0,
+      "refund_cents": 0,
+      "net_paid_cents": 0,
+      "current_obligation_cents": 1183415,
+      "all_original_request_bindings_and_current_obligations_agree": true
+    },
+    {
+      "batch": 2,
+      "unique_native_events": 200,
+      "gross_paid_cents": 1153915,
+      "refund_cents": 0,
+      "net_paid_cents": 1153915,
+      "current_obligation_cents": 1183415,
+      "all_original_request_bindings_and_current_obligations_agree": true
+    },
+    {
+      "batch": 3,
+      "unique_native_events": 210,
+      "gross_paid_cents": 1164415,
+      "refund_cents": 1000,
+      "net_paid_cents": 1163415,
+      "current_obligation_cents": 1193415,
+      "all_original_request_bindings_and_current_obligations_agree": true
+    },
+    {
+      "batch": 4,
+      "unique_native_events": 219,
+      "gross_paid_cents": 1206415,
+      "refund_cents": 3000,
+      "net_paid_cents": 1203415,
+      "current_obligation_cents": 1193415,
+      "all_original_request_bindings_and_current_obligations_agree": true
+    }
+  ],
+  "intentional_owner_differences": [
+    {
+      "batch": 1,
+      "claim": "C09",
+      "old": "LEAD-01",
+      "new": "EMP-01"
+    },
+    {
+      "batch": 2,
+      "claim": "C09",
+      "old": "LEAD-01",
+      "new": "EMP-01"
+    }
+  ],
+  "c18_current_evidence": {
+    "status": "held",
+    "next_owner": "FIN-01",
+    "authorized_obligation_cents": 0,
+    "paid_cents": 10000,
+    "balance_cents": -10000,
+    "current_resolution_event_ids": [],
+    "resolved_finance_holds": []
+  },
+  "c19_current_evidence": {
+    "revision": 3,
+    "net_paid_cents": 8000,
+    "linked_refund_event_id": "F-C19-3",
+    "refund_of": "F-C19-1",
+    "review_source_refs": [
+      "REGISTERS-REVIEW-LEDGER:row310",
+      "REGISTERS-REVIEW-LEDGER:row311",
+      "REGISTERS-REVIEW-LEDGER:row312"
+    ],
+    "all_review_packets_bind_cancellation_TC019": true,
+    "current_resolution_event_ids": [
+      "F-C19-4"
+    ]
+  },
+  "c20_actual_staged_partial": [
+    {
+      "batch": 2,
+      "overpayment": "open",
+      "finance_resolution": "open",
+      "claim_status": "held",
+      "net_paid_cents": 11000,
+      "balance_cents": -1000,
+      "actual_operation_resumed_tasks": []
+    },
+    {
+      "batch": 3,
+      "overpayment": "resolved",
+      "finance_resolution": "open",
+      "claim_status": "held",
+      "net_paid_cents": 10000,
+      "balance_cents": 0,
+      "actual_operation_resumed_tasks": [
+        {
+          "from_status": "open",
+          "item_id": "RQ-65c94a8a3837096ec1a0f284",
+          "owner": "FIN-01",
+          "resolution_scope": "This fact only; other facts, approval and Finance conditions remain independent",
+          "revision": 1,
+          "source_refs": [
+            "INITIAL:page20",
+            "REGISTERS-FINANCE-ACTIVITY:row26",
+            "REGISTERS-FINANCE-ACTIVITY:row27",
+            "REGISTERS-FINANCE-ACTIVITY:row45"
+          ],
+          "subject_id": "C20",
+          "to_status": "resolved"
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "overpayment": "resolved",
+      "finance_resolution": "resolved",
+      "claim_status": "closed-reimbursed",
+      "net_paid_cents": 10000,
+      "balance_cents": 0,
+      "actual_operation_resumed_tasks": [
+        {
+          "from_status": "open",
+          "item_id": "RQ-e20eaf20f448b036b947421a",
+          "owner": "FIN-01",
+          "resolution_scope": "This fact only; other facts, approval and Finance conditions remain independent",
+          "revision": 1,
+          "source_refs": [
+            "INITIAL:page20",
+            "REGISTERS-FINANCE-ACTIVITY:row26",
+            "REGISTERS-FINANCE-ACTIVITY:row27",
+            "REGISTERS-FINANCE-ACTIVITY:row28",
+            "REGISTERS-FINANCE-ACTIVITY:row45"
+          ],
+          "subject_id": "C20",
+          "to_status": "resolved"
+        }
+      ]
+    }
+  ],
+  "csv_all_121_rows_agree_all_nine_columns": true,
+  "report_contains_current_c18_c19_and_both_c20_fact_ids": true,
+  "nonmonetary_semantic_observation": "Resolved C20 queue responses copy the original missing-fact wording under proven_facts; source/status/amount transitions are correct, but the words describe the issue addressed, not a literally true post-repair proposition."
+}

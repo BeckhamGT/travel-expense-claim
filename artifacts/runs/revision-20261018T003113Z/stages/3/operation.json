@@ -1,0 +1,27 @@
+{
+  "batch_id": 3,
+  "implementation_sha256": "4ecd2681e41e0d9abe0d8d0f3cf1bfe872ed6f265506fe79e419b7a74dad82a8",
+  "observation": "Actual current execution; source business times are retained separately",
+  "observed_at": "2026-10-18T00:45:14.136536Z",
+  "operation": "continue",
+  "predecessor_sha256": "b936eec77808a72488d2a42906af754ac21ff81b1bff8f3fa701f86a5b8213b4",
+  "resumed_tasks": [
+    {
+      "from_status": "open",
+      "item_id": "RQ-65c94a8a3837096ec1a0f284",
+      "owner": "FIN-01",
+      "resolution_scope": "This fact only; other facts, approval and Finance conditions remain independent",
+      "revision": 1,
+      "source_refs": [
+        "INITIAL:page20",
+        "REGISTERS-FINANCE-ACTIVITY:row26",
+        "REGISTERS-FINANCE-ACTIVITY:row27",
+        "REGISTERS-FINANCE-ACTIVITY:row45"
+      ],
+      "subject_id": "C20",
+      "to_status": "resolved"
+    }
+  ],
+  "run_id": "revision-20261018T003113Z",
+  "source_sha256": "02d38e092921badf1264aad2e0475cd6919696d95efc103fb7765a655d683283"
+}

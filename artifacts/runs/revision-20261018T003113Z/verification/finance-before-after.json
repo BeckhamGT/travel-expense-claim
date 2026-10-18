@@ -1,0 +1,130 @@
+{
+  "label": "Actual native C18 control plus explicitly hypothetical supplemental recovery; no native sources modified",
+  "graded_commit": "d11fb0607cded870f51308226cdc2db686460c0a",
+  "source_manifest_sha256": "5a76310724feb90c09f9f8a2234df70f1b8c10ae4b2a1df774fd3c8dd54fc64d",
+  "before_code_sha256": "dae6e55a99961a729035771775b1f463bfa3d6768931dfcc46ca607f78ccb60f",
+  "after_code_sha256": "a8941c0bd77d9c758fc63950ff021744db92da5a2bc925ec0437867a23db4e47",
+  "native_before": {
+    "current_obligation_cents": 0,
+    "paid_cents": 10000,
+    "refunded_cents": 0,
+    "net_paid_cents": 10000,
+    "balance_cents": -10000,
+    "admitted_event_ids": [
+      "F-C18-accepted",
+      "F-C18-1",
+      "F-C18-2",
+      "F-C18-3"
+    ],
+    "resolution_event_ids": [],
+    "active_hold_codes": [
+      "settlement_after_cancellation",
+      "overpayment"
+    ],
+    "resolved_holds": []
+  },
+  "native_after": {
+    "current_obligation_cents": 0,
+    "paid_cents": 10000,
+    "refunded_cents": 0,
+    "net_paid_cents": 10000,
+    "balance_cents": -10000,
+    "admitted_event_ids": [
+      "F-C18-accepted",
+      "F-C18-1",
+      "F-C18-2",
+      "F-C18-3"
+    ],
+    "resolution_event_ids": [],
+    "active_hold_codes": [
+      "settlement_after_cancellation",
+      "overpayment"
+    ],
+    "resolved_holds": []
+  },
+  "supplemental_before": {
+    "current_obligation_cents": 0,
+    "paid_cents": 10000,
+    "refunded_cents": 10000,
+    "net_paid_cents": 0,
+    "balance_cents": 0,
+    "admitted_event_ids": [
+      "F-C18-accepted",
+      "F-C18-1",
+      "F-C18-2",
+      "F-C18-3",
+      "SUPPLEMENTAL-C18-refund",
+      "SUPPLEMENTAL-C18-resolution"
+    ],
+    "resolution_event_ids": [
+      "SUPPLEMENTAL-C18-resolution"
+    ],
+    "active_hold_codes": [
+      "settlement_after_cancellation"
+    ],
+    "resolved_holds": []
+  },
+  "supplemental_refund_alone_after": {
+    "current_obligation_cents": 0,
+    "paid_cents": 10000,
+    "refunded_cents": 10000,
+    "net_paid_cents": 0,
+    "balance_cents": 0,
+    "admitted_event_ids": [
+      "F-C18-accepted",
+      "F-C18-1",
+      "F-C18-2",
+      "F-C18-3",
+      "SUPPLEMENTAL-C18-refund"
+    ],
+    "resolution_event_ids": [],
+    "active_hold_codes": [
+      "settlement_after_cancellation"
+    ],
+    "resolved_holds": []
+  },
+  "supplemental_refund_and_resolution_after": {
+    "current_obligation_cents": 0,
+    "paid_cents": 10000,
+    "refunded_cents": 10000,
+    "net_paid_cents": 0,
+    "balance_cents": 0,
+    "admitted_event_ids": [
+      "F-C18-accepted",
+      "F-C18-1",
+      "F-C18-2",
+      "F-C18-3",
+      "SUPPLEMENTAL-C18-refund",
+      "SUPPLEMENTAL-C18-resolution"
+    ],
+    "resolution_event_ids": [
+      "SUPPLEMENTAL-C18-resolution"
+    ],
+    "active_hold_codes": [],
+    "resolved_holds": [
+      {
+        "code": "settlement_after_cancellation",
+        "reason": "A transfer arrived after Finance cancellation activity; retain the money and reconcile the original request",
+        "event_id": "F-C18-3",
+        "claim_id": "C18",
+        "request_id": "REQ-C18",
+        "owner": "FIN-01",
+        "next_action": "Obtain an explicit Finance resolution of this delivery; preserve admitted history",
+        "source_refs": [
+          "REGISTERS-FINANCE-ACTIVITY:row21"
+        ],
+        "status": "resolved",
+        "resolved_by_event_id": "SUPPLEMENTAL-C18-resolution",
+        "resolved_at": "2026-09-16T11:00:00Z",
+        "resolution_evidence_event_ids": [
+          "SUPPLEMENTAL-C18-refund",
+          "SUPPLEMENTAL-C18-resolution"
+        ],
+        "resolution_source_refs": [
+          "SUPPLEMENTAL:current-resolution",
+          "SUPPLEMENTAL:linked-refund"
+        ]
+      }
+    ]
+  }
+}

@@ -130,6 +130,31 @@ class WorkflowHandoffTests(unittest.TestCase):
         self.assertEqual(final["status"], "held")
         self.assertFalse(final["financial_completion_accepted"])
 
+    def test_supplemental_later_return_task_cannot_change_earlier_snapshot_routing(self):
+        # Supplemental hypothetical future return, never a supplied C09 reply:
+        # a later task for the same fact/revision changes provider responsibility.
+        original = Sources.table
+
+        def later_return(sources, name):
+            rows = deepcopy(original(sources, name))
+            if name in {"Review ledger", "Review packets"}:
+                prior = next(row for row in rows if row["Decision reference"] == "D-C09-1-claim-budget_owner-1")
+                future = {**prior, "Decision reference": "SUPPLEMENTAL-FUTURE-RETURN",
+                          "_ref": "supplemental:future-" + name.lower().replace(" ", "-")}
+                if name == "Review ledger":
+                    future.update({"Arrival batch": 2, "Decision time (UTC)": "2026-09-04 12:00:00 UTC",
+                                   "Repair requested": "Obtain funding decision."})
+                rows.append(future)
+            return rows
+
+        with patch.object(Sources, "table", later_return):
+            first = build_run(MANIFEST, completion_accepted=True, through_batch=1)
+            full = build_run(MANIFEST, completion_accepted=True)
+        prefix_claim = next(row for row in first["snapshots"][0]["claims"] if row["claim_id"] == "C09")
+        self.assertEqual(prefix_claim["next_owner"], "EMP-01")
+        self.assertEqual(full["snapshots"][0], first["snapshots"][0],
+                         "Later return routing metadata must not leak into an earlier arrival snapshot")
+
 
 if __name__ == "__main__":
     unittest.main()
