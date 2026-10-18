@@ -1,0 +1,53 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M567QT586VJTD6HKMXANWE9E",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "README.md",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-budget.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-caps.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-finance-activity.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-fx.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-merchant-payments.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-people.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-review-ledger.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-review-packets.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-travel-cancellations.json",
+    "artifacts/runs/revision-20261018T003113Z/retained/native-tab-trips.json",
+    "artifacts/runs/revision-20261018T003113Z/verification/final_checks.py",
+    "artifacts/runs/revision-20261018T003113Z/verification/replay-results.json",
+    "artifacts/runs/revision-20261018T003113Z/verification/report.md",
+    "artifacts/runs/revision-20261018T003113Z/verification/staged-observations.json",
+    "docs/coverage.md",
+    "docs/follow-up-topics.md",
+    "docs/source-acquisition.md",
+    "skills/travel-expense-claim/SKILL.md",
+    "src/travel_expense_claim/continuation.py",
+    "src/travel_expense_claim/finance.py",
+    "src/travel_expense_claim/repair_queue.py",
+    "src/travel_expense_claim/workflow.py",
+    "tests/test_continuation.py",
+    "tests/test_finance.py",
+    "tests/test_repair_queue.py",
+    "tests/test_workflow.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2031318,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 67486080,
+    "output_tokens": 249660,
+    "api_call_count": 425,
+    "subagent_tokens_complete": false
+  }
+}
