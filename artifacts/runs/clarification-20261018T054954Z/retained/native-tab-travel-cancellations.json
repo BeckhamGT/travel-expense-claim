@@ -1,0 +1,1246 @@
+{
+  "spreadsheetId": "1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit",
+  "properties": {
+    "title": "travel-registers",
+    "locale": "zh_TW",
+    "timeZone": "America/Los_Angeles"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 1608282833,
+        "title": "Travel cancellations",
+        "index": 9,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 26,
+          "frozenRowCount": 5,
+          "frozenColumnCount": 1,
+          "hideGridlines": true,
+          "rowGroupControlAfter": true,
+          "columnGroupControlAfter": true
+        }
+      },
+      "data": [
+        {
+          "rowData": [
+            {
+              "values": [
+                {
+                  "formattedValue": "Travel cancellations",
+                  "userEnteredValue": {
+                    "stringValue": "Travel cancellations"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Travel cancellations"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "Synthetic business records. SRC-D-3.",
+                  "userEnteredValue": {
+                    "stringValue": "Synthetic business records. SRC-D-3."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Synthetic business records. SRC-D-3."
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "Business cancellation only. Blank effective time on initiation is not confirmation. Arrival order differs from activity time.",
+                  "userEnteredValue": {
+                    "stringValue": "Business cancellation only. Blank effective time on initiation is not confirmation. Arrival order differs from activity time."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Business cancellation only. Blank effective time on initiation is not confirmation. Arrival order differs from activity time."
+                  }
+                }
+              ]
+            },
+            {},
+            {
+              "values": [
+                {
+                  "formattedValue": "Cancellation activity reference",
+                  "userEnteredValue": {
+                    "stringValue": "Cancellation activity reference"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Cancellation activity reference"
+                  }
+                },
+                {
+                  "formattedValue": "Cancellation reference",
+                  "userEnteredValue": {
+                    "stringValue": "Cancellation reference"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Cancellation reference"
+                  }
+                },
+                {
+                  "formattedValue": "Action",
+                  "userEnteredValue": {
+                    "stringValue": "Action"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Action"
+                  }
+                },
+                {
+                  "formattedValue": "Cancelled subject",
+                  "userEnteredValue": {
+                    "stringValue": "Cancelled subject"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Cancelled subject"
+                  }
+                },
+                {
+                  "formattedValue": "Trip reference",
+                  "userEnteredValue": {
+                    "stringValue": "Trip reference"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Trip reference"
+                  }
+                },
+                {
+                  "formattedValue": "Trip revision",
+                  "userEnteredValue": {
+                    "stringValue": "Trip revision"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Trip revision"
+                  }
+                },
+                {
+                  "formattedValue": "Permit reference",
+                  "userEnteredValue": {
+                    "stringValue": "Permit reference"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Permit reference"
+                  }
+                },
+                {
+                  "formattedValue": "Permit revision",
+                  "userEnteredValue": {
+                    "stringValue": "Permit revision"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Permit revision"
+                  }
+                },
+                {
+                  "formattedValue": "Initiation activity reference",
+                  "userEnteredValue": {
+                    "stringValue": "Initiation activity reference"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Initiation activity reference"
+                  }
+                },
+                {
+                  "formattedValue": "Acting employee or supervisor",
+                  "userEnteredValue": {
+                    "stringValue": "Acting employee or supervisor"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Acting employee or supervisor"
+                  }
+                },
+                {
+                  "formattedValue": "Activity time (UTC)",
+                  "userEnteredValue": {
+                    "stringValue": "Activity time (UTC)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Activity time (UTC)"
+                  }
+                },
+                {
+                  "formattedValue": "Effective time (UTC)",
+                  "userEnteredValue": {
+                    "stringValue": "Effective time (UTC)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Effective time (UTC)"
+                  }
+                },
+                {
+                  "formattedValue": "Arrival batch",
+                  "userEnteredValue": {
+                    "stringValue": "Arrival batch"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Arrival batch"
+                  }
+                },
+                {
+                  "formattedValue": "Business reason",
+                  "userEnteredValue": {
+                    "stringValue": "Business reason"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Business reason"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC122-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC122-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122-requested"
+                  }
+                },
+                {
+                  "formattedValue": "TC122",
+                  "userEnteredValue": {
+                    "stringValue": "TC122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122"
+                  }
+                },
+                {
+                  "formattedValue": "requested",
+                  "userEnteredValue": {
+                    "stringValue": "requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "requested"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T122",
+                  "userEnteredValue": {
+                    "stringValue": "T122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T122"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "P122",
+                  "userEnteredValue": {
+                    "stringValue": "P122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "P122"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "EMP-01",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-10 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46275.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46275.375
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "Employee requests cancellation after client rescheduling",
+                  "userEnteredValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC122-confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "TC122-confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122-confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "TC122",
+                  "userEnteredValue": {
+                    "stringValue": "TC122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122"
+                  }
+                },
+                {
+                  "formattedValue": "confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T122",
+                  "userEnteredValue": {
+                    "stringValue": "T122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T122"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "P122",
+                  "userEnteredValue": {
+                    "stringValue": "P122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "P122"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "TC122-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC122-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122-requested"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.375
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.375
+                  }
+                },
+                {
+                  "formattedValue": "2",
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "formattedValue": "Supervisor confirms the requested business cancellation",
+                  "userEnteredValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC121-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC121-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC121-requested"
+                  }
+                },
+                {
+                  "formattedValue": "TC121",
+                  "userEnteredValue": {
+                    "stringValue": "TC121"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC121"
+                  }
+                },
+                {
+                  "formattedValue": "requested",
+                  "userEnteredValue": {
+                    "stringValue": "requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "requested"
+                  }
+                },
+                {
+                  "formattedValue": "permit",
+                  "userEnteredValue": {
+                    "stringValue": "permit"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "permit"
+                  }
+                },
+                {
+                  "formattedValue": "T121",
+                  "userEnteredValue": {
+                    "stringValue": "T121"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T121"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "P121",
+                  "userEnteredValue": {
+                    "stringValue": "P121"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "P121"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "EMP-01",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-10 10:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46275.416666666664
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46275.416666666664
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "Employee requests cancellation after client rescheduling",
+                  "userEnteredValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC121-confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "TC121-confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC121-confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "TC121",
+                  "userEnteredValue": {
+                    "stringValue": "TC121"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC121"
+                  }
+                },
+                {
+                  "formattedValue": "confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "permit",
+                  "userEnteredValue": {
+                    "stringValue": "permit"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "permit"
+                  }
+                },
+                {
+                  "formattedValue": "T121",
+                  "userEnteredValue": {
+                    "stringValue": "T121"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T121"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "P121",
+                  "userEnteredValue": {
+                    "stringValue": "P121"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "P121"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "TC121-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC121-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC121-requested"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 10:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.416666666664
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.416666666664
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 10:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.416666666664
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.416666666664
+                  }
+                },
+                {
+                  "formattedValue": "2",
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "formattedValue": "Supervisor confirms the requested business cancellation",
+                  "userEnteredValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC018-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC018-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC018-requested"
+                  }
+                },
+                {
+                  "formattedValue": "TC018",
+                  "userEnteredValue": {
+                    "stringValue": "TC018"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC018"
+                  }
+                },
+                {
+                  "formattedValue": "requested",
+                  "userEnteredValue": {
+                    "stringValue": "requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "requested"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T18",
+                  "userEnteredValue": {
+                    "stringValue": "T18"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T18"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {},
+                {},
+                {},
+                {
+                  "formattedValue": "EMP-01",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.375
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "2",
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "formattedValue": "Employee requests cancellation after client rescheduling",
+                  "userEnteredValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC018-confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "TC018-confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC018-confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "TC018",
+                  "userEnteredValue": {
+                    "stringValue": "TC018"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC018"
+                  }
+                },
+                {
+                  "formattedValue": "confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T18",
+                  "userEnteredValue": {
+                    "stringValue": "T18"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T18"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {},
+                {},
+                {
+                  "formattedValue": "TC018-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC018-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC018-requested"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 10:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.416666666664
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.416666666664
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 10:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.416666666664
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.416666666664
+                  }
+                },
+                {
+                  "formattedValue": "2",
+                  "userEnteredValue": {
+                    "numberValue": 2
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  }
+                },
+                {
+                  "formattedValue": "Supervisor confirms the requested business cancellation",
+                  "userEnteredValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC019-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC019-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC019-requested"
+                  }
+                },
+                {
+                  "formattedValue": "TC019",
+                  "userEnteredValue": {
+                    "stringValue": "TC019"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC019"
+                  }
+                },
+                {
+                  "formattedValue": "requested",
+                  "userEnteredValue": {
+                    "stringValue": "requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "requested"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T19",
+                  "userEnteredValue": {
+                    "stringValue": "T19"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T19"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {},
+                {},
+                {},
+                {
+                  "formattedValue": "EMP-01",
+                  "userEnteredValue": {
+                    "stringValue": "EMP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EMP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-13 08:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46278.333333333336
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46278.333333333336
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "3",
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "formattedValue": "Employee requests cancellation after client rescheduling",
+                  "userEnteredValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Employee requests cancellation after client rescheduling"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC019-confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "TC019-confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC019-confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "TC019",
+                  "userEnteredValue": {
+                    "stringValue": "TC019"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC019"
+                  }
+                },
+                {
+                  "formattedValue": "confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T19",
+                  "userEnteredValue": {
+                    "stringValue": "T19"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T19"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {},
+                {},
+                {
+                  "formattedValue": "TC019-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC019-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC019-requested"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-13 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46278.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46278.375
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-13 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46278.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46278.375
+                  }
+                },
+                {
+                  "formattedValue": "3",
+                  "userEnteredValue": {
+                    "numberValue": 3
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  }
+                },
+                {
+                  "formattedValue": "Supervisor confirms the requested business cancellation",
+                  "userEnteredValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "TC122-confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "TC122-confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122-confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "TC122",
+                  "userEnteredValue": {
+                    "stringValue": "TC122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122"
+                  }
+                },
+                {
+                  "formattedValue": "confirmed",
+                  "userEnteredValue": {
+                    "stringValue": "confirmed"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "confirmed"
+                  }
+                },
+                {
+                  "formattedValue": "trip",
+                  "userEnteredValue": {
+                    "stringValue": "trip"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "trip"
+                  }
+                },
+                {
+                  "formattedValue": "T122",
+                  "userEnteredValue": {
+                    "stringValue": "T122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "T122"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "P122",
+                  "userEnteredValue": {
+                    "stringValue": "P122"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "P122"
+                  }
+                },
+                {
+                  "formattedValue": "1",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                },
+                {
+                  "formattedValue": "TC122-requested",
+                  "userEnteredValue": {
+                    "stringValue": "TC122-requested"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "TC122-requested"
+                  }
+                },
+                {
+                  "formattedValue": "SUP-01",
+                  "userEnteredValue": {
+                    "stringValue": "SUP-01"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "SUP-01"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.375
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-12 09:00:00 UTC",
+                  "userEnteredValue": {
+                    "numberValue": 46277.375
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46277.375
+                  }
+                },
+                {
+                  "formattedValue": "4",
+                  "userEnteredValue": {
+                    "numberValue": 4
+                  },
+                  "effectiveValue": {
+                    "numberValue": 4
+                  }
+                },
+                {
+                  "formattedValue": "Supervisor confirms the requested business cancellation",
+                  "userEnteredValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Supervisor confirms the requested business cancellation"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

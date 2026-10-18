@@ -1,0 +1,162 @@
+{
+  "review": "Independent read-only implementation and actual new-manifest interpretation audit",
+  "scope": "No runtime edits; Sources/build_run source-backed checks before sealing. Fresh access itself is evidenced by acquisition agent, not independently repeated here.",
+  "manifest": "artifacts/runs/clarification-20261018T054954Z/sources.json",
+  "manifest_sha256": "efd07b392c49ea0f1834ef7da69c82ed9a611307b92967b08a09bb75a3abac79",
+  "interview_sha256": "3c2958030d76bd4edf0ce76a5b96f93de61fe208e420766d7ad1e8b9d2d55aa9",
+  "native_file_bindings_verified": 21,
+  "separate_document_bindings_verified": 1,
+  "native_url_count": 5,
+  "code_paths_reviewed": [
+    "business_definitions.py:load_definitions",
+    "verify_independence.py:Sources.__init__",
+    "snapshots.py:_manifest",
+    "recheck.py:_recheck",
+    "workflow.py:render_report"
+  ],
+  "source_interpretation": {
+    "no_explicit_written_conflict": true,
+    "lead_line669_classifies_entertainment_as_personal": true,
+    "written_policy_paragraph2_supplies_existing_zero_rule": true,
+    "classification_not_approval_exception_or_Finance_fact": true,
+    "missing_definition_route_line609_operator_owns_package_gap": true,
+    "Administration_coordinates_Finance_retains_monetary_authority": true
+  },
+  "actual_new_manifest_results": [
+    {
+      "batch": "1",
+      "C117_line_cents": [
+        0,
+        4000
+      ],
+      "C117_status": "pending",
+      "C117_missing_roles": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "C117_decisions": [],
+      "C117_no_Finance_request": true,
+      "C117_completion": false
+    },
+    {
+      "batch": "2",
+      "C117_line_cents": [
+        0,
+        4000
+      ],
+      "C117_status": "pending",
+      "C117_missing_roles": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "C117_decisions": [],
+      "C117_no_Finance_request": true,
+      "C117_completion": false
+    },
+    {
+      "batch": "3",
+      "C117_line_cents": [
+        0,
+        4000
+      ],
+      "C117_status": "pending",
+      "C117_missing_roles": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "C117_decisions": [],
+      "C117_no_Finance_request": true,
+      "C117_completion": false
+    },
+    {
+      "batch": "4",
+      "C117_line_cents": [
+        0,
+        4000
+      ],
+      "C117_status": "pending",
+      "C117_missing_roles": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "C117_decisions": [],
+      "C117_no_Finance_request": true,
+      "C117_completion": false
+    }
+  ],
+  "missing_definition_queue_facts": [
+    {
+      "subject": "C22",
+      "cost": "COST-22",
+      "code": "missing_rate",
+      "owner": "Exercise operator",
+      "source_refs": [
+        "INITIAL:page22",
+        "INTERVIEW:line609",
+        "POLICY:paragraph7",
+        "RECEIPTS:page11",
+        "REGISTERS-FX:complete-tab",
+        "REGISTERS-MERCHANT-PAYMENTS:row26"
+      ],
+      "next_action": "Administration coordinates exercise-operator correction of the missing package definition; Finance retains monetary authority. Keep held; no exception can substitute for the missing definition"
+    },
+    {
+      "subject": "C116",
+      "cost": "COST-116-2",
+      "code": "missing_rate",
+      "owner": "Exercise operator",
+      "source_refs": [
+        "INITIAL:page115",
+        "INTERVIEW:line609",
+        "POLICY:paragraph7",
+        "RECEIPTS:page98",
+        "REGISTERS-FX:complete-tab",
+        "REGISTERS-MERCHANT-PAYMENTS:row198"
+      ],
+      "next_action": "Administration coordinates exercise-operator correction of the missing package definition; Finance retains monetary authority. Keep held; no exception can substitute for the missing definition"
+    },
+    {
+      "subject": "C116",
+      "cost": "COST-116-1",
+      "code": "missing_cap",
+      "owner": "Exercise operator",
+      "source_refs": [
+        "INITIAL:page115",
+        "INTERVIEW:line609",
+        "POLICY:paragraph7",
+        "RECEIPTS:page97",
+        "REGISTERS-CAPS:complete-tab",
+        "REGISTERS-MERCHANT-PAYMENTS:row197"
+      ],
+      "next_action": "Administration coordinates exercise-operator correction of the missing package definition; Finance retains monetary authority. Keep held; no exception can substitute for the missing definition"
+    },
+    {
+      "subject": "C23",
+      "cost": "COST-23",
+      "code": "missing_cap",
+      "owner": "Exercise operator",
+      "source_refs": [
+        "INITIAL:page23",
+        "INTERVIEW:line609",
+        "POLICY:paragraph7",
+        "RECEIPTS:page12",
+        "REGISTERS-CAPS:complete-tab",
+        "REGISTERS-MERCHANT-PAYMENTS:row27"
+      ],
+      "next_action": "Administration coordinates exercise-operator correction of the missing package definition; Finance retains monetary authority. Keep held; no exception can substitute for the missing definition"
+    }
+  ],
+  "first_snapshot_semantic_and_source_validation": "passed",
+  "confirmed_implementation_defects": [],
+  "limitations": [
+    "Strict explicit-phrase support is intentionally narrow; future differently worded or conflicting clarifications require human source review and an appropriate interpretation update.",
+    "No claim approvals or operator numerical definitions were supplied. C117 still needs ordinary supplied reviewer outcomes; C22/C23/C116 remain unresolved.",
+    "Historical run queue items are not mutated; new linked-run reporting should explain why C117 old category/director-uncertainty items are no longer active.",
+    "Operational seal, complete-run verification and capture/origin synchronization are separate root-agent work after this pre-seal review.",
+    "docs/follow-up-topics.md still contains prior-run entertainment gap wording at review time; root documentation update must supersede it before final publication."
+  ]
+}

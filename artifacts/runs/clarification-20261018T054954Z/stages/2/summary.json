@@ -1,0 +1,43 @@
+[
+  {
+    "accepted_obligation_cents": 1183415,
+    "batch_id": 1,
+    "budget_remaining_cents": 316585,
+    "claims": 120,
+    "finance_event_count": 100,
+    "gross_paid_cents": 0,
+    "known_allowed_cents": 1356416,
+    "net_paid_cents": 0,
+    "refunded_cents": 0,
+    "request_count": 100,
+    "statuses": {
+      "closed-no-payment": 2,
+      "held": 13,
+      "pending": 103,
+      "rejected": 1,
+      "withdrawn": 1
+    },
+    "unknown_claims": 5
+  },
+  {
+    "accepted_obligation_cents": 1183415,
+    "batch_id": 2,
+    "budget_remaining_cents": 315585,
+    "claims": 120,
+    "finance_event_count": 200,
+    "gross_paid_cents": 1153915,
+    "known_allowed_cents": 1356416,
+    "net_paid_cents": 1153915,
+    "refunded_cents": 0,
+    "request_count": 100,
+    "statuses": {
+      "closed-no-payment": 2,
+      "closed-reimbursed": 95,
+      "held": 15,
+      "pending": 6,
+      "rejected": 1,
+      "withdrawn": 1
+    },
+    "unknown_claims": 5
+  }
+]

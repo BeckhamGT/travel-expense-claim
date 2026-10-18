@@ -2,7 +2,7 @@
 
 Reusable [Agent Skill](skills/travel-expense-claim/SKILL.md) for Alderbridge Consulting's complete supplied travel-permission, claim review, repair and Finance-reconciliation exercise. The company and replies are fictional; the implementation prepares local work and consumes supplied facts, with approvals, exceptions, bookings and payments remaining human-owned.
 
-The [assignment](https://private-pecorino-70e.notion.site/Travel-expense-claim-Task-and-submission-3da0b700541e81249039eff895f77c98), [public template](https://github.com/GitRollTraining/travel-expense-claim) and supplied [snapshot schema](snapshot.schema.json) define the submission. [Coverage and adoption](docs/coverage.md) distinguish actual verification, legitimate owned business holds and unfinished work. The original interview is preserved under `interviews/`.
+The [assignment](https://private-pecorino-70e.notion.site/Travel-expense-claim-Task-and-submission-3da0b700541e81249039eff895f77c98), [public template](https://github.com/GitRollTraining/travel-expense-claim) and supplied [snapshot schema](snapshot.schema.json) define the submission. [Coverage and adoption](docs/coverage.md) distinguish actual verification, legitimate owned business holds and unfinished work. The [final complete interview export](interviews/project-d-travel-expense-claim-20261018-0547.md) is preserved byte-for-byte under `interviews/`; earlier exports of the same conversation remain in Git history.
 
 ## Setup
 
@@ -15,15 +15,15 @@ python3 -m venv .venv
 
 The processing dependency is pinned `jsonschema`; all arithmetic, event reduction, queue management and output generation otherwise use the standard library. Native acquisition uses supported browser/Drive tools. PDF extraction and workbook cross-checking additionally use `pypdf` and `openpyxl` (the Codex bundled runtime already supplies them); install those only when needed for a new collection. See [source acquisition and resume](docs/source-acquisition.md).
 
-Follow the course's [Entire setup lesson](https://classroom.google.com/c/ODcyMjA4NTkwNDk2/m/ODc0NzI2NzQzMzQ2/details). Verify `entire status` reports Enabled, Codex and sync target origin, then inspect a real commit-linked checkpoint. Configuration alone is insufficient. Genuinely missing assessed capture requires facilitator repair before further assessed implementation.
+Follow the course's [Entire setup lesson](https://classroom.google.com/c/ODcyMjA4NTkwNDk2/m/ODc0NzI2NzQzMzQ2/details). Verify `entire status` reports Enabled, Codex and sync target origin, then inspect a real commit-linked checkpoint. Configuration alone is insufficient. If capture appears incomplete, inspect actual root and child JSONL payloads separately from exact-token accounting metadata, diagnose supported recovery, and report any genuinely unavailable assessed records.
 
 ## Current linked run and preserved assessment
 
-The assessed revision is `d11fb0607cded870f51308226cdc2db686460c0a`; its [original handoff](artifacts/runs/submission-20261017T154939Z/report.md), sources, snapshots and interview remain unchanged. Its 79.1/100 assessment prompted targeted continuation, recovery and repair-ownership corrections; private “No evidence” checkpoints are not inferred from that score.
+The assessed revision is `d11fb0607cded870f51308226cdc2db686460c0a`; its [original handoff](artifacts/runs/submission-20261017T154939Z/report.md), sources and snapshots remain unchanged, and its original interview remains in Git history. Its 79.1/100 assessment prompted targeted continuation, recovery and repair-ownership corrections; private “No evidence” checkpoints are not inferred from that score.
 
-The new collection is `artifacts/runs/revision-20261018T003113Z/sources.json`, linked to that graded manifest by `prior_run` path/hash and `change_reason`. Fresh access covers all five locations, 229 PDF pages, 16 policy paragraphs and ten native tabs; 13,703 values match the fresh XLSX. Business content is unchanged, including the missing definitions. The old URL slug resolves to POL-2026.2. The exercise clock remains **2026-11-15 Europe/Amsterdam**.
+The current collection is `artifacts/runs/clarification-20261018T054954Z/sources.json`, linked by `prior_run` path/hash to technical revision run `revision-20261018T003113Z` at commit `917838bf6d0e1534b53da193b73883a8de4ce7e5`. Fresh native access again covers all five locations, 229 PDF pages, 16 policy paragraphs and ten tabs; 13,703 values match the fresh XLSX. Native business content is unchanged. A separate original-interview binding supplies the explicit entertainment-to-personal classification and exercise-operator ownership of missing definitions. It supplies no claim approval. The old policy slug resolves to POL-2026.2. The exercise clock remains **2026-11-15 Europe/Amsterdam**.
 
-The new run has now consumed all four batches in separate invocations. See its [operational report](artifacts/runs/revision-20261018T003113Z/report.md) and [before/after verification](artifacts/runs/revision-20261018T003113Z/verification/report.md). The full suite passed 211 tests; independent native reconciliation found no mismatches, and offline replay preserved all 57 files then present. These checks complete the authorized technical revision; [missing definitions](docs/follow-up-topics.md) remain human follow-up. No assessment resubmission has been made.
+The new run has now consumed all four batches in separate invocations. See its [operational report](artifacts/runs/clarification-20261018T054954Z/report.md) and [before/after verification](artifacts/runs/clarification-20261018T054954Z/verification/report.md). The full suite passed 224 tests; independent source reconciliation found no mismatches, and offline replay preserved all 69 files then present. C117 is now pending three reviews at EUR40, with no payment or approval invented. The earlier technical fixes were retained. [Three missing numeric definitions](docs/follow-up-topics.md) remain operator/facilitator follow-up for C22, C23 and C116. No assessment resubmission has been made.
 
 All four learner choices remain adopted in the real captured conversation. Changed evidence would require revisiting affected choices; a new run alone does not invent a new learner decision. The financial-completion flag supplies no evidence, review, transfer or approval.
 
@@ -33,34 +33,34 @@ Preview is unsealed inspection of a selected retained-source prefix. It consumes
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow preview \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json \
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json \
   --through-batch 1 \
-  --output-dir artifacts/runs/revision-20261018T003113Z/inspection/batch-1
+  --output-dir artifacts/runs/clarification-20261018T054954Z/inspection/batch-1
 ```
 
 Start only batch 1. The command seals its state/view, reports owned waiting work and exits. It does not consume batches 2–4:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow seal \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 1 \
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 1 \
   --completion-accepted
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow status \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json
 ```
 
 Continue only when the next supplied arrival is intentionally consumed. These exact native C20 task IDs demonstrate separate partial facts; obtain other task IDs from the queue/status, never guess them:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 2 --completion-accepted
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 2 --completion-accepted
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 3 \
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 3 \
   --task RQ-65c94a8a3837096ec1a0f284 --completion-accepted
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow status \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json \
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json \
   --task RQ-e20eaf20f448b036b947421a
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json --batch 4 \
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 4 \
   --task RQ-e20eaf20f448b036b947421a --completion-accepted
 ```
 
@@ -83,7 +83,7 @@ Every source revision, receipt/paid proof, calculation, decision packet, accepte
 ```bash
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow verify \
-  --sources artifacts/runs/revision-20261018T003113Z/sources.json \
+  --sources artifacts/runs/clarification-20261018T054954Z/sources.json \
   --completion-accepted
 git diff --check
 ```

@@ -1,0 +1,323 @@
+{
+  "run_id": "clarification-20261018T054954Z",
+  "completed_at": "2026-10-18T05:52:23Z",
+  "scope": "Fresh native collection only; no processing, claim approval, closure, operational batch or submission check is asserted here. Interview classification is business evidence, not tool instructions or a claim decision.",
+  "five_native_urls_attempted": true,
+  "all_five_accessible": true,
+  "pdf_pages": 229,
+  "pdf_counts": {
+    "INITIAL": 120,
+    "UPDATES": 7,
+    "RECEIPTS": 102
+  },
+  "pdf_empty_pages": 0,
+  "raw_pdf_hashes_equal_prior": true,
+  "complete_extracted_page_arrays_equal_prior": true,
+  "pdf_derivative_representation": "Fresh raw PDFs were independently re-extracted page by page using bundled pypdf layout mode. Every complete extracted page equals the previous array. After that exact check, identical original derivative bytes and formatting were explicitly retained.",
+  "native_populated_values_compared": 13703,
+  "native_export_mismatches": [],
+  "native_cell_data_equal_prior_all_ten_tabs": true,
+  "workbook_tabs": [
+    "People",
+    "Trips",
+    "Merchant payments",
+    "FX",
+    "Caps",
+    "Budget",
+    "Review ledger",
+    "Review packets",
+    "Finance activity",
+    "Travel cancellations"
+  ],
+  "workbook_comparison": "native-export-comparison.json",
+  "workbook_export_bytes_equal_prior": false,
+  "workbook_export_size_bytes": 124644,
+  "source_content_changes_observed": [],
+  "policy_fresh_browser_paragraphs": 16,
+  "policy_original_representation": "Freshly read complete original policy, including all paragraphs loaded by scrolling. All normalized lengths and both weighted checksums matched prior original exactly. Identical prior plain-text formatting explicitly retained.",
+  "policy_fingerprint_method": "Collapse Unicode whitespace; compare character count and modular sums of (index+1)*codepoint and (index+1)^2*codepoint modulo 4294967291. No substantive word normalization.",
+  "policy_comparison": [
+    {
+      "paragraph": 1,
+      "normalized_length": 449,
+      "weighted_index_mod4294967291": 9197793,
+      "weighted_index_squared_mod4294967291": 2759444905,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 2,
+      "normalized_length": 487,
+      "weighted_index_mod4294967291": 11218165,
+      "weighted_index_squared_mod4294967291": 3652210543,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 3,
+      "normalized_length": 1183,
+      "weighted_index_mod4294967291": 66812390,
+      "weighted_index_squared_mod4294967291": 1429569970,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 4,
+      "normalized_length": 906,
+      "weighted_index_mod4294967291": 39148360,
+      "weighted_index_squared_mod4294967291": 2309503291,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 5,
+      "normalized_length": 543,
+      "weighted_index_mod4294967291": 13747191,
+      "weighted_index_squared_mod4294967291": 717031840,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 6,
+      "normalized_length": 890,
+      "weighted_index_mod4294967291": 37884809,
+      "weighted_index_squared_mod4294967291": 985654266,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 7,
+      "normalized_length": 562,
+      "weighted_index_mod4294967291": 15171696,
+      "weighted_index_squared_mod4294967291": 1392313919,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 8,
+      "normalized_length": 519,
+      "weighted_index_mod4294967291": 12875792,
+      "weighted_index_squared_mod4294967291": 173754201,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 9,
+      "normalized_length": 454,
+      "weighted_index_mod4294967291": 9899910,
+      "weighted_index_squared_mod4294967291": 3011484514,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 10,
+      "normalized_length": 676,
+      "weighted_index_mod4294967291": 21718069,
+      "weighted_index_squared_mod4294967291": 1218295509,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 11,
+      "normalized_length": 857,
+      "weighted_index_mod4294967291": 35161303,
+      "weighted_index_squared_mod4294967291": 2893865883,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 12,
+      "normalized_length": 486,
+      "weighted_index_mod4294967291": 11278104,
+      "weighted_index_squared_mod4294967291": 3652857074,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 13,
+      "normalized_length": 1017,
+      "weighted_index_mod4294967291": 48903159,
+      "weighted_index_squared_mod4294967291": 3111150252,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 14,
+      "normalized_length": 1074,
+      "weighted_index_mod4294967291": 55201913,
+      "weighted_index_squared_mod4294967291": 865183158,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 15,
+      "normalized_length": 1598,
+      "weighted_index_mod4294967291": 123152498,
+      "weighted_index_squared_mod4294967291": 2573323554,
+      "fresh_browser_equal": true
+    },
+    {
+      "paragraph": 16,
+      "normalized_length": 1569,
+      "weighted_index_mod4294967291": 118645704,
+      "weighted_index_squared_mod4294967291": 3878021850,
+      "fresh_browser_equal": true
+    }
+  ],
+  "features": {
+    "native_notes": 0,
+    "native_hyperlinks": 0,
+    "native_validations": 0,
+    "formulas": 0,
+    "xlsx_comments": 0,
+    "external_links": 0,
+    "hidden_sheets": [],
+    "hidden_rows": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    },
+    "hidden_columns": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    }
+  },
+  "fresh_missing_definition_evidence": {
+    "native_fx_range": "'FX'!A1:D7; sheetId=777323076",
+    "native_fx_all_formatted_rows": [
+      [
+        "FX"
+      ],
+      [
+        "Synthetic business records. SRC-D-3."
+      ],
+      [
+        "EUR per original unit. Local rate dates."
+      ],
+      [],
+      [
+        "Rate reference",
+        "Rate date",
+        "Currency",
+        "EUR per currency unit"
+      ],
+      [
+        "FX-EUR",
+        "2026-09-01",
+        "EUR",
+        "1.0000"
+      ],
+      [
+        "FX-USD",
+        "2026-09-01",
+        "USD",
+        "0.9000"
+      ]
+    ],
+    "native_caps_range": "'Caps'!A1:G7; sheetId=768624731",
+    "native_caps_all_formatted_rows": [
+      [
+        "Caps"
+      ],
+      [
+        "Synthetic business records. SRC-D-3."
+      ],
+      [
+        "Original currency per night/day. Dates inclusive."
+      ],
+      [],
+      [
+        "Cap reference",
+        "Destination",
+        "Category",
+        "Currency",
+        "Effective from",
+        "Effective to",
+        "Amount per unit"
+      ],
+      [
+        "CAP-lodging",
+        "NL",
+        "lodging",
+        "EUR",
+        "2026-01-01",
+        "2026-12-31",
+        "150.00"
+      ],
+      [
+        "CAP-meals",
+        "NL",
+        "meals",
+        "EUR",
+        "2026-01-01",
+        "2026-12-31",
+        "40.00"
+      ]
+    ],
+    "absent_entries": [
+      {
+        "definition": "GBP EUR-per-unit exact payment-date rate, 2026-09-01",
+        "affected": [
+          "C22/COST-22",
+          "C116/COST-116-2"
+        ],
+        "observed": "Only EUR 1.0000 and USD 0.9000 records on 2026-09-01; GBP is absent."
+      },
+      {
+        "definition": "BE/EUR lodging cap applicable on 2026-09-01",
+        "affected": [
+          "C23/COST-23"
+        ],
+        "observed": "Only NL/EUR lodging 150.00 and meals 40.00; BE is absent."
+      },
+      {
+        "definition": "NL/USD lodging cap applicable on 2026-09-01",
+        "affected": [
+          "C116/COST-116-1"
+        ],
+        "observed": "Only NL/EUR caps; no USD cap. No currency conversion of a cap is authorized by those source entries."
+      }
+    ],
+    "lead_reference_discrepancy": "Latest complete learner interview 01:45–01:47 refers GBP and Belgium/EUR questions to FX/Caps but provides no numerical entries. Complete fresh native/export contents do not contain them. Keep affected holds; obtain the exercise operator correction or definition through the human owner.",
+    "policy_consistency": "POL-2026.2 paragraph 2 gives personal purchases zero entitlement and leaves unknown categories and missing rates/caps unresolved. Latest lead at 01:47 explicitly classifies entertainment as personal. No explicit written entertainment eligibility rule conflicts with that classification. This is not an authorized claim decision."
+  },
+  "representative_visual_checks": [
+    {
+      "source": "INITIAL",
+      "page": 116,
+      "result": "C117 r1 EMP-03/T117, submitted 2026-09-01, COST-117-1 EUR 10 and COST-117-2 EUR 40, no Finance exception. Clear layout matches extraction."
+    },
+    {
+      "source": "RECEIPTS",
+      "page": 98,
+      "result": "R-COST-117-1/COST-117-1 EMP-03/T117: entertainment EUR 10, one unit, description Business travel purchase, issued 2026-09-01. Clear layout matches extraction. Same page also contains C116 GBP 10 transport."
+    }
+  ],
+  "actual_failures_and_recovery": [
+    {
+      "operation": "Materialize four fresh connector-returned files",
+      "first_attempt": "urllib URLError / socket.gaierror Errno 8 inside the network/filesystem sandbox; no source bytes substituted.",
+      "diagnosis": "Connector raw fetch/export succeeded; sandbox DNS prevented local materialization.",
+      "recovery": "Approved require_escalated inbound materialization succeeded for all four with complete length/hash readback."
+    },
+    {
+      "operation": "Policy initial AX scroll",
+      "first_attempt": "Detached accessibility element after Notion canonical URL redirect.",
+      "diagnosis": "Initial AX index came from the pre-redirect page.",
+      "recovery": "Refreshed AX state and scrolled the current document; all 16 paragraphs read."
+    },
+    {
+      "operation": "PDF extraction runtime",
+      "first_attempt": "Project .venv and system Python lacked pypdf.",
+      "diagnosis": "These are not the bundled document runtime.",
+      "recovery": "Loaded the workspace dependency registry and used explicit bundled Python; pypdf/openpyxl imports, extraction and comparison succeeded."
+    },
+    {
+      "operation": "Poppler representative rendering",
+      "observation": "Both renderer commands exited 0 but emitted fontconfig missing-config and unwritable-cache warnings.",
+      "verification": "Both PNG files were opened and visually inspected; claim and receipt text is clear and the table is legible. Raw PDFs remain unchanged."
+    }
+  ],
+  "no_business_definitions_invented": true
+}

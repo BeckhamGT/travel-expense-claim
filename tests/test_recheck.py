@@ -244,13 +244,13 @@ class FullRecheckTests(unittest.TestCase):
         self.assertIn("invalid_exception", {issue["code"] for issue in item["issues"]})
 
     def test_replay_is_deterministic_and_retained_history_bytes_remain_unchanged(self):
-        paths = [MANIFEST, ROOT / "interviews/project-d-travel-expense-claim-20261017-0334.md",
+        paths = [MANIFEST, ROOT / "interviews/project-d-travel-expense-claim-20261018-0547.md",
                  ROOT / "artifacts/verification/choice-1/independence.json"]
         before = [sha256(path.read_bytes()).hexdigest() for path in paths]
         self.assertEqual(inspect(MANIFEST, SUBJECTS), self.result)
         self.assertEqual(before, [sha256(path.read_bytes()).hexdigest() for path in paths])
         self.assertEqual(before[0], "23895ede4a65fa089ad8b73812b9182e4f1d8aff85516aa5d93d4b8a43aff5a5")
-        self.assertEqual(before[1], "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2")
+        self.assertEqual(before[1], "3c2958030d76bd4edf0ce76a5b96f93de61fe208e420766d7ad1e8b9d2d55aa9")
 
     def test_deadline_uses_calendar_months_and_clamps_nonexistent_day(self):
         self.assertEqual(filing_deadline("2026-07-31"), date(2026, 9, 30))

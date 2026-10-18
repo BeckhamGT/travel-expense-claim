@@ -1,0 +1,11 @@
+{
+  "batch_id": 2,
+  "implementation_sha256": "c35cb72907c68ed3d5c9a4a97c9cf362c79d4bf7410804c9f6432c8e2ba4e249",
+  "observation": "Actual current execution; source business times are retained separately",
+  "observed_at": "2026-10-18T06:47:46.318783Z",
+  "operation": "continue",
+  "predecessor_sha256": "057ceb2020eb5af035c17f5414f209c0ab18366723a2394df72eefdb777ace17",
+  "resumed_tasks": [],
+  "run_id": "clarification-20261018T054954Z",
+  "source_sha256": "efd07b392c49ea0f1834ef7da69c82ed9a611307b92967b08a09bb75a3abac79"
+}

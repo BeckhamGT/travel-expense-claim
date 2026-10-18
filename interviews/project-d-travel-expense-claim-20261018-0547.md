@@ -1,6 +1,6 @@
 # Project D — Travel Expense Claim Interview
 
-Participant: Beckham Vo · Exported: 10/16/2026, 11:34:04 PM
+Participant: Beckham Vo · Exported: 10/18/2026, 1:47:52 AM
 
 ## Travel Administration Lead · Travel Administration Lead
 
@@ -328,6 +328,22 @@ For unknown amounts, the entitlement remains unresolved until the category is de
 
 That is correct. Any expense without a defined category or missing payment proof cannot be processed for reimbursement, and these items remain on hold until the required evidence is provided. What part of the work would you like to explore next?
 
+**Beckham Vo** · Voice · 11:22 PM
+
+For unknown amounts, the entitlement remains unresolved until the category is defined. For supporting evidence, we require a matching receipt and settled merchant payment proof for every line; missing proof means the expense is not allowable.
+
+**Travel Administration Lead** · Voice · 11:22 PM
+
+You've got that exactly right. Any expense without a clear category definition remains unresolved, and all reimbursement claims must have both a receipt and settled payment proof to be considered allowable. Which part of our process would you like to explore next?
+
+**Beckham Vo** · Voice · 11:23 PM
+
+For unknown amounts, the entitlement remains unresolved until the category is defined. For supporting evidence, we require a matching receipt and settled merchant payment proof for every line; missing proof means the expense is not allowable.
+
+**Travel Administration Lead** · Voice · 11:23 PM
+
+That is correct. Any line lacking a defined category or payment proof remains unresolved and cannot be cleared for reimbursement until the details are provided. What part of our process would you like to investigate next?
+
 **Beckham Vo** · Voice · 11:23 PM
 
 What counts as missing evidence?
@@ -547,3 +563,107 @@ Thank you, that is all.
 **Travel Administration Lead** · Voice · 11:33 PM
 
 You are very welcome. Let me know if anything else comes up while you work on the reimbursement workflow.
+
+**Beckham Vo** · Voice · 01:40 AM
+
+I am not sure what the GBP exchange rates are. And what is that?
+
+**Travel Administration Lead** · Voice · 01:40 AM
+
+Finance provides exact exchange rates defined as Euros per unit of original currency on the payment date. You can find these in the FX tab of the Travel registers workbook.
+
+- [Travel registers workbook](https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit)
+
+**Beckham Vo** · Voice · 01:41 AM
+
+I don't understand lodging caps.
+
+**Travel Administration Lead** · Voice · 01:41 AM
+
+Lodging caps are whole-line limits determined by the destination, currency, and payment date. We compare the supported gross amount against the nightly cap multiplied by the number of documented nights. You can check these limits in the Caps tab of the Travel registers workbook.
+
+- [Travel registers workbook](https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit)
+
+**Beckham Vo** · Voice · 01:41 AM
+
+What is a whole-line limits?
+
+**Travel Administration Lead** · Voice · 01:41 AM
+
+It means we evaluate the total expense for all nights or days combined against the overall cap, rather than testing individual nights against a limit.
+
+**Beckham Vo** · Voice · 01:41 AM
+
+Can you explain the entertainment expense treatment?
+
+**Travel Administration Lead** · Voice · 01:41 AM
+
+Entertainment is not listed as an eligible expense category under our current policy. Such costs generally fall under personal expenses, which carry zero entitlement.
+
+**Beckham Vo** · Voice · 01:42 AM
+
+Who owns missing definitions and what ha- what happens when while they remain unavailable?
+
+**Travel Administration Lead** · Voice · 01:42 AM
+
+The exercise operator owns missing definitions such as unknown categories or missing field details. While they remain unavailable, the affected claim remains on hold and cannot be cleared with an exception. What would you like to explore next?
+
+**Beckham Vo** · Voice · 01:42 AM
+
+What is a exercise operator?
+
+**Travel Administration Lead** · Voice · 01:42 AM
+
+The exercise operator is responsible for managing the scenario's structure, including resolving gaps in the provided information or addressing queries about missing definitions. What would you like to explore next?
+
+**Beckham Vo** · Voice · 01:43 AM
+
+What should happen to missing definitions? While they remain unavailable?
+
+**Travel Administration Lead** · Voice · 01:43 AM
+
+While missing definitions remain unavailable, the affected claim remains on hold. It cannot be cleared with an exception until the necessary information is provided. What would you like to explore next?
+
+**Beckham Vo** · Voice · 01:45 AM
+
+What is the authorized rates needed to convert those expenses to euros? For GPB exchange rate.
+
+**Travel Administration Lead** · Voice · 01:45 AM
+
+You can find the authorized exchange rates in the FX tab of the Travel registers workbook. - [Travel registers workbook](https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit)
+
+**Travel Administration Lead** · Voice · 01:46 AM
+
+To convert expenses to Euros, you use Finance's exact rates on the payment date. You can find these in the FX tab of the Travel registers workbook.
+
+**Beckham Vo** · Voice · 01:46 AM
+
+For lodging caps, what is the applicable limit for Belgium?
+
+**Travel Administration Lead** · Voice · 01:46 AM
+
+Applicable lodging caps are based on the destination, currency, and payment date. You can find the cap for Belgium in the Caps tab of the Travel registers workbook. What would you like to explore next?
+
+- [Travel registers workbook](https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit)
+
+**Travel Administration Lead** · Voice · 01:46 AM
+
+Applicable lodging caps are based on the destination, currency, and payment date. You can find the cap for Belgium in the Caps tab of the Travel registers workbook. What would you like to explore next?
+
+**Beckham Vo** · Voice · 01:47 AM
+
+The applicable limits for Belgium/Euro.
+
+**Travel Administration Lead** · Voice · 01:47 AM
+
+You can find the specific lodging and meals caps for Belgium in the Caps tab of the Travel registers workbook. What part of the workflow would you like to investigate next?
+
+- [Travel registers workbook](https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit)
+
+**Beckham Vo** · Voice · 01:47 AM
+
+How the company treats that expense category for entertainment?
+
+**Travel Administration Lead** · Voice · 01:47 AM
+
+Entertainment is classified as a personal expense under company policy, meaning it carries zero entitlement for reimbursement. What part of the workflow would you like to explore next?

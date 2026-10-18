@@ -224,12 +224,25 @@ def _recheck(claim, history, sources, tables, receipts, reviews, packets, cancel
             if date.fromisoformat(first) > filing_deadline(trip["End date"]):
                 resolved = exception["source_ref"] if exception and "late_filing" in exception["covered_issues"] else None
                 issue("late_filing", "First filing is after the original planned trip deadline", person["Finance officer"], [claim["source_ref"], trip["_ref"]], resolved_by=resolved)
-            calculation = calculate_line(gross=line["gross"], currency=line["currency"], category=receipt["category"],
+            classification = sources.category_definitions.get(receipt["category"])
+            category = classification["policy_category"] if classification else receipt["category"]
+            calculation = calculate_line(gross=line["gross"], currency=line["currency"], category=category,
                 units=receipt["units"], destination=trip["Destination"], payment_date=paid["Paid date"],
                 fx_rows=tables["FX"], caps_rows=tables["Caps"], replacement_allowed=exception["allowed"] if exception else None)
+            if classification:
+                calculation["source_refs"].extend([classification["source_ref"], "POLICY:paragraph2"])
+                calculation["findings"].append(dict(code="category_classified", blocking=False,
+                    detail="Lead's bound category clarification; this is not a claim approval or Finance exception",
+                    original_category=receipt["category"], policy_category=category,
+                    source_ref=classification["source_ref"]))
             for finding in calculation["findings"]:
                 if finding["blocking"]:
-                    issue(finding["code"], f"{line['cost_id']} ({line['currency']}, paid {paid['Paid date']}): " + finding["detail"], person["Finance officer"], [*check.source_refs, *calculation["source_refs"]])
+                    route = sources.missing_definition_route if finding["code"] in {"unknown_category", "missing_rate", "missing_cap"} else None
+                    action = dict(next_action="Administration coordinates exercise-operator correction of the missing package definition; Finance retains monetary authority. Keep held; no exception can substitute for the missing definition") if route else {}
+                    issue(finding["code"], f"{line['cost_id']} ({line['currency']}, paid {paid['Paid date']}): " + finding["detail"],
+                        route["owner"] if route else person["Finance officer"],
+                        [*check.source_refs, *calculation["source_refs"], *([route["source_ref"], "POLICY:paragraph7"] if route else [])],
+                        **action)
         for process in confirmed:
             resolved = (exception["source_ref"] if exception and "travel_cancellation" in exception["covered_issues"]
                         and exception["cancellation_id"] == process["cancellation_id"] else None)

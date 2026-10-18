@@ -1,0 +1,462 @@
+[
+  {
+    "command": "PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow seal --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 1 --completion-accepted",
+    "exit_code": 0,
+    "result": {
+      "mode": "seal",
+      "consumed_batch": 1,
+      "replay": false,
+      "resumed_tasks": [],
+      "run_id": "clarification-20261018T054954Z",
+      "current_batch": 1,
+      "next_batch": 2,
+      "state": "awaiting-explicit-continuation",
+      "open_work_by_owner": {
+        "LEAD-01": 14,
+        "ADMIN-01": 18,
+        "SUP-01": 18,
+        "Exercise operator": 4,
+        "EMP-01": 2,
+        "EMP-03": 2,
+        "FIN-01": 4,
+        "DIR-01": 1
+      },
+      "selected_tasks": []
+    },
+    "observation": {
+      "batch": 1,
+      "C117": {
+        "status": "pending",
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "next_owner": "ADMIN-01",
+        "decision_ids": []
+      },
+      "missing_role_names": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "missing_definition_owners": {
+        "C22": "Exercise operator",
+        "C23": "Exercise operator",
+        "C116": "Exercise operator"
+      },
+      "current_C117_queue_codes": [
+        "approval_reply",
+        "approval_reply",
+        "approval_reply"
+      ],
+      "no_later_snapshot": true,
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "057ceb2020eb5af035c17f5414f209c0ab18366723a2394df72eefdb777ace17",
+          "mtime_ns": "1792306065584522482"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "a8764eddec0bda639169e0f95d775d496e009924126b0d886e20c391f038f019",
+          "mtime_ns": "1792306065591674605"
+        },
+        "stages/1/operation.json": {
+          "sha256": "9ee17a3e9d5ac1ab1b539b8578092e76580020d97d5a4f05928095dd8311da5e",
+          "mtime_ns": "1792306065592061144"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "b17198728d4ddb77619d12e5f14541a5600a32548d20823fa3e8c406359cb14b",
+          "mtime_ns": "1792306065591781396"
+        },
+        "stages/1/report.md": {
+          "sha256": "b53bff6314e7c3ccfa01501e28d256d5bd9cfce4c34afa7312d3df1c952ed334",
+          "mtime_ns": "1792306065591885729"
+        },
+        "stages/1/summary.json": {
+          "sha256": "6d6e0595e1740c1f72731bbb1f81a61247d39eb4af0bbf1605f149b778213886",
+          "mtime_ns": "1792306065591963895"
+        }
+      }
+    },
+    "prior_stages_unchanged": true
+  },
+  {
+    "command": "PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 2 --completion-accepted",
+    "exit_code": 0,
+    "result": {
+      "mode": "continue",
+      "consumed_batch": 2,
+      "replay": false,
+      "resumed_tasks": [],
+      "run_id": "clarification-20261018T054954Z",
+      "current_batch": 2,
+      "next_batch": 3,
+      "state": "awaiting-explicit-continuation",
+      "open_work_by_owner": {
+        "SUP-01": 16,
+        "LEAD-01": 15,
+        "ADMIN-01": 19,
+        "FIN-01": 9,
+        "Exercise operator": 4,
+        "EMP-01": 2,
+        "EMP-03": 2,
+        "DIR-01": 1
+      },
+      "selected_tasks": []
+    },
+    "observation": {
+      "batch": 2,
+      "C117": {
+        "status": "pending",
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "next_owner": "ADMIN-01",
+        "decision_ids": []
+      },
+      "missing_role_names": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "missing_definition_owners": {
+        "C22": "Exercise operator",
+        "C23": "Exercise operator",
+        "C116": "Exercise operator"
+      },
+      "current_C117_queue_codes": [
+        "approval_reply",
+        "approval_reply",
+        "approval_reply"
+      ],
+      "no_later_snapshot": true,
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "057ceb2020eb5af035c17f5414f209c0ab18366723a2394df72eefdb777ace17",
+          "mtime_ns": "1792306065584522482"
+        },
+        "batches/2.json": {
+          "sha256": "a7c78c53c310a785a89dd9bde071091e8c2befc7a55737ac37173552754893ed",
+          "mtime_ns": "1792306066396315993"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "a8764eddec0bda639169e0f95d775d496e009924126b0d886e20c391f038f019",
+          "mtime_ns": "1792306065591674605"
+        },
+        "stages/1/operation.json": {
+          "sha256": "9ee17a3e9d5ac1ab1b539b8578092e76580020d97d5a4f05928095dd8311da5e",
+          "mtime_ns": "1792306065592061144"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "b17198728d4ddb77619d12e5f14541a5600a32548d20823fa3e8c406359cb14b",
+          "mtime_ns": "1792306065591781396"
+        },
+        "stages/1/report.md": {
+          "sha256": "b53bff6314e7c3ccfa01501e28d256d5bd9cfce4c34afa7312d3df1c952ed334",
+          "mtime_ns": "1792306065591885729"
+        },
+        "stages/1/summary.json": {
+          "sha256": "6d6e0595e1740c1f72731bbb1f81a61247d39eb4af0bbf1605f149b778213886",
+          "mtime_ns": "1792306065591963895"
+        },
+        "stages/2/claims.csv": {
+          "sha256": "a8519b857e4be2ceb7b1d2115449b900bcbd3fda82e2f1db8b2d8c41c097e203",
+          "mtime_ns": "1792306066403870613"
+        },
+        "stages/2/operation.json": {
+          "sha256": "58036732af6c6699c3a6341e0bf4d24ac983f614d932eb02fdf30c3520a1ca0a",
+          "mtime_ns": "1792306066404274861"
+        },
+        "stages/2/repair-queue.json": {
+          "sha256": "8ba253b185aee9fb8df0d5f3fa7c213d65b7d3c193930dd59e8d920e62a850bf",
+          "mtime_ns": "1792306066403972113"
+        },
+        "stages/2/report.md": {
+          "sha256": "28bc4199e617361ec1c377f61055b6814db3fc8aa7467a0d65cfa569c9602047",
+          "mtime_ns": "1792306066404079820"
+        },
+        "stages/2/summary.json": {
+          "sha256": "668229d9848115e58a859b9ecac07a91770ab10e15a38ad7e767cdc2e452fc07",
+          "mtime_ns": "1792306066404172986"
+        }
+      }
+    },
+    "prior_stages_unchanged": true
+  },
+  {
+    "command": "PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 3 --completion-accepted",
+    "exit_code": 0,
+    "result": {
+      "mode": "continue",
+      "consumed_batch": 3,
+      "replay": false,
+      "resumed_tasks": [],
+      "run_id": "clarification-20261018T054954Z",
+      "current_batch": 3,
+      "next_batch": 4,
+      "state": "awaiting-explicit-continuation",
+      "open_work_by_owner": {
+        "FIN-01": 9,
+        "LEAD-01": 14,
+        "ADMIN-01": 18,
+        "SUP-01": 14,
+        "Exercise operator": 4,
+        "EMP-03": 2,
+        "DIR-01": 1,
+        "EMP-01": 1
+      },
+      "selected_tasks": []
+    },
+    "observation": {
+      "batch": 3,
+      "C117": {
+        "status": "pending",
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "next_owner": "ADMIN-01",
+        "decision_ids": []
+      },
+      "missing_role_names": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "missing_definition_owners": {
+        "C22": "Exercise operator",
+        "C23": "Exercise operator",
+        "C116": "Exercise operator"
+      },
+      "current_C117_queue_codes": [
+        "approval_reply",
+        "approval_reply",
+        "approval_reply"
+      ],
+      "no_later_snapshot": true,
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "057ceb2020eb5af035c17f5414f209c0ab18366723a2394df72eefdb777ace17",
+          "mtime_ns": "1792306065584522482"
+        },
+        "batches/2.json": {
+          "sha256": "a7c78c53c310a785a89dd9bde071091e8c2befc7a55737ac37173552754893ed",
+          "mtime_ns": "1792306066396315993"
+        },
+        "batches/3.json": {
+          "sha256": "977d59cb8e2e32194db9e4212416ff0c6364cea3d2744d4cbb45dbe2295b323b",
+          "mtime_ns": "1792306067757023619"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "a8764eddec0bda639169e0f95d775d496e009924126b0d886e20c391f038f019",
+          "mtime_ns": "1792306065591674605"
+        },
+        "stages/1/operation.json": {
+          "sha256": "9ee17a3e9d5ac1ab1b539b8578092e76580020d97d5a4f05928095dd8311da5e",
+          "mtime_ns": "1792306065592061144"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "b17198728d4ddb77619d12e5f14541a5600a32548d20823fa3e8c406359cb14b",
+          "mtime_ns": "1792306065591781396"
+        },
+        "stages/1/report.md": {
+          "sha256": "b53bff6314e7c3ccfa01501e28d256d5bd9cfce4c34afa7312d3df1c952ed334",
+          "mtime_ns": "1792306065591885729"
+        },
+        "stages/1/summary.json": {
+          "sha256": "6d6e0595e1740c1f72731bbb1f81a61247d39eb4af0bbf1605f149b778213886",
+          "mtime_ns": "1792306065591963895"
+        },
+        "stages/2/claims.csv": {
+          "sha256": "a8519b857e4be2ceb7b1d2115449b900bcbd3fda82e2f1db8b2d8c41c097e203",
+          "mtime_ns": "1792306066403870613"
+        },
+        "stages/2/operation.json": {
+          "sha256": "58036732af6c6699c3a6341e0bf4d24ac983f614d932eb02fdf30c3520a1ca0a",
+          "mtime_ns": "1792306066404274861"
+        },
+        "stages/2/repair-queue.json": {
+          "sha256": "8ba253b185aee9fb8df0d5f3fa7c213d65b7d3c193930dd59e8d920e62a850bf",
+          "mtime_ns": "1792306066403972113"
+        },
+        "stages/2/report.md": {
+          "sha256": "28bc4199e617361ec1c377f61055b6814db3fc8aa7467a0d65cfa569c9602047",
+          "mtime_ns": "1792306066404079820"
+        },
+        "stages/2/summary.json": {
+          "sha256": "668229d9848115e58a859b9ecac07a91770ab10e15a38ad7e767cdc2e452fc07",
+          "mtime_ns": "1792306066404172986"
+        },
+        "stages/3/claims.csv": {
+          "sha256": "84e57f6c8e94f2d6ea630ffce59ff70a598363e8fe4121fa8176abc7ffa078dd",
+          "mtime_ns": "1792306067765315110"
+        },
+        "stages/3/operation.json": {
+          "sha256": "a87b243ec92acbd93c042d19e52f04ec396436bc0b5644018b9acea95541c054",
+          "mtime_ns": "1792306067765716149"
+        },
+        "stages/3/repair-queue.json": {
+          "sha256": "d0fd837c4cf593c839e510476cdcff10aeb208b14a255e0af0567a99b12ab6fe",
+          "mtime_ns": "1792306067765422484"
+        },
+        "stages/3/report.md": {
+          "sha256": "6240fd06c30734eb2fdc271f4c7be0d0f7eae7433313f95cec3d0697c29ef3e4",
+          "mtime_ns": "1792306067765521025"
+        },
+        "stages/3/summary.json": {
+          "sha256": "809ade6c374e8a7195c2f2aec8e8afcc9313b9b3b96d3e4954b8e0fdad0a2f8e",
+          "mtime_ns": "1792306067765611191"
+        }
+      }
+    },
+    "prior_stages_unchanged": true
+  },
+  {
+    "command": "PYTHONPATH=src .venv/bin/python -m travel_expense_claim.workflow continue --sources artifacts/runs/clarification-20261018T054954Z/sources.json --batch 4 --completion-accepted",
+    "exit_code": 0,
+    "result": {
+      "mode": "continue",
+      "consumed_batch": 4,
+      "replay": false,
+      "resumed_tasks": [],
+      "run_id": "clarification-20261018T054954Z",
+      "current_batch": 4,
+      "next_batch": null,
+      "state": "all-batches-consumed-owned-work-remains",
+      "open_work_by_owner": {
+        "FIN-01": 7,
+        "LEAD-01": 13,
+        "ADMIN-01": 17,
+        "SUP-01": 13,
+        "Exercise operator": 4,
+        "EMP-03": 2,
+        "DIR-01": 1,
+        "EMP-01": 1
+      },
+      "selected_tasks": []
+    },
+    "observation": {
+      "batch": 4,
+      "C117": {
+        "status": "pending",
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "next_owner": "ADMIN-01",
+        "decision_ids": []
+      },
+      "missing_role_names": [
+        "administration",
+        "budget_owner",
+        "supervisor"
+      ],
+      "missing_definition_owners": {
+        "C22": "Exercise operator",
+        "C23": "Exercise operator",
+        "C116": "Exercise operator"
+      },
+      "current_C117_queue_codes": [
+        "approval_reply",
+        "approval_reply",
+        "approval_reply"
+      ],
+      "no_later_snapshot": true,
+      "sealed_files": {
+        "batches/1.json": {
+          "sha256": "057ceb2020eb5af035c17f5414f209c0ab18366723a2394df72eefdb777ace17",
+          "mtime_ns": "1792306065584522482"
+        },
+        "batches/2.json": {
+          "sha256": "a7c78c53c310a785a89dd9bde071091e8c2befc7a55737ac37173552754893ed",
+          "mtime_ns": "1792306066396315993"
+        },
+        "batches/3.json": {
+          "sha256": "977d59cb8e2e32194db9e4212416ff0c6364cea3d2744d4cbb45dbe2295b323b",
+          "mtime_ns": "1792306067757023619"
+        },
+        "batches/4.json": {
+          "sha256": "631a66a64a5d64b463251fe62c307bd7aacebec171aeddc5b278556fdc9dd674",
+          "mtime_ns": "1792306069761294250"
+        },
+        "stages/1/claims.csv": {
+          "sha256": "a8764eddec0bda639169e0f95d775d496e009924126b0d886e20c391f038f019",
+          "mtime_ns": "1792306065591674605"
+        },
+        "stages/1/operation.json": {
+          "sha256": "9ee17a3e9d5ac1ab1b539b8578092e76580020d97d5a4f05928095dd8311da5e",
+          "mtime_ns": "1792306065592061144"
+        },
+        "stages/1/repair-queue.json": {
+          "sha256": "b17198728d4ddb77619d12e5f14541a5600a32548d20823fa3e8c406359cb14b",
+          "mtime_ns": "1792306065591781396"
+        },
+        "stages/1/report.md": {
+          "sha256": "b53bff6314e7c3ccfa01501e28d256d5bd9cfce4c34afa7312d3df1c952ed334",
+          "mtime_ns": "1792306065591885729"
+        },
+        "stages/1/summary.json": {
+          "sha256": "6d6e0595e1740c1f72731bbb1f81a61247d39eb4af0bbf1605f149b778213886",
+          "mtime_ns": "1792306065591963895"
+        },
+        "stages/2/claims.csv": {
+          "sha256": "a8519b857e4be2ceb7b1d2115449b900bcbd3fda82e2f1db8b2d8c41c097e203",
+          "mtime_ns": "1792306066403870613"
+        },
+        "stages/2/operation.json": {
+          "sha256": "58036732af6c6699c3a6341e0bf4d24ac983f614d932eb02fdf30c3520a1ca0a",
+          "mtime_ns": "1792306066404274861"
+        },
+        "stages/2/repair-queue.json": {
+          "sha256": "8ba253b185aee9fb8df0d5f3fa7c213d65b7d3c193930dd59e8d920e62a850bf",
+          "mtime_ns": "1792306066403972113"
+        },
+        "stages/2/report.md": {
+          "sha256": "28bc4199e617361ec1c377f61055b6814db3fc8aa7467a0d65cfa569c9602047",
+          "mtime_ns": "1792306066404079820"
+        },
+        "stages/2/summary.json": {
+          "sha256": "668229d9848115e58a859b9ecac07a91770ab10e15a38ad7e767cdc2e452fc07",
+          "mtime_ns": "1792306066404172986"
+        },
+        "stages/3/claims.csv": {
+          "sha256": "84e57f6c8e94f2d6ea630ffce59ff70a598363e8fe4121fa8176abc7ffa078dd",
+          "mtime_ns": "1792306067765315110"
+        },
+        "stages/3/operation.json": {
+          "sha256": "a87b243ec92acbd93c042d19e52f04ec396436bc0b5644018b9acea95541c054",
+          "mtime_ns": "1792306067765716149"
+        },
+        "stages/3/repair-queue.json": {
+          "sha256": "d0fd837c4cf593c839e510476cdcff10aeb208b14a255e0af0567a99b12ab6fe",
+          "mtime_ns": "1792306067765422484"
+        },
+        "stages/3/report.md": {
+          "sha256": "6240fd06c30734eb2fdc271f4c7be0d0f7eae7433313f95cec3d0697c29ef3e4",
+          "mtime_ns": "1792306067765521025"
+        },
+        "stages/3/summary.json": {
+          "sha256": "809ade6c374e8a7195c2f2aec8e8afcc9313b9b3b96d3e4954b8e0fdad0a2f8e",
+          "mtime_ns": "1792306067765611191"
+        },
+        "stages/4/claims.csv": {
+          "sha256": "30c3aaec5e4a29f0d551799f6d5fffdaa64a6285d1bc6b5ecaf2c8f3429026dc",
+          "mtime_ns": "1792306069769965906"
+        },
+        "stages/4/operation.json": {
+          "sha256": "91241f9aff7cff91444e7eb0c884b5b57a5e6b0d0d0840db28f60d267843f162",
+          "mtime_ns": "1792306069770338403"
+        },
+        "stages/4/repair-queue.json": {
+          "sha256": "2fa09d0e27848596828612662a6a8aa4b972c5d05b8ef9f34b4e2cf1c14ad546",
+          "mtime_ns": "1792306069770068155"
+        },
+        "stages/4/report.md": {
+          "sha256": "9a973d773d6f432b2f12767cba948ffb72e4f289d5f88772f13695310c443ca9",
+          "mtime_ns": "1792306069770165446"
+        },
+        "stages/4/summary.json": {
+          "sha256": "3a8e769a0647e58da08468d5db0e51f18aefe1f96074da036ee1cf9743065745",
+          "mtime_ns": "1792306069770248779"
+        }
+      }
+    },
+    "prior_stages_unchanged": true
+  }
+]

@@ -15,6 +15,7 @@ import re
 from zoneinfo import ZoneInfo
 
 from .independence import Check, Work, budget_remaining, cents, evaluate, visible_at
+from .business_definitions import load_definitions
 
 
 class SourceError(ValueError):
@@ -36,6 +37,13 @@ class Sources:
             path = (self.base / entry["path"]).resolve()
             if not path.is_relative_to(self.base) or sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
                 raise SourceError("Missing, unsafe or hash-mismatched retained source: " + entry["source_id"])
+        try:
+            documents, self.category_definitions, self.missing_definition_route = load_definitions(self.path, self.data)
+        except (ValueError, OSError) as error:
+            raise SourceError('Invalid interview business definition: ' + str(error)) from error
+        if set(documents) & set(self.files):
+            raise SourceError('Interview document identity conflicts with a native source')
+        self.files.update(documents)
 
     def read(self, source_id):
         entry = self.files[source_id]

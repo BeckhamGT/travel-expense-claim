@@ -1,0 +1,231 @@
+test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) ... 
+  test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=1) ... FAIL
+  test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=2) ... FAIL
+  test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=3) ... FAIL
+  test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=4) ... FAIL
+test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) ... FAIL
+test_bound_interview_provenance_resolves_in_snapshot_validation (test_business_definitions.BusinessDefinitionTests.test_bound_interview_provenance_resolves_in_snapshot_validation) ... FAIL
+test_category_clarification_preserves_actual_finance_and_unrelated_closure (test_business_definitions.BusinessDefinitionTests.test_category_clarification_preserves_actual_finance_and_unrelated_closure) ... ok
+test_claimed_excerpt_must_match_original_line_exactly (test_business_definitions.BusinessDefinitionTests.test_claimed_excerpt_must_match_original_line_exactly) ... FAIL
+test_claimed_lead_speaker_must_match_original_message (test_business_definitions.BusinessDefinitionTests.test_claimed_lead_speaker_must_match_original_message) ... FAIL
+test_classification_cannot_replace_missing_settled_payment_proof (test_business_definitions.BusinessDefinitionTests.test_classification_cannot_replace_missing_settled_payment_proof) ... ok
+test_existing_eligible_category_cannot_be_overridden_by_unrelated_clarification (test_business_definitions.BusinessDefinitionTests.test_existing_eligible_category_cannot_be_overridden_by_unrelated_clarification) ... FAIL
+test_historical_manifest_keeps_undefined_entertainment_unknown (test_business_definitions.BusinessDefinitionTests.test_historical_manifest_keeps_undefined_entertainment_unknown) ... ok
+test_interview_hash_mismatch_fails_before_processing (test_business_definitions.BusinessDefinitionTests.test_interview_hash_mismatch_fails_before_processing) ... FAIL
+test_learner_statement_cannot_supply_lead_category_authority (test_business_definitions.BusinessDefinitionTests.test_learner_statement_cannot_supply_lead_category_authority) ... FAIL
+test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) ... 
+  test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) (claim='C22') ... FAIL
+  test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) (claim='C23') ... FAIL
+  test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) (claim='C116') ... FAIL
+test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) ... FAIL
+test_unmapped_category_remains_unknown (test_business_definitions.BusinessDefinitionTests.test_unmapped_category_remains_unknown) ... ok
+test_weak_generally_personal_text_is_not_the_explicit_classification (test_business_definitions.BusinessDefinitionTests.test_weak_generally_personal_text_is_not_the_explicit_classification) ... FAIL
+
+======================================================================
+FAIL: test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 80, in test_actual_c117_classification_changes_calculation_without_granting_authority
+    self.assertEqual([line["allowed_cents"] for line in claim["lines"]], [0, 4000])
+AssertionError: Lists differ: [None, 4000] != [0, 4000]
+
+First differing element 0:
+None
+0
+
+- [None, 4000]
+?  ^^^^
+
++ [0, 4000]
+?  ^
+
+
+======================================================================
+FAIL: test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 80, in test_actual_c117_classification_changes_calculation_without_granting_authority
+    self.assertEqual([line["allowed_cents"] for line in claim["lines"]], [0, 4000])
+AssertionError: Lists differ: [None, 4000] != [0, 4000]
+
+First differing element 0:
+None
+0
+
+- [None, 4000]
+?  ^^^^
+
++ [0, 4000]
+?  ^
+
+
+======================================================================
+FAIL: test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 80, in test_actual_c117_classification_changes_calculation_without_granting_authority
+    self.assertEqual([line["allowed_cents"] for line in claim["lines"]], [0, 4000])
+AssertionError: Lists differ: [None, 4000] != [0, 4000]
+
+First differing element 0:
+None
+0
+
+- [None, 4000]
+?  ^^^^
+
++ [0, 4000]
+?  ^
+
+
+======================================================================
+FAIL: test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority) (batch=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 80, in test_actual_c117_classification_changes_calculation_without_granting_authority
+    self.assertEqual([line["allowed_cents"] for line in claim["lines"]], [0, 4000])
+AssertionError: Lists differ: [None, 4000] != [0, 4000]
+
+First differing element 0:
+None
+0
+
+- [None, 4000]
+?  ^^^^
+
++ [0, 4000]
+?  ^
+
+
+======================================================================
+FAIL: test_actual_c117_classification_changes_calculation_without_granting_authority (test_business_definitions.BusinessDefinitionTests.test_actual_c117_classification_changes_calculation_without_granting_authority)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 100, in test_actual_c117_classification_changes_calculation_without_granting_authority
+    self.assertEqual({item["code"] for item in items}, {"approval_reply"})
+AssertionError: Items in the first set but not the second:
+'unknown_category'
+'approval_requirement'
+
+======================================================================
+FAIL: test_bound_interview_provenance_resolves_in_snapshot_validation (test_business_definitions.BusinessDefinitionTests.test_bound_interview_provenance_resolves_in_snapshot_validation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 107, in test_bound_interview_provenance_resolves_in_snapshot_validation
+    self.assertIn("INTERVIEW", sources.files)
+AssertionError: 'INTERVIEW' not found in {'INITIAL': {'source_id': 'INITIAL', 'path': 'retained/claims-initial.pdf', 'sha256': 'b42a28754b1877363e1a25ed4fa1f3865915f44ec9995f7ed15fc9b6eefb08b7', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/13sRj6s_kMeP1hsYGstWWmfkb6SCN1YOS/view', 'locator': 'All pages 1–120', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Drive connector raw PDF; complete bytes materialized', 'page_count': 120, 'completeness': 'Every page extracted and read; representative layout inspected; no empty extracted pages.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'INITIAL-TEXT': {'source_id': 'INITIAL-TEXT', 'path': 'retained/claims-initial.txt', 'sha256': '7cecc9e269b0fbf1965c302851987c8c30edb083a05d4a6484038e67e415435d', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/13sRj6s_kMeP1hsYGstWWmfkb6SCN1YOS/view', 'locator': 'Derivative of INITIAL; all pages 1–120', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'pypdf extraction of retained raw PDF', 'derived_from': 'INITIAL', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'INITIAL-PAGES': {'source_id': 'INITIAL-PAGES', 'path': 'retained/claims-initial.pages.json', 'sha256': '47f58278045af707269011142db6c7b439ff8264753f6ff67df3c88daae20b5f', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/13sRj6s_kMeP1hsYGstWWmfkb6SCN1YOS/view', 'locator': 'Derivative of INITIAL; all pages 1–120', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'pypdf extraction of retained raw PDF', 'derived_from': 'INITIAL', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'UPDATES': {'source_id': 'UPDATES', 'path': 'retained/claims-updates.pdf', 'sha256': '03c15787d18e2928457cd0164b573dc03a3baade0ed26a391ba79c73a568da3b', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/16829RwrGrMCK9oq5TnWuytFewGk_8xQP/view', 'locator': 'All pages 1–7', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Drive connector raw PDF; complete bytes materialized', 'page_count': 7, 'completeness': 'Every page extracted and read; representative layout inspected; no empty extracted pages.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'UPDATES-TEXT': {'source_id': 'UPDATES-TEXT', 'path': 'retained/claims-updates.txt', 'sha256': '6bb1479a43f6c28006339d3c502a828e54c6fde928f14916ac91abcf2428f3a8', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/16829RwrGrMCK9oq5TnWuytFewGk_8xQP/view', 'locator': 'Derivative of UPDATES; all pages 1–7', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'pypdf extraction of retained raw PDF', 'derived_from': 'UPDATES', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'UPDATES-PAGES': {'source_id': 'UPDATES-PAGES', 'path': 'retained/claims-updates.pages.json', 'sha256': '493836163efb323e6868aeb0dcf34e99e1698595e0facc4a8c451236a821a845', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/16829RwrGrMCK9oq5TnWuytFewGk_8xQP/view', 'locator': 'Derivative of UPDATES; all pages 1–7', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'pypdf extraction of retained raw PDF', 'derived_from': 'UPDATES', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'RECEIPTS': {'source_id': 'RECEIPTS', 'path': 'retained/receipts.pdf', 'sha256': '4c3dc47f187ccc5cdd0112e18afaadd3b6363bbb4d96793205ef8f3d4c06fcc8', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/1Ynn1VLH-faRIy91xy95rOWwCBhy5mjjM/view', 'locator': 'All pages 1–102', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Drive connector raw PDF; complete bytes materialized', 'page_count': 102, 'completeness': 'Every page extracted and read; representative layout inspected; no empty extracted pages.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'RECEIPTS-TEXT': {'source_id': 'RECEIPTS-TEXT', 'path': 'retained/receipts.txt', 'sha256': '4f044ea70cbae4a6beeb235d9cd4d3e79f749d69823d1d85352e01f7fc72dc9a', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/1Ynn1VLH-faRIy91xy95rOWwCBhy5mjjM/view', 'locator': 'Derivative of RECEIPTS; all pages 1–102', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'pypdf extraction of retained raw PDF', 'derived_from': 'RECEIPTS', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'RECEIPTS-PAGES': {'source_id': 'RECEIPTS-PAGES', 'path': 'retained/receipts.pages.json', 'sha256': '8f13cb3c372a2e960ff77ef39ca6bca064ee9aff1decacd80966ed1952c98457', 'status': 'read', 'error': None, 'url': 'https://drive.google.com/file/d/1Ynn1VLH-faRIy91xy95rOWwCBhy5mjjM/view', 'locator': 'Derivative of RECEIPTS; all pages 1–102', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'pypdf extraction of retained raw PDF', 'derived_from': 'RECEIPTS', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'POLICY': {'source_id': 'POLICY', 'path': 'retained/policy.txt', 'sha256': '61e2354bded6673c3582e66bd293aea03ca262cee71396c5cd52ba557cbadb30', 'status': 'read', 'error': None, 'url': 'https://private-pecorino-70e.notion.site/Project-D-Alderbridge-travel-reimbursement-policy-POL-2026-1-3d80b700541e81ed93ebd386abc1dcb0', 'locator': 'Title and all 16 policy paragraphs, including final cancellation/Finance paragraph', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'POL-2026.2', 'access_route': 'Public Notion page in browser; visible original wording retained', 'observed_url': 'https://private-pecorino-70e.notion.site/Project-D-Alderbridge-travel-reimbursement-policy-POL-2026-2-3d80b700541e81ed93ebd386abc1dcb0', 'completeness': 'Fresh browser read of all 16 paragraphs. All normalized paragraph lengths/fingerprints match the original text representation; that identical representation is explicitly retained, with no paraphrase.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-XLSX': {'source_id': 'REGISTERS-XLSX', 'path': 'retained/travel-registers.xlsx', 'sha256': '7f18138a49fdfdf3ba83e751780422370b79a41536fd7a9174002d215b036348', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': 'Complete native XLSX export; all 10 visible sheets', 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Drive native XLSX export', 'completeness': 'Compared all 13,703 populated live CellData values with export, including numeric and date/time representations; no mismatches.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-PEOPLE': {'source_id': 'REGISTERS-PEOPLE', 'path': 'retained/native-tab-people.json', 'sha256': '8991831129d1e9bc80c8994c563a502a5b34247b2b9191d554f7b9930b325e85', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'People'!A1:J19; sheetId=346358653", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-TRIPS': {'source_id': 'REGISTERS-TRIPS', 'path': 'retained/native-tab-trips.json', 'sha256': '970cba58664a2e1eea005a1df72668580b3a47d067a6c615fb09aa8d8386c2c9', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Trips'!A1:O128; sheetId=1638508794", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-MERCHANT-PAYMENTS': {'source_id': 'REGISTERS-MERCHANT-PAYMENTS', 'path': 'retained/native-tab-merchant-payments.json', 'sha256': 'd8ba7de2383c11ac9b0e0cc62d7bbb37edf9e5d52be8b22be409b2a83939d0c6', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Merchant payments'!A1:I206; sheetId=2006903626", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-FX': {'source_id': 'REGISTERS-FX', 'path': 'retained/native-tab-fx.json', 'sha256': '58063a5cc25f0d356fa4a7b1a9c9e764027527863b89c86a9a9f8d840006b9f4', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'FX'!A1:D7; sheetId=777323076", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-CAPS': {'source_id': 'REGISTERS-CAPS', 'path': 'retained/native-tab-caps.json', 'sha256': 'd64d611b896a2c5024bedc1bcb67370e9ed46513d8e110e5d35f089f048d3ee7', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Caps'!A1:G7; sheetId=768624731", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-BUDGET': {'source_id': 'REGISTERS-BUDGET', 'path': 'retained/native-tab-budget.json', 'sha256': 'fd751302f3415c17da635cce2caeb1a3104d445f4673b3fba5466ad7013114f0', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Budget'!A1:I8; sheetId=1700439189", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-REVIEW-LEDGER': {'source_id': 'REGISTERS-REVIEW-LEDGER', 'path': 'retained/native-tab-review-ledger.json', 'sha256': 'fdba1d113e38dff83bfcb529e29f2afae256aae611a049f59d3508fb668aa7e0', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Review ledger'!A1:M312; sheetId=492252124", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-REVIEW-PACKETS': {'source_id': 'REGISTERS-REVIEW-PACKETS', 'path': 'retained/native-tab-review-packets.json', 'sha256': '800c4b87aa3730ee5d50ea4bd7120397b21498f2fdccee230cb17566d7f90dc4', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Review packets'!A1:P312; sheetId=2147088768", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-FINANCE-ACTIVITY': {'source_id': 'REGISTERS-FINANCE-ACTIVITY', 'path': 'retained/native-tab-finance-activity.json', 'sha256': '0c236c40583cde3776893ade24128c7b118aaacf1e8492f39efa2e2b8b25b2e6', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Finance activity'!A1:M225; sheetId=43269773", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}, 'REGISTERS-TRAVEL-CANCELLATIONS': {'source_id': 'REGISTERS-TRAVEL-CANCELLATIONS', 'path': 'retained/native-tab-travel-cancellations.json', 'sha256': '39c85c94cf11a0906791a16fa4a64fc4adfe0daf49d0dcf4412d73c6e9fb5417', 'status': 'read', 'error': None, 'url': 'https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit', 'locator': "'Travel cancellations'!A1:N14; sheetId=1608282833", 'observed_at': '2026-10-17T15:52:26Z', 'source_version': 'SRC-D-3', 'access_route': 'Google Sheets bounded live CellData API', 'completeness': 'All populated rows/columns plus native headings/notes; full export preserves entire workbook beyond rectangle.', 'observation_time_basis': 'Measured completed fresh-source acquisition/retention verification timestamp for this run; native fetches and reads occurred immediately before it.'}}
+
+======================================================================
+FAIL: test_claimed_excerpt_must_match_original_line_exactly (test_business_definitions.BusinessDefinitionTests.test_claimed_excerpt_must_match_original_line_exactly)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 172, in test_claimed_excerpt_must_match_original_line_exactly
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_claimed_lead_speaker_must_match_original_message (test_business_definitions.BusinessDefinitionTests.test_claimed_lead_speaker_must_match_original_message)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 188, in test_claimed_lead_speaker_must_match_original_message
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_existing_eligible_category_cannot_be_overridden_by_unrelated_clarification (test_business_definitions.BusinessDefinitionTests.test_existing_eligible_category_cannot_be_overridden_by_unrelated_clarification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 195, in test_existing_eligible_category_cannot_be_overridden_by_unrelated_clarification
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_interview_hash_mismatch_fails_before_processing (test_business_definitions.BusinessDefinitionTests.test_interview_hash_mismatch_fails_before_processing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 165, in test_interview_hash_mismatch_fails_before_processing
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_learner_statement_cannot_supply_lead_category_authority (test_business_definitions.BusinessDefinitionTests.test_learner_statement_cannot_supply_lead_category_authority)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 179, in test_learner_statement_cannot_supply_lead_category_authority
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) (claim='C22')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 119, in test_missing_numeric_definitions_stay_unknown_and_owned_by_operator
+    self.assertEqual((claim["status"], claim["next_owner"]), ("held", "Exercise operator"))
+AssertionError: Tuples differ: ('held', 'FIN-01') != ('held', 'Exercise operator')
+
+First differing element 1:
+'FIN-01'
+'Exercise operator'
+
+- ('held', 'FIN-01')
++ ('held', 'Exercise operator')
+
+======================================================================
+FAIL: test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) (claim='C23')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 119, in test_missing_numeric_definitions_stay_unknown_and_owned_by_operator
+    self.assertEqual((claim["status"], claim["next_owner"]), ("held", "Exercise operator"))
+AssertionError: Tuples differ: ('held', 'FIN-01') != ('held', 'Exercise operator')
+
+First differing element 1:
+'FIN-01'
+'Exercise operator'
+
+- ('held', 'FIN-01')
++ ('held', 'Exercise operator')
+
+======================================================================
+FAIL: test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator) (claim='C116')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 119, in test_missing_numeric_definitions_stay_unknown_and_owned_by_operator
+    self.assertEqual((claim["status"], claim["next_owner"]), ("held", "Exercise operator"))
+AssertionError: Tuples differ: ('held', 'FIN-01') != ('held', 'Exercise operator')
+
+First differing element 1:
+'FIN-01'
+'Exercise operator'
+
+- ('held', 'FIN-01')
++ ('held', 'Exercise operator')
+
+======================================================================
+FAIL: test_missing_numeric_definitions_stay_unknown_and_owned_by_operator (test_business_definitions.BusinessDefinitionTests.test_missing_numeric_definitions_stay_unknown_and_owned_by_operator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 124, in test_missing_numeric_definitions_stay_unknown_and_owned_by_operator
+    self.assertEqual({item["owner"] for item in missing}, {"Exercise operator"})
+AssertionError: Items in the first set but not the second:
+'FIN-01'
+Items in the second set but not the first:
+'Exercise operator'
+
+======================================================================
+FAIL: test_weak_generally_personal_text_is_not_the_explicit_classification (test_business_definitions.BusinessDefinitionTests.test_weak_generally_personal_text_is_not_the_explicit_classification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/fellowship/travel-expense-claim/tests/test_business_definitions.py", line 202, in test_weak_generally_personal_text_is_not_the_explicit_classification
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.822s
+
+FAILED (failures=16)

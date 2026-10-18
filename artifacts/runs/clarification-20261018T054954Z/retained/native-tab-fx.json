@@ -1,0 +1,194 @@
+{
+  "spreadsheetId": "1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1338nvKD6rgAdLgGRhYCMMlQyDNLK0sE8pvFWrZAaaxg/edit",
+  "properties": {
+    "title": "travel-registers",
+    "locale": "zh_TW",
+    "timeZone": "America/Los_Angeles"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 777323076,
+        "title": "FX",
+        "index": 3,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1000,
+          "columnCount": 26,
+          "frozenRowCount": 5,
+          "frozenColumnCount": 1,
+          "hideGridlines": true,
+          "rowGroupControlAfter": true,
+          "columnGroupControlAfter": true
+        }
+      },
+      "data": [
+        {
+          "rowData": [
+            {
+              "values": [
+                {
+                  "formattedValue": "FX",
+                  "userEnteredValue": {
+                    "stringValue": "FX"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FX"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "Synthetic business records. SRC-D-3.",
+                  "userEnteredValue": {
+                    "stringValue": "Synthetic business records. SRC-D-3."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Synthetic business records. SRC-D-3."
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "EUR per original unit. Local rate dates.",
+                  "userEnteredValue": {
+                    "stringValue": "EUR per original unit. Local rate dates."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EUR per original unit. Local rate dates."
+                  }
+                }
+              ]
+            },
+            {},
+            {
+              "values": [
+                {
+                  "formattedValue": "Rate reference",
+                  "userEnteredValue": {
+                    "stringValue": "Rate reference"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Rate reference"
+                  }
+                },
+                {
+                  "formattedValue": "Rate date",
+                  "userEnteredValue": {
+                    "stringValue": "Rate date"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Rate date"
+                  }
+                },
+                {
+                  "formattedValue": "Currency",
+                  "userEnteredValue": {
+                    "stringValue": "Currency"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Currency"
+                  }
+                },
+                {
+                  "formattedValue": "EUR per currency unit",
+                  "userEnteredValue": {
+                    "stringValue": "EUR per currency unit"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EUR per currency unit"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "FX-EUR",
+                  "userEnteredValue": {
+                    "stringValue": "FX-EUR"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FX-EUR"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-01",
+                  "userEnteredValue": {
+                    "numberValue": 46266
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46266
+                  }
+                },
+                {
+                  "formattedValue": "EUR",
+                  "userEnteredValue": {
+                    "stringValue": "EUR"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "EUR"
+                  }
+                },
+                {
+                  "formattedValue": "1.0000",
+                  "userEnteredValue": {
+                    "numberValue": 1
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "formattedValue": "FX-USD",
+                  "userEnteredValue": {
+                    "stringValue": "FX-USD"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "FX-USD"
+                  }
+                },
+                {
+                  "formattedValue": "2026-09-01",
+                  "userEnteredValue": {
+                    "numberValue": 46266
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46266
+                  }
+                },
+                {
+                  "formattedValue": "USD",
+                  "userEnteredValue": {
+                    "stringValue": "USD"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "USD"
+                  }
+                },
+                {
+                  "formattedValue": "0.9000",
+                  "userEnteredValue": {
+                    "numberValue": 0.9
+                  },
+                  "effectiveValue": {
+                    "numberValue": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

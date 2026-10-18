@@ -1,0 +1,42 @@
+{
+  "completion_choice_adopted": true,
+  "current_batch": 4,
+  "implementation_sha256": "c35cb72907c68ed3d5c9a4a97c9cf362c79d4bf7410804c9f6432c8e2ba4e249",
+  "run_id": "clarification-20261018T054954Z",
+  "schema_version": "travel-claim-continuation/1",
+  "source_sha256": "efd07b392c49ea0f1834ef7da69c82ed9a611307b92967b08a09bb75a3abac79",
+  "stages": {
+    "1": {
+      "claims.csv": "a8764eddec0bda639169e0f95d775d496e009924126b0d886e20c391f038f019",
+      "operation.json": "9ee17a3e9d5ac1ab1b539b8578092e76580020d97d5a4f05928095dd8311da5e",
+      "repair-queue.json": "b17198728d4ddb77619d12e5f14541a5600a32548d20823fa3e8c406359cb14b",
+      "report.md": "b53bff6314e7c3ccfa01501e28d256d5bd9cfce4c34afa7312d3df1c952ed334",
+      "snapshot": "057ceb2020eb5af035c17f5414f209c0ab18366723a2394df72eefdb777ace17",
+      "summary.json": "6d6e0595e1740c1f72731bbb1f81a61247d39eb4af0bbf1605f149b778213886"
+    },
+    "2": {
+      "claims.csv": "a8519b857e4be2ceb7b1d2115449b900bcbd3fda82e2f1db8b2d8c41c097e203",
+      "operation.json": "58036732af6c6699c3a6341e0bf4d24ac983f614d932eb02fdf30c3520a1ca0a",
+      "repair-queue.json": "8ba253b185aee9fb8df0d5f3fa7c213d65b7d3c193930dd59e8d920e62a850bf",
+      "report.md": "28bc4199e617361ec1c377f61055b6814db3fc8aa7467a0d65cfa569c9602047",
+      "snapshot": "a7c78c53c310a785a89dd9bde071091e8c2befc7a55737ac37173552754893ed",
+      "summary.json": "668229d9848115e58a859b9ecac07a91770ab10e15a38ad7e767cdc2e452fc07"
+    },
+    "3": {
+      "claims.csv": "84e57f6c8e94f2d6ea630ffce59ff70a598363e8fe4121fa8176abc7ffa078dd",
+      "operation.json": "a87b243ec92acbd93c042d19e52f04ec396436bc0b5644018b9acea95541c054",
+      "repair-queue.json": "d0fd837c4cf593c839e510476cdcff10aeb208b14a255e0af0567a99b12ab6fe",
+      "report.md": "6240fd06c30734eb2fdc271f4c7be0d0f7eae7433313f95cec3d0697c29ef3e4",
+      "snapshot": "977d59cb8e2e32194db9e4212416ff0c6364cea3d2744d4cbb45dbe2295b323b",
+      "summary.json": "809ade6c374e8a7195c2f2aec8e8afcc9313b9b3b96d3e4954b8e0fdad0a2f8e"
+    },
+    "4": {
+      "claims.csv": "30c3aaec5e4a29f0d551799f6d5fffdaa64a6285d1bc6b5ecaf2c8f3429026dc",
+      "operation.json": "91241f9aff7cff91444e7eb0c884b5b57a5e6b0d0d0840db28f60d267843f162",
+      "repair-queue.json": "2fa09d0e27848596828612662a6a8aa4b972c5d05b8ef9f34b4e2cf1c14ad546",
+      "report.md": "9a973d773d6f432b2f12767cba948ffb72e4f289d5f88772f13695310c443ca9",
+      "snapshot": "631a66a64a5d64b463251fe62c307bd7aacebec171aeddc5b278556fdc9dd674",
+      "summary.json": "3a8e769a0647e58da08468d5db0e51f18aefe1f96074da036ee1cf9743065745"
+    }
+  }
+}

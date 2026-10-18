@@ -1,0 +1,185 @@
+{
+  "run_id": "clarification-20261018T054954Z",
+  "previous_commit": "917838bf6d0e1534b53da193b73883a8de4ce7e5",
+  "source_manifest_sha256": "efd07b392c49ea0f1834ef7da69c82ed9a611307b92967b08a09bb75a3abac79",
+  "implementation_sha256": "c35cb72907c68ed3d5c9a4a97c9cf362c79d4bf7410804c9f6432c8e2ba4e249",
+  "canonical_interview_sha256": "3c2958030d76bd4edf0ce76a5b96f93de61fe208e420766d7ad1e8b9d2d55aa9",
+  "one_final_complete_export": true,
+  "original_export_preserved_in_Git": true,
+  "historical_artifact_files_preserved": 159,
+  "immutable_schema_and_existing_money_authority_reducers": true,
+  "observations": [
+    {
+      "batch": 1,
+      "before_C117": {
+        "allowed_cents": null,
+        "paid_cents": 0,
+        "balance_cents": null,
+        "authorized_obligation_cents": null,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "held",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "after_C117": {
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "authorized_obligation_cents": 4000,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "pending",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "all_other_claim_money_status_and_authority_unchanged": true,
+      "supplied_Finance_decisions_cancellations_unchanged": true
+    },
+    {
+      "batch": 2,
+      "before_C117": {
+        "allowed_cents": null,
+        "paid_cents": 0,
+        "balance_cents": null,
+        "authorized_obligation_cents": null,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "held",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "after_C117": {
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "authorized_obligation_cents": 4000,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "pending",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "all_other_claim_money_status_and_authority_unchanged": true,
+      "supplied_Finance_decisions_cancellations_unchanged": true
+    },
+    {
+      "batch": 3,
+      "before_C117": {
+        "allowed_cents": null,
+        "paid_cents": 0,
+        "balance_cents": null,
+        "authorized_obligation_cents": null,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "held",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "after_C117": {
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "authorized_obligation_cents": 4000,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "pending",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "all_other_claim_money_status_and_authority_unchanged": true,
+      "supplied_Finance_decisions_cancellations_unchanged": true
+    },
+    {
+      "batch": 4,
+      "before_C117": {
+        "allowed_cents": null,
+        "paid_cents": 0,
+        "balance_cents": null,
+        "authorized_obligation_cents": null,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "held",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "after_C117": {
+        "allowed_cents": 4000,
+        "paid_cents": 0,
+        "balance_cents": 4000,
+        "authorized_obligation_cents": 4000,
+        "gross_paid_cents": 0,
+        "refunded_cents": 0,
+        "decision_ids": [],
+        "status": "pending",
+        "finance_resolution_required": false,
+        "current_resolution_event_ids": []
+      },
+      "all_other_claim_money_status_and_authority_unchanged": true,
+      "supplied_Finance_decisions_cancellations_unchanged": true
+    }
+  ],
+  "prior_queue_facts_addressed": [
+    {
+      "item_id": "RQ-1eff2185b4e03fc7d86eeb60",
+      "historical_code": "approval_requirement",
+      "historical_status": "open",
+      "current_disposition": "No longer applicable under the bound new-run category definition; prior sealed item is preserved",
+      "new_evidence": [
+        "INTERVIEW:line669",
+        "POLICY:paragraph2"
+      ]
+    },
+    {
+      "item_id": "RQ-7bb4f8d32ab5f3ca97074d88",
+      "historical_code": "unknown_category",
+      "historical_status": "open",
+      "current_disposition": "No longer applicable under the bound new-run category definition; prior sealed item is preserved",
+      "new_evidence": [
+        "INTERVIEW:line669",
+        "POLICY:paragraph2"
+      ]
+    }
+  ],
+  "current_C117_approval_task_ids": [
+    "RQ-07d5aa92f77f8705edbc6dd2",
+    "RQ-cd0cd03caa1bb7681fbf7515",
+    "RQ-eb48bb03c67b0db3468a6b27"
+  ],
+  "source_numeric_definitions_still_missing": [
+    "GBP 2026-09-01",
+    "BE/EUR lodging",
+    "NL/USD lodging"
+  ],
+  "final_summary": {
+    "accepted_obligation_cents": 1193415,
+    "batch_id": 4,
+    "budget_remaining_cents": 296585,
+    "claims": 121,
+    "finance_event_count": 219,
+    "gross_paid_cents": 1206415,
+    "known_allowed_cents": 1358416,
+    "net_paid_cents": 1203415,
+    "refunded_cents": 3000,
+    "request_count": 104,
+    "statuses": {
+      "closed-no-payment": 2,
+      "closed-reimbursed": 103,
+      "held": 11,
+      "pending": 3,
+      "rejected": 1,
+      "withdrawn": 1
+    },
+    "unknown_claims": 5
+  },
+  "independent_source_mismatches": 0,
+  "tests": 224,
+  "replay_unchanged_files": 69
+}

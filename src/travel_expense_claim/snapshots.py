@@ -119,6 +119,13 @@ def _manifest(path, checker):
         urls.add(entry["url"])
         files[identity] = entry
     _require(len(urls) == 5, "Manifest must cover all five native source URLs")
+    from .business_definitions import load_definitions
+    try:
+        documents, _, _ = load_definitions(path, manifest)
+    except (ValueError, OSError) as error:
+        raise SnapshotError('Invalid interview business definition: ' + str(error)) from error
+    _require(not set(documents) & set(files), 'Interview document identity conflicts with a native source')
+    files.update(documents)
     return manifest, files
 
 

@@ -1,0 +1,119 @@
+{
+  "comparisons": [
+    {
+      "tab": "People",
+      "sheet_id": 346358653,
+      "native_populated_values": 153,
+      "native_equal_prior": true,
+      "export_max_row": 19,
+      "export_max_column": 10
+    },
+    {
+      "tab": "Trips",
+      "sheet_id": 1638508794,
+      "native_populated_values": 1626,
+      "native_equal_prior": true,
+      "export_max_row": 128,
+      "export_max_column": 15
+    },
+    {
+      "tab": "Merchant payments",
+      "sheet_id": 2006903626,
+      "native_populated_values": 1821,
+      "native_equal_prior": true,
+      "export_max_row": 206,
+      "export_max_column": 9
+    },
+    {
+      "tab": "FX",
+      "sheet_id": 777323076,
+      "native_populated_values": 15,
+      "native_equal_prior": true,
+      "export_max_row": 7,
+      "export_max_column": 4
+    },
+    {
+      "tab": "Caps",
+      "sheet_id": 768624731,
+      "native_populated_values": 24,
+      "native_equal_prior": true,
+      "export_max_row": 7,
+      "export_max_column": 7
+    },
+    {
+      "tab": "Budget",
+      "sheet_id": 1700439189,
+      "native_populated_values": 38,
+      "native_equal_prior": true,
+      "export_max_row": 8,
+      "export_max_column": 9
+    },
+    {
+      "tab": "Review ledger",
+      "sheet_id": 492252124,
+      "native_populated_values": 3702,
+      "native_equal_prior": true,
+      "export_max_row": 312,
+      "export_max_column": 13
+    },
+    {
+      "tab": "Review packets",
+      "sheet_id": 2147088768,
+      "native_populated_values": 3763,
+      "native_equal_prior": true,
+      "export_max_row": 312,
+      "export_max_column": 16
+    },
+    {
+      "tab": "Finance activity",
+      "sheet_id": 43269773,
+      "native_populated_values": 2434,
+      "native_equal_prior": true,
+      "export_max_row": 225,
+      "export_max_column": 13
+    },
+    {
+      "tab": "Travel cancellations",
+      "sheet_id": 1608282833,
+      "native_populated_values": 127,
+      "native_equal_prior": true,
+      "export_max_row": 14,
+      "export_max_column": 14
+    }
+  ],
+  "mismatches": [],
+  "native_populated_values": 13703,
+  "features": {
+    "native_notes": 0,
+    "native_hyperlinks": 0,
+    "native_validations": 0,
+    "formulas": 0,
+    "xlsx_comments": 0,
+    "external_links": 0,
+    "hidden_sheets": [],
+    "hidden_rows": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    },
+    "hidden_columns": {
+      "People": [],
+      "Trips": [],
+      "Merchant payments": [],
+      "FX": [],
+      "Caps": [],
+      "Budget": [],
+      "Review ledger": [],
+      "Review packets": [],
+      "Finance activity": [],
+      "Travel cancellations": []
+    }
+  }
+}

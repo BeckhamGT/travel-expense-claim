@@ -1,0 +1,13 @@
+{
+  "mode": "User-authorized supersession with one final complete export for the same Work Sim conversation; earlier bytes preserved in Git history",
+  "previous_commit": "917838bf6d0e1534b53da193b73883a8de4ce7e5",
+  "previous_path": "interviews/project-d-travel-expense-claim-20261017-0334.md",
+  "previous_sha256": "8099acf7f137edf8521c50b3d80c1dd76fe6a4dd175356fa7b1648199b1606e2",
+  "latest_path": "interviews/project-d-travel-expense-claim-20261018-0547.md",
+  "latest_sha256": "3c2958030d76bd4edf0ce76a5b96f93de61fe208e420766d7ad1e8b9d2d55aa9",
+  "latest_bytes": 35126,
+  "latest_lines": 669,
+  "latest_messages": 161,
+  "earlier_messages_preserved_in_order": 133,
+  "note": "Latest export includes earlier exchanges plus inserted repeated exchanges and added clarification; it is not a simple byte-prefix append."
+}
