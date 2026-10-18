@@ -2,7 +2,7 @@
   "cli_version": "0.11.3",
   "checkpoint_id": "01M56WJEYZETEBYWDQBM56MREX",
   "strategy": "manual-commit",
-  "checkpoints_count": 5,
+  "checkpoints_count": 7,
   "files_touched": [
     "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-initial.json",
     "artifacts/runs/clarification-20261018T054954Z/retained/native-metadata-receipts.json",
@@ -54,14 +54,21 @@
       "compact_transcript": "/2/transcript.jsonl",
       "content_hash": "/2/content_hash.txt",
       "prompt": "/2/prompt.txt"
+    },
+    {
+      "metadata": "/3/metadata.json",
+      "transcript": "/3/full.jsonl",
+      "compact_transcript": "/3/transcript.jsonl",
+      "content_hash": "/3/content_hash.txt",
+      "prompt": "/3/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 2498167,
+    "input_tokens": 2624921,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 82428288,
-    "output_tokens": 317410,
-    "api_call_count": 550,
+    "cache_read_tokens": 85212800,
+    "output_tokens": 330513,
+    "api_call_count": 580,
     "subagent_tokens_complete": false
   }
 }
